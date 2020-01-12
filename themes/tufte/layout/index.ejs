@@ -1,0 +1,6 @@
+<%- partial('_partial/root', {
+    title: config.title,
+    body: page.posts.map(function(post) {
+        return partial('_partial/post', {post: post, link_title: true});
+    }).join("")
+}) %>
