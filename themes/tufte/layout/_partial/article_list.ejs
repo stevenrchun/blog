@@ -1,0 +1,7 @@
+<ul>
+  <%-
+  posts.map(function(post) {
+        return partial('_partial/article_listing', {post: post, link_title: true});
+  }).join(' ');
+  %>
+</ul>

@@ -9,7 +9,8 @@ body {
 
 .body-container {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  flex-flow: column;
 }
 
 .content {
@@ -28,10 +29,30 @@ p, ol, ul {
   font-size: 1.2rem;
 }
 
+h1.title {
+  width: 80%
+}
+
 p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper {width: 80%;}
 
 .sidenote, .marginnote {
     font-size: 1rem;
+}
+
+li {
+  list-style-type: none;
+}
+
+.listing-subtitle-container {
+  display: flex;
+}
+
+.listing-subtitle-container > p {
+  margin-top: 0;
+}
+
+.listing-subtitle-container > a {
+  margin-right: 2px;
 }
 
 /* repeat all media queries so they apply */

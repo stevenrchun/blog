@@ -1,6 +1,6 @@
 <%- partial('_partial/root', {
     title: config.title,
-    body: page.posts.map(function(post) {
-        return partial('_partial/post', {post: post, link_title: true});
-    }).join("")
+    body: partial('_partial/article_list', {
+        posts: page.posts, link_title: true
+      })
 }) %>

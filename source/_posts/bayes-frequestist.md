@@ -1,0 +1,24 @@
+---
+title: Bayesian and Frequentist Methodologies
+subtitle: Understanding a core technique in machine learning.
+tags:
+- Statistics
+- ML
+---
+Welcome to [Hexo](https://hexo.io/){% sidenote %}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.
+{% endsidenote %}! This is your very first post.{% sidenote %}
+Second nooooote.
+{% endsidenote %}Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+
+
+## Quick Start
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Magna fringilla urna porttitor rhoncus dolor purus. Lectus vestibulum mattis ullamcorper velit sed ullamcorper. Proin nibh nisl condimentum id venenatis a condimentum vitae sapien. Massa tempor nec feugiat nisl pretium fusce id velit. Vulputate eu scelerisque felis imperdiet. Morbi tempus iaculis urna id volutpat lacus. Id faucibus nisl tincidunt eget nullam non. Scelerisque felis imperdiet proin fermentum. Arcu cursus euismod quis viverra nibh cras pulvinar. Suspendisse sed nisi lacus sed viverra. Nec ullamcorper sit amet risus nullam eget felis. Scelerisque purus semper eget duis at. Amet tellus cras adipiscing enim eu turpis. Phasellus egestas tellus rutrum tellus pellentesque eu tincidunt tortor aliquam. Convallis posuere morbi leo urna molestie at elementum eu facilisis. Pellentesque habitant morbi tristique senectus et netus et.
+
+Fermentum odio eu feugiat pretium. Et odio pellentesque diam volutpat commodo sed egestas egestas. Enim nec dui nunc mattis enim ut tellus elementum. Dolor magna eget est lorem ipsum dolor. Sed odio morbi quis commodo. Sodales ut etiam sit amet nisl purus in mollis. Convallis tellus id interdum velit. Pulvinar elementum integer enim neque volutpat. Amet risus nullam eget felis eget nunc lobortis mattis. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae.
+
+Facilisis sed odio morbi quis commodo odio aenean sed. Habitant morbi tristique senectus et netus et malesuada fames. Nunc pulvinar sapien et ligula ullamcorper malesuada proin libero nunc. Enim sed faucibus turpis in eu mi bibendum neque egestas. Aliquam nulla facilisi cras fermentum odio eu. Integer malesuada nunc vel risus commodo. Mauris nunc congue nisi vitae suscipit tellus. Ornare quam viverra orci sagittis eu volutpat odio facilisis. Morbi tristique senectus et netus et malesuada fames. Ultricies integer quis auctor elit sed vulputate mi sit. Ut etiam sit amet nisl purus in mollis nunc sed. Duis at tellus at urna condimentum mattis pellentesque id.
+
+Ut tortor pretium viverra suspendisse potenti. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Viverra tellus in hac habitasse platea dictumst vestibulum rhoncus. Dolor sit amet consectetur adipiscing elit duis tristique sollicitudin. Turpis in eu mi bibendum neque egestas congue quisque. Cras tincidunt lobortis feugiat vivamus at augue eget arcu. Non tellus orci ac auctor augue mauris augue. Cras adipiscing enim eu turpis egestas pretium aenean pharetra. Mi eget mauris pharetra et ultrices neque ornare aenean euismod. Sodales neque sodales ut etiam. Commodo ullamcorper a lacus vestibulum sed arcu non odio euismod. Mi proin sed libero enim sed. Eu facilisis sed odio morbi quis. Velit aliquet sagittis id consectetur purus. Vulputate ut pharetra sit amet aliquam id diam. Lacus vestibulum sed arcu non odio euismod lacinia at quis. Aliquam sem fringilla ut morbi tincidunt augue interdum velit.
+
+Feugiat nisl pretium fusce id velit ut tortor pretium viverra. Urna porttitor rhoncus dolor purus non enim praesent. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Hac habitasse platea dictumst vestibulum rhoncus est pellentesque. Hendrerit gravida rutrum quisque non tellus orci. Justo laoreet sit amet cursus sit amet. Quis varius quam quisque id diam vel. Et pharetra pharetra massa massa ultricies. Nec feugiat in fermentum posuere urna nec tincidunt praesent. Ornare quam viverra orci sagittis eu volutpat odio facilisis mauris. Est ultricies integer quis auctor elit sed. Arcu cursus vitae congue mauris rhoncus aenean vel elit. Neque aliquam vestibulum morbi blandit cursus risus at. Tristique senectus et netus et malesuada fames ac. Leo vel orci porta non pulvinar neque laoreet suspendisse. Dui vivamus arcu felis bibendum ut tristique et egestas quis. Tortor posuere ac ut consequat semper. Ut tortor pretium viverra suspendisse potenti nullam. Pellentesque dignissim enim sit amet venenatis.
