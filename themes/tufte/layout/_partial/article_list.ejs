@@ -1,7 +1,13 @@
 <ul>
   <%-
   posts.map(function(post) {
-        return partial('_partial/article_listing', {post: post, link_title: true});
+    console.log(post.tags);
+    post.tags.forEach(function(tag) {
+        if (tag.name == 'Draft' || tag.name == 'draft') {
+          return;
+        }
+    })
+    return partial('_partial/article_listing', {post: post, link_title: true});
   }).join(' ');
   %>
 </ul>
