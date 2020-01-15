@@ -1,0 +1,107 @@
+/*
+
+Orginal Style from ethanschoonover.com/solarized (c) Jeremy Hull <sourdrums@gmail.com>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #fdf6e3;
+  color: #657b83;
+  -webkit-text-size-adjust: none;
+}
+
+.code .comment,
+.code .diff .header,
+.code .doctype,
+.code .pi,
+.code .lisp .string {
+  color: #93a1a1;
+}
+
+/* Solarized Green */
+.code .keyword,
+.code .winutils,
+.code .method,
+.code .addition,
+.code .css .tag,
+.code .request,
+.code .status,
+.code .nginx .title {
+  color: #859900;
+}
+
+/* Solarized Cyan */
+.code .number,
+.code .command,
+.code .string,
+.code .tag .value,
+.code .rule .value,
+.code .doctag,
+.code .tex .formula,
+.code .regexp,
+.code .hexcolor,
+.code .link_url {
+  color: #2aa198;
+}
+
+/* Solarized Blue */
+.code .title,
+.code .localvars,
+.code .chunk,
+.code .decorator,
+.code .built_in,
+.code .identifier,
+.code .vhdl .literal,
+.code .id,
+.code .css .function,
+.code .name {
+  color: #268bd2;
+}
+
+/* Solarized Yellow */
+.code .attribute,
+.code .variable,
+.code .lisp .body,
+.code .smalltalk .number,
+.code .constant,
+.code .class .title,
+.code .parent,
+.code .type,
+.code .link_reference {
+  color: #b58900;
+}
+
+/* Solarized Orange */
+.code .preprocessor,
+.code .preprocessor .keyword,
+.code .pragma,
+.code .shebang,
+.code .symbol,
+.code .symbol .string,
+.code .diff .change,
+.code .special,
+.code .attr_selector,
+.code .subst,
+.code .cdata,
+.code .css .pseudo,
+.code .header {
+  color: #cb4b16;
+}
+
+/* Solarized Red */
+.code .deletion,
+.code .important {
+  color: #dc322f;
+}
+
+/* Solarized Violet */
+.code .link_label {
+  color: #6c71c4;
+}
+
+.code .tex .formula {
+  background: #eee8d5;
+}
