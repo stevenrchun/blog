@@ -1,11 +1,13 @@
 <li>
-  <% if(link_title) { %>
-    <a href="<%= url_for(post.path) %>">
-  <% } %>
-  <h4 class="title"><%- post.title %></h4>
-  <% if(link_title) { %>
-    </a>
-  <% } %>
+  <h4 class="title">
+    <% if(link_title) { %>
+      <a href="<%= url_for(post.path) %>">
+    <% } %>
+      <%- post.title %>
+    <% if(link_title) { %>
+      </a>
+    <% } %>
+  </h4>
   <div class="listing-subtitle-container">
     <p style="margin-bottom: 0;">
       <em id="published-on">Published on <%= post.date.format("DD MMMM YYYY") %></em>
@@ -13,7 +15,7 @@
     <%
       post.tags.forEach(function(tag){
         %>
-          <a href="<%= config.root %>tags/#<%= tag.name %>" title="<%= tag.name %>">
+          <a href="<%= config.root %>tags/<%= tag.name %>" title="<%= tag.name %>">
             <%= tag.name  %>
           </a>
         <%

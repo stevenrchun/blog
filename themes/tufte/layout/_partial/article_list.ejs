@@ -1,7 +1,6 @@
 <ul>
   <%-
   posts.map(function(post) {
-    console.log(post.tags);
     post.tags.forEach(function(tag) {
         if (tag.name == 'Draft' || tag.name == 'draft') {
           return;

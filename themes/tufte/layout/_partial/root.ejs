@@ -19,6 +19,9 @@
     <% } %>
   </head>
   <body>
+  <% if(include_intro) { %>
+    <%- intro %>
+  <% } %>
     <%- partial('_partial/header') %>
     <div class="body-container">
     <%- body %>
