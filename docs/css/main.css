@@ -67,6 +67,7 @@ li {
 .sidenote, .marginnote {
   font-size: 1rem;
   margin-right: -55%;
+  color: #616161;
 }
 
 .sidenote:nth-of-type(even) {
@@ -106,7 +107,7 @@ li {
   display: flex;
   justify-content: space-between;
   border-style: solid;
-  border-width: 0 0 2px 0;
+  border-width: 0 0 4px 0;
   border-color: black;
 }
 
