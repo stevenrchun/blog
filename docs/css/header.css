@@ -22,4 +22,14 @@
   margin-bottom: 4px;
   color: #BE7798;
   margin-top: 1rem;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.header > h3:last-child {
+  margin-right: 0;
+}
+
+.header > h3:first-child {
+  margin-left: 0;
 }
