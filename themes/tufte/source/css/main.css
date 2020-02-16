@@ -61,6 +61,22 @@ li {
   margin-left: -55%;
 }
 
+/* intro */
+.intro-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.intro {
+  width: 45%;
+  display: flex;
+}
+
+.intro > p {
+  width: 100%;
+}
+
 /* repeat all media queries so they apply */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   a:link {

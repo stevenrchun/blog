@@ -1,0 +1,11 @@
+index: >
+  <p><b>Hello, I'm Steven Chun. This is my blog.</b> It exists <i>mostly</i> to prevent further atrophy of my writing abilities and as a research notebook
+  for topics in computer science, statistics, and economics. It exists <i>partly</i> because I'm a vain person.
+  In most of my writing, I hope to explain complicated things simply.
+  If you're curious about my current affiliations, see <a href="http://www.stevenchun.me">my homepage.</a></p>
+
+bookshelf: >
+  <p><b>This is my bookshelf.</b> It is simply a semi-up-to-date list of the books I own, many of which I haven't read.
+  I unabashedly ripped off this concept from <a href="https://patrickcollison.com/bookshelf">Patrick Collison</a>.
+  I'm fond of Umberto Eco's (who had like, 30,000 books) theory that, "confronted by a vast array of books, <i>anyone</i> will be seized by the anguish of learning,
+  and will inevitably lapse into asking the question that express his torment and his remorse". Welp, that's the idea.</p>

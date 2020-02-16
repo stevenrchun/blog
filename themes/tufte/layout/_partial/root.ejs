@@ -22,7 +22,7 @@
 </head>
 
 <body>
-    <% if(is_home()) { %>
+    <% if(is_home() || is_current('/bookshelf')) { %>
     <%- intro %>
     <% } %>
     <%- partial('_partial/header') %>

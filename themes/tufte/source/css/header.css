@@ -25,6 +25,12 @@
   margin-right: 8px;
 }
 
+.header > h3:hover {
+  color: #F7EE80;
+  text-shadow: 1px 1px #715879, 2px 2px #715879;
+  transform: translate(-3px, -3px);
+}
+
 .header > h3:last-child {
   margin-right: 0;
 }

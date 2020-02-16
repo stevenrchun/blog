@@ -3,6 +3,8 @@
     body: partial('_partial/article_list', {
         posts: page.posts, link_title: true
       }),
-    intro: partial('_partial/intro', {}),
+    intro: partial('_partial/intro', {
+        text: site.data.intros.index
+      }),
     css_source: 'home.css'
 }) %>

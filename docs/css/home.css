@@ -1,9 +1,14 @@
 body {
   background-color: #EFC000;
+  /*background-color: #EDCB64;*/
 }
 
 li > h4 {
   color: #BE7798;
+}
+
+li > h4:hover {
+  text-decoration: underline;
 }
 
 .listing-subtitle-container {
@@ -16,25 +21,4 @@ li > h4 {
 
 .listing-subtitle-container > a {
   margin-right: 2px;
-}
-
-.intro-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.intro {
-  width: 45%;
-  display: flex;
-}
-
-.intro > p {
-  width: 100%;
-}
-
-@media screen and (max-width: 760px) {
-  .intro {
-    width: 85%;
-  }
 }

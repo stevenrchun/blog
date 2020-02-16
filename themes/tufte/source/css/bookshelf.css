@@ -33,8 +33,15 @@ body {
   background-color: #EFC000;
 }
 
+.book-cell:hover > h4 {
+  color: #E4AEBD;
+  color: #F7EE80;
+  text-shadow: 1px 1px #715879, 2px 2px #715879;
+}
+
 .book-cell > img {
   width: 50%;
+  border: solid black;
 }
 
 .book-cell > h4 {

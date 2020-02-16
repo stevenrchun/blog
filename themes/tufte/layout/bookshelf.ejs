@@ -3,5 +3,8 @@
     body: partial('_partial/bookshelf', {
             post: page, link_title: false
           }),
+    intro: partial('_partial/intro', {
+            text: site.data.intros.bookshelf
+          }),
     css_source: 'bookshelf.css'
 }) %>
