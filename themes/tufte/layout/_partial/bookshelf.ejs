@@ -1,0 +1,16 @@
+<div class="bookshelf-container">
+    <% for (var book in site.data.books) { %>
+    <div class="book-cell">
+        <img src="<%- site.data.books[book].cover_link %>" />
+        <h4><%- book %></h4>
+        <p>By <%-site.data.books[book].author%></p>
+    </div>
+    <% } %>
+    <%
+      // Fill in the remainder to keep 4 on each row.
+      for (var i = 0; i < Object.keys(site.data.books).length % 4; i++) {
+    %>
+    <div class="book-cell">
+    </div>
+    <% } %>
+</div>

@@ -1,13 +1,14 @@
 <header>
-  <% if(config.home) { %><a href="<%= config.home %>">Home</a> &middot;<% } %>
-  <div class="header-container">
-    <div class="header">
-      <h3><a href="<%= config.root %>">Articles</a></h3>
-      <h3><a href="<%= config.root %>">About</a></h3>
+    <% if(config.home) { %><a href="<%= config.home %>">Home</a> &middot;<% } %>
+    <div class="header-container">
+        <div class="header">
+            <h3><a href="<%= config.root %>">Articles</a></h3>
+            <h3><a href="<%= config.root + 'bookshelf' %>">Bookshelf</a></h3>
+            <h3><a href="<%= config.root %>">About</a></h3>
+        </div>
     </div>
-  </div>
-  <% if(config.feed) { %>
-  &middot;
-  <a href="<%= url_for(config.feed.path) %>"><%= (config.feed.type == "atom") ? "Atom" : "RSS" %> Feed</a>
-  <% } %>
+    <% if(config.feed) { %>
+    &middot;
+    <a href="<%= url_for(config.feed.path) %>"><%= (config.feed.type == "atom") ? "Atom" : "RSS" %> Feed</a>
+    <% } %>
 </header>

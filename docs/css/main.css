@@ -4,7 +4,7 @@
 body {
   width: inherit;
   padding: 0;
-  background-color: #fffffe;
+  /*background-color: #fffffe;*/
 }
 
 .body-container {
@@ -13,9 +13,6 @@ body {
   flex-flow: column;
 }
 
-.content {
-  width: 45%;
-}
 
 title, h1, h2, h3, h4 {
   font-family: 'Space Mono';
@@ -46,21 +43,8 @@ p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.bookt
   width: 100%;
 }
 
-
 li {
   list-style-type: none;
-}
-
-.listing-subtitle-container {
-  display: flex;
-}
-
-.listing-subtitle-container > p {
-  margin-top: 0;
-}
-
-.listing-subtitle-container > a {
-  margin-right: 2px;
 }
 
 /* Alternate sidenotes */
@@ -75,48 +59,6 @@ li {
   clear: left;
   margin-right: 0;
   margin-left: -55%;
-}
-
-/* Intro */
-.intro-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.intro {
-  width: 45%;
-  display: flex;
-}
-
-.intro > p {
-  width: 100%;
-}
-
-/* End Intro */
-
-/* Header */
-.header-container {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-}
-
-.header {
-  width: 45%;
-  display: flex;
-  justify-content: space-between;
-  border-style: solid;
-  border-width: 0 0 4px 0;
-  border-color: black;
-}
-
-.header > a {
-  text-decoration: none;
-}
-
-.header > h3 {
-  margin-bottom: 4px;
 }
 
 /* repeat all media queries so they apply */

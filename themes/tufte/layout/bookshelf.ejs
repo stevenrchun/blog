@@ -1,0 +1,7 @@
+<%- partial('_partial/root', {
+    title: page.title,
+    body: partial('_partial/bookshelf', {
+            post: page, link_title: false
+          }),
+    css_source: 'bookshelf.css'
+}) %>

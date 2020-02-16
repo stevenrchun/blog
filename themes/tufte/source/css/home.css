@@ -1,0 +1,34 @@
+body {
+  background-color: #EFC000;
+}
+
+li > h4 {
+  color: #BE7798;
+}
+
+.listing-subtitle-container {
+  display: flex;
+}
+
+.listing-subtitle-container > p {
+  margin-top: 0;
+}
+
+.listing-subtitle-container > a {
+  margin-right: 2px;
+}
+
+.intro-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.intro {
+  width: 45%;
+  display: flex;
+}
+
+.intro > p {
+  width: 100%;
+}
