@@ -32,3 +32,9 @@ li > h4 {
 .intro > p {
   width: 100%;
 }
+
+@media screen and (max-width: 760px) {
+  .intro {
+    width: 85%;
+  }
+}
