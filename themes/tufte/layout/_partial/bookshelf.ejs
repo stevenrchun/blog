@@ -8,9 +8,15 @@
     <% } %>
     <%
       // Fill in the remainder to keep 4 on each row.
-      for (var i = 0; i < Object.keys(site.data.books).length % 4; i++) {
+      var n_books = Object.keys(site.data.books).length;
+
+      if (n_books % 4 != 0) {
+        for (var i = 0; i < 4 - (n_books % 4); i++) {
     %>
     <div class="book-cell">
     </div>
-    <% } %>
+    <%
+        }
+      }
+    %>
 </div>

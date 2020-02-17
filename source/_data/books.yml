@@ -13,18 +13,111 @@ Seveneves:
     Stephenson, who worked at Blue Origin, is in fact so rigorous that it can feel impossible to *unsuspend* disbelief. Can't recommend enough; bonus if
     you're looking for something with whip-crack smart, well-written female leads.
 
-Billion Dollar Whale:
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/61jiUKqaziL.jpg
-  author: Tom Wright & Bradley Hope
-
 The Path to Power:
-  cover_link: https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Seveneves_Book_Cover.jpg/220px-Seveneves_Book_Cover.jpg
+  favorite: false
+  ISBN: 0-679-72945-3
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51XOGLoW9lL.jpg
+  author: Robert Caro
+  read: false
 
-The Vital Question:
-  cover_link: https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Seveneves_Book_Cover.jpg/220px-Seveneves_Book_Cover.jpg
+Deep Learning:
+  favorite: false
+  ISBN: 978-0262035613
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/61AWo6sS%2B-L._SX378_BO1,204,203,200_.jpg
+  author: Goodfellow, Bengio, & Courville
+  read: false
 
-Ender's Game:
-  cover_link: https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Seveneves_Book_Cover.jpg/220px-Seveneves_Book_Cover.jpg
+"The Vital Question: The Origins of Complex Life":
+  favorite: false
+  ISBN: 978-0-393-08881-6
+  cover_link: https://upload.wikimedia.org/wikipedia/en/1/13/Cover_of_The_Vital_Question_by_Nick_Lane.jpg
+  author: Nick Lane
+  read: false
 
 A Gentleman in Moscow:
-  cover_link: https://upload.wikimedia.org/wikipedia/en/thumb/f/f9/Seveneves_Book_Cover.jpg/220px-Seveneves_Book_Cover.jpg
+  favorite: false
+  ISBN: 978-0670026197
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SY346_.jpg
+  author: Amor Towles
+  read: false
+
+'How to Travel with a Salmon: And Other Essays':
+  favorite: false
+  ISBN: 978-0156001250
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/416x8xcDRiL._SX326_BO1,204,203,200_.jpg
+  author: Umberto Eco
+  read: false
+
+The Planet Remade:
+  favorite: false
+  ISBN: 9780691148250
+  cover_link: https://pup-assets.imgix.net/onix/images/9780691148250.jpg?w=640
+  author: Oliver Morton
+  read: false
+
+Billion Dollar Whale:
+  favorite: false
+  ISBN: 978-0316436502
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/61jiUKqaziL.jpg
+  author: Tom Wright & Bradley Hope
+  read: false
+
+The Ultimate Hitchiker's Guide to the Galaxy:
+  favorite: false
+  ISBN: 978-0345453747
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51Ine%2BshI8L._SX329_BO1,204,203,200_.jpg
+  author: Douglas Adams
+  read: false
+
+Salt, Fat, Acid, Heat:
+  favorite: true
+  ISBN: 978-1476753836
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/515vfwlf2vL._SX396_BO1,204,203,200_.jpg
+  author: Samin Nosrat
+  read: true
+
+String Theory:
+  favorite: true
+  ISBN: 978-1598534801
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51YKnHu5FGL._SX342_BO1,204,203,200_.jpg
+  author: David Foster Wallace
+  read: true
+
+'Payback: Debt & the Shadow Side of Wealth':
+  favorite: false
+  ISBN: 978-0747598497
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51iZjgfGQUL._SX345_BO1,204,203,200_.jpg
+  author: Margaret Atwood
+  read: true
+
+Bad Blood:
+  favorite: false
+  ISBN: 978-1524731656
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/41tmqEUIbSL._SX329_BO1,204,203,200_.jpg
+  author: John Carreyrou
+  read: true
+
+Animal Farm:
+  favorite: true
+  ISBN: 978-0151072552
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/21a2OjbrUQL._SX277_BO1,204,203,200_.jpg
+  author: George Orwell
+  read: true
+
+'Winners Take All: The Elite Charade of Changing the World':
+  favorite: true
+  ISBN: 978-0451493248
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/41N7qmiiEXL._SX334_BO1,204,203,200_.jpg
+  author: Anand Giridharadas
+  read: true
+
+The 2002 Aims of Education Address:
+  favorite: true
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/61UQ7hDHb9L._SX325_BO1,204,203,200_.jpg
+  author: Andrew Abbott
+  read: true
+
+Amazon’s Antitrust Paradox:
+  favorite: true
+  cover_link: https://heinonline.org/HOL/ViewImageLocal?handle=hein.journals/ylr126&div=18&collection=&method=preview&ext=.png&size=3
+  author: Lina Khan
