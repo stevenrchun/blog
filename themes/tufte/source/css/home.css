@@ -1,14 +1,19 @@
 body {
   background-color: #EFC000;
-  /*background-color: #EDCB64;*/
+  /* background-color: #113D30; Good for homepage w white text though! */
 }
 
 li > h4 {
   color: #BE7798;
+  color: black;
 }
 
 li > h4:hover {
   text-decoration: underline;
+}
+
+.header > h3 {
+  color: black;
 }
 
 .listing-subtitle-container {

@@ -29,6 +29,7 @@ const ghostPostData = async () => {
       tags: tags,
       date: post.published_at,
       content: post.html,
+      mathjax: true,
     };
     hexo.post.create(postData, true);
   });

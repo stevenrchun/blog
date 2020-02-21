@@ -2,6 +2,18 @@
 <html lang="en">
 
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYDKQWLE1C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SYDKQWLE1C');
+    </script>
     <title><%= title %></title>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <% if(config.author) { %>
@@ -30,9 +42,16 @@
         <%- body %>
     </div>
     <footer>
-        <% if(page.prev_link) { %><a href="<%= config.root + page.prev_link %>">&lt; Previous</a>
-        <% } else if(!page.title && page.prev !== 0) { %><a href="<%= config.root %>">&lt; Previous</a><% } %>
-        <% if(page.next_link) { %><a href="<%= config.root + page.next_link %>">Next &gt;</a><% } %>
+        <div class="pagination-container">
+            <% if(page.prev_link) { %><a href="<%= config.root + page.prev_link %>">&#8592; Previous</a>
+            <% } else if(!page.title && page.prev !== 0) { %><a href="<%= config.root %>">&#8592; Previous</a><% } %>
+            <% if(page.next_link) { %><a href="<%= config.root + page.next_link %>">Next &#8594;</a><% } %>
+        </div>
+        <div class="pagination-container">
+            <a href="mailto:schunchicago@gmail">
+                <p>comments or errata? say hi at schunchicago@gmail.com</p>
+            </a>
+        </div>
     </footer>
 </body>
 

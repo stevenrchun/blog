@@ -1,7 +1,8 @@
 ---
 title: Placeholder
 tags: []
-date: 2020-02-11 00:00:15
+mathjax: true
+date: 2020-02-10 22:00:15
 ---
 
 <p>Hello, this blog is under-development. Stuff is cooking though, so stay tuned.</p><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tristique dolor vitae aliquam finibus. Aliquam dignissim justo ac enim fringilla vulputate. Aenean et leo a purus accumsan tempus. Pellentesque cursus posuere fermentum. Pellentesque vel justo laoreet massa gravida elementum at ac ante. Morbi laoreet sapien sit amet urna aliquam tincidunt et a massa. {% sidenote %}<br>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.<br>{% endsidenote %} Nam hendrerit neque ullamcorper, varius enim eget, aliquam elit. Phasellus sagittis purus et {% sidenote %}<br>Second sidenote! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.<br>{% endsidenote %} risus {% sidenote %}<br>THird sidenote! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.<br>{% endsidenote %} condimentum {% sidenote %}<br>Fourth sidenote! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.<br>{% endsidenote %}, at lacinia dui tristique. Cras id ante urna. Morbi dolor urna, accumsan quis elit sed, eleifend sagittis nisl. Curabitur lacinia libero sit amet mi consectetur, quis blandit justo malesuada. Maecenas eleifend nunc ac commodo interdum.</p>

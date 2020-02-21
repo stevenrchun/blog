@@ -77,6 +77,21 @@ li {
   width: 100%;
 }
 
+/* Footer stuff */
+.pagination-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-container > a {
+  margin: 5px;
+}
+
+.pagination-container > p {
+  text-align: center;
+}
+
 /* repeat all media queries so they apply */
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   a:link {
