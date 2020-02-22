@@ -16,6 +16,10 @@ li > h4:hover {
   color: black;
 }
 
+.header > h3:hover {
+  text-shadow: 1px 1px black, 2px 2px black;
+}
+
 .listing-subtitle-container {
   display: flex;
 }
