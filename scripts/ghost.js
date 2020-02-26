@@ -1,4 +1,5 @@
 const ghostContentAPI = require('@tryghost/content-api');
+const beautify = require('js-beautify').html;
 
 const api = new ghostContentAPI({
   url: 'http://localhost:2368',
@@ -28,8 +29,9 @@ const ghostPostData = async () => {
       path: post.slug,
       tags: tags,
       date: post.published_at,
-      content: post.html,
+      content: beautify(post.html),
       mathjax: true,
+      author: post.primary_author.name,
     };
     hexo.post.create(postData, true);
   });
