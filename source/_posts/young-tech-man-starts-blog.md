@@ -4,6 +4,8 @@ tags: []
 mathjax: true
 author: Steven Chun
 date: 2020-02-25 23:15:50
+summary: Look, I don't know. It seemed like a good idea at the time.
+twitter_image: https://imgur.com/a/lSruREG
 ---
 
 <p>I know what this looks like. And you’re not entirely wrong, either.</p>

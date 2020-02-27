@@ -1,5 +1,6 @@
 <%- partial('_partial/root', {
     title: page.title,
     body: partial('_partial/post', {post: page, link_title: false}),
-    css_source: 'post.css'
+    css_source: 'post.css',
+    open_graph_options: {image: "https://imgur.com/a/lSruREG", description: page.summary, twitter_card: "summary_large_image"},
 }) %>

@@ -31,6 +31,7 @@
     <% if(config.feed) { %>
     <link rel="alternate" type="application/<%= config.feed.type %>+xml" title="<%= config.title %>" href="<%= url_for(config.feed.path) %>" />
     <% } %>
+    <%- open_graph(open_graph_options) %>
 </head>
 
 <body>

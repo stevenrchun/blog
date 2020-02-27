@@ -37,4 +37,4 @@ const ghostPostData = async () => {
   });
 };
 
-ghostPostData();
+// ghostPostData();
