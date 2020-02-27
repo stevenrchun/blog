@@ -56,9 +56,10 @@ li {
   font-size: 1rem;
   margin-right: -55%;
   color: #616161;
+  margin-bottom: 15px;
 }
 
-.sidenote:nth-of-type(even) {
+.even-sidenote {
   float: left;
   clear: left;
   margin-right: 0;
