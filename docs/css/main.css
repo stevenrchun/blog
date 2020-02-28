@@ -204,9 +204,3 @@ blockquote {
     width: 100%;
   }
 }
-
-@media screen and (max-width: 760px) {
-  .content {
-    width: 90%;
-  }
-}
