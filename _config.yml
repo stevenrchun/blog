@@ -11,6 +11,10 @@ author: Steven Chun
 language: en
 timezone: ''
 
+# Preprocessing
+fetch: true # don't want to fetch everytime while debugging, because it's a lot of requests :(
+show_drafts: false # so I can check out what's cooking.
+
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://blog.stevenchun.me/
@@ -41,7 +45,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -51,6 +55,10 @@ highlight:
   tab_replace: ''
   wrap: true
   hljs: false
+
+# Marked renderer
+marked:
+  breaks: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')

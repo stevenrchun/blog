@@ -1,11 +1,13 @@
 <ul>
     <%-
   posts.map(function(post) {
+    let isDraft = false;
     post.tags.forEach(function(tag) {
         if (tag.name == 'Draft' || tag.name == 'draft') {
-          return;
+          isDraft = true;
         }
     })
+    if (isDraft && !config.show_drafts) return;
     return partial('_partial/article_listing', {post: post, link_title: true});
   }).join(' ');
   %>
