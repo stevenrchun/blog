@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="586px" height="104px" viewBox="0 0 586 104" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-391.000000, -297.000000)" fill="#000000">
+            <g id="Group" transform="translate(391.000000, 294.000000)">
+                <path id="Line" d="M48,91 L519,91 L519,87 L528,91.5 L519,96 L519,92 L48,92 L48,96 L39,91.5 L48,87 L48,91 Z" fill-rule="nonzero"></path>
+                <text id="Math" font-family="ETBembo-BoldLF, ETBembo" font-size="14" font-weight="bold">
+                    <tspan x="0" y="94">Math</tspan>
+                </text>
+                <text id="Machine-Code" font-family="ETBembo-BoldLF, ETBembo" font-size="14" font-weight="bold">
+                    <tspan x="536" y="89">Machine</tspan>
+                    <tspan x="536" y="106">Code</tspan>
+                </text>
+                <text id="Where-we’re-going" font-family="ETBembo-BoldLF, ETBembo" font-size="14" font-weight="bold">
+                    <tspan x="353" y="59">Where we’re going</tspan>
+                </text>
+                <text id="A-reasonable-explana" font-family="ETBembo-BoldLF, ETBembo" font-size="14" font-weight="bold">
+                    <tspan x="107" y="59">A reasonable explanation</tspan>
+                </text>
+                <path id="Line-2" d="M182,76.26 L182,63 L182,62.5 L183,62.5 L183,63 L183,76.26 L187,76.26 L182.5,85.26 L178,76.26 L182,76.26 Z" fill-rule="nonzero"></path>
+                <path id="Line-2" d="M408,76.26 L408,63 L408,62.5 L409,62.5 L409,63 L409,76.26 L413,76.26 L408.5,85.26 L404,76.26 L408,76.26 Z" fill-rule="nonzero"></path>
+                <text id="The-Explanation-Spec" font-family="ETBembo-BoldLF, ETBembo" font-size="14" font-weight="bold">
+                    <tspan x="207" y="13.5">The Explanation Spectrum</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
