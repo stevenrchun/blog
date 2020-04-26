@@ -125,7 +125,7 @@ $$\hat{y}_i= \beta_0 + \beta_1x_i =
 y_i - u_i$$
 
 What mathematical notation gains in precision it loses in legibility. However,
-this is basically the same thing. [12]is again the predicted value at any point,
+this is basically the same thing. $\hat{y}$[12] is again the predicted value at any point,
 the carrot (called a {% preview
 https://twitter.com/chemicollins/status/1236350747895308288 %}hat{% endpreview
 %}) indicates that this is a predicted value which will differ from  which is
@@ -210,7 +210,7 @@ And with respect to $\beta_1$:
 $$
 \begin{align}
 \frac{\delta SSE}{\delta \beta_1} & = 2\sum^N_{i=1}u_i \cdot \frac{\delta(y_i -
-\beta_1 - \beta_1 x_i)}{\delta \beta_1} \\\\
+\beta_0 - \beta_1 x_i)}{\delta \beta_1} \\\\
 & = 2\sum^N_i u_i \cdot (-x_i) \\\\
 & = -2 \sum^N_i u_i x_i
 \end{align}
@@ -247,7 +247,7 @@ And multiply both sides by $-1$ to get a Nice Equation™.
 
 $$N\beta_0 + \beta_1 \sum^N_{i=1}x_i = \sum^N_{i=1}y_i$$
 
-And then the OLS Normal Equation for is the same thing just multiplied by
+And then the OLS Normal Equation for $\beta_1$ is the same thing just multiplied by
 $\sum^N_{i=1}x_i$ since that’s the only difference between the two FOCs and all
 we’ve done is move things around.
 
