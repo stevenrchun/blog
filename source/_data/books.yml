@@ -32,14 +32,14 @@ Deep Learning:
   ISBN: 978-0-393-08881-6
   cover_link: https://upload.wikimedia.org/wikipedia/en/1/13/Cover_of_The_Vital_Question_by_Nick_Lane.jpg
   author: Nick Lane
-  read: false
+  read: true
 
 A Gentleman in Moscow:
   favorite: false
   ISBN: 978-0670026197
   cover_link: https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SY346_.jpg
   author: Amor Towles
-  read: false
+  read: true
 
 'How to Travel with a Salmon: And Other Essays':
   favorite: false
@@ -60,14 +60,14 @@ Billion Dollar Whale:
   ISBN: 978-0316436502
   cover_link: https://images-na.ssl-images-amazon.com/images/I/61jiUKqaziL.jpg
   author: Tom Wright & Bradley Hope
-  read: false
+  read: true
 
 The Ultimate Hitchiker's Guide to the Galaxy:
   favorite: false
   ISBN: 978-0345453747
   cover_link: https://images-na.ssl-images-amazon.com/images/I/51Ine%2BshI8L._SX329_BO1,204,203,200_.jpg
   author: Douglas Adams
-  read: false
+  read: true
 
 Salt, Fat, Acid, Heat:
   favorite: true
@@ -118,6 +118,24 @@ The 2002 Aims of Education Address:
   read: true
 
 Amazon’s Antitrust Paradox:
-  favorite: true
+  favorite: false
   cover_link: https://heinonline.org/HOL/ViewImageLocal?handle=hein.journals/ylr126&div=18&collection=&method=preview&ext=.png&size=3
   author: Lina Khan
+  read: true
+
+The Right Stuff:
+  ISBN: 978-0312427566
+  favorite: true
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/41ykmq1e0tL._SX330_BO1,204,203,200_.jpg
+  author: Tom Wolfe
+  read: true
+
+The Paris Review Interviews, Vol. I:
+  ISBN: 978-0312361754
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/41o1DXR9SaL._SX331_BO1,204,203,200_.jpg
+  author: Assorted
+
+Trick Mirror:
+  ISBN: 978-0525510543
+  cover_link: https://m.media-amazon.com/images/I/51xau4YNRLL.jpg
+  author: Jia Tolentino
