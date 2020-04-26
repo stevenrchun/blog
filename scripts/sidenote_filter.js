@@ -12,7 +12,7 @@ function insertSidenotes(content) {
   let textContent = split[split.length - 2];
   let sidenoteContent = split[split.length - 1];
   // Regex matching any numeric between two brackets [*]
-  let sidenotes = sidenoteContent.split(/(\[[0-9]*\])/g);
+  let sidenotes = sidenoteContent.split(/(\[[0-9].?[0-9]*\])/g);
   let sidenoteMap = new Map();
   // Skip the first element, it's just the linebreak from the Footnote
   // separator.

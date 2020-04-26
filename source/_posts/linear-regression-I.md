@@ -1,15 +1,17 @@
 ---
 title: "Under the Hood: Linear Regression"
 tags:
-  - draft
+  - Statistics
+  - Computation
 mathjax: true
 author: Steven Chun
-date: 2020-04-18 23:15:50
+date: 2020-04-25
 summary: It's not your Grandfather's Econometrics!
+twitter_image: https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg
 ---
 It  has been twenty-one days since I’ve seen another person. Actually,
 it’s been more like 4-5 weeks, but every time I opened up this essay I
-had to update the number and I lost count. As the world collectively
+had to update the number, and I lost count. As the world collectively
 weathers the pandemic, I find myself with an abundance of time and no
 excuse to not write[1]. So, let’s talk about an old friend: linear
 regression.
@@ -73,16 +75,19 @@ you know why good or bad things happen, and provides insight on how you might
 promote more good things and prevent bad things.
 
 For example, you might think, “Classical economic theory[6] suggests that making
-everyone sign up for healthcare makes everyone better off—I wonder if that
-holds up in the real world?”[7] You might get some data on healthcare coverage,
-costs, and premiums; you could exploit the fact that Massachusetts actually did
-make everyone sign up for healthcare; and then you can have a little linear
+everyone sign up for healthcare makes everyone better off—I wonder if that holds
+up in the real world?”[7] You might get some data on healthcare coverage, costs,
+and premiums; you could exploit the fact that Massachusetts actually did make
+everyone sign up for healthcare; and then you can have a little linear
 regression to estimate if people were better off. You might look at your
 regression and conclude, “Hey, people are better off, like {% preview
 https://www.aeaweb.org/articles?id=10.1257/aer.20130758 %}\$241{% endpreview %}
 better off! We should do this nationally!” And you go and do it nationally[8],
-and it goes, you know, okay.
+and it goes, you know, {% preview
+https://www.nytimes.com/2017/02/05/upshot/grading-obamacare-successes-failures-and-incompletes.html
+%}okay{% endpreview %}.
 
+Of course, economics is a lot more than just specifying and running a
 regression. Actually, that’s probably the easiest part. But still! You can’t do
 any of it without linear regression!
 
@@ -106,7 +111,7 @@ linear regression, you compare how far (bad) your predicted values (the line)
 are from your observed values (the dots), we often think of linear regression as
 using a loss function.
 
-The _loss function de jure_ is Ordinary Least Squares (OLS)[10]. It means you
+The _loss function de jure_ [9.9] is Ordinary Least Squares (OLS)[10]. It means you
 measure how far off your prediction is by taking the Euclidean distance between
 the true value and your predicted value[11] and squaring it. You do that for
 each example, sum them all, and you get a number that represents the sum of the
@@ -304,7 +309,7 @@ some milk, definitely some coffee, that’s what I always say.
 
 <div class="epigraph">
   <blockquote>
-    <p>“A mathematician is a device for turning coffee into theorems”</p>
+    <p>“A mathematician is a device for turning coffee into theorems.”</p>
   <footer>—<a href="https://en.wikipedia.org/wiki/Alfr%C3%A9d_R%C3%A9nyi">Alfréd Rényi</a>[21]</footer>
   </blockquote>
 </div>
@@ -326,123 +331,155 @@ them en machina[22].
 
 Our multivariate model now looks like this
 
+$$\hat{Y} = X\hat{B}$$
 
+But what about our constant intercept? Well, we just make the
+first column of $X$ all $1$s, which does the exact same thing. And like before:
 
+$$e=Y - X\hat{B} = Y - \hat{Y}$$
 
-
-And like before:
-
-
-
-
-
-Which says that the residuals (which we called u before, but now we’ll use e
+Which says that the residuals (which we called $u$ before, but now we’ll use $e$
 because that seems more common in these derivations), are, like before, equal to
 the truth minus our prediction.
 
+Same! But different. We have $n$ examples, $k$ explanatory variables, $Y$ is an
+$n$ dimensional vector[23] of ground truth values, $X$ is a $n \times k$ matrix[24],
+is a $k$ dimensional vector of the true parameters, and $e$ is a $n$ dimensional
+vector of residuals. Visually, that looks like this:
 
-Same! But different. We have n examples, k explanatory variables, Y is an n
-dimensional vector of ground truth values, X is a n x k matrix[23], is a k
-dimensional vector of the true parameters, and $e$ is a n dimensional vector of
-residuals[24]. Visually, that looks like this:
 
-
-[25]
-
+$$
+\begin{align}
+\begin{bmatrix}
+Y_1 \\\\
+Y_2 \\\\
+\vdots \\\\
+\vdots \\\\
+Y_n
+\end{bmatrix}\_{k \times 1}
+=
+\underbrace{
+\begin{bmatrix}
+1 & X_{1,1} & X_{2,1} & \dots & X_{k,1} \\\\
+1 & X_{1,2} & X_{2,2} & \dots & X_{k,2} \\\\
+\vdots & \vdots & \vdots & \dots & \vdots \\\\
+\vdots & \vdots & \vdots & \dots & \vdots \\\\
+1 & X_{1,n} & X_{2,n} & \dots & X_{k,n} \\\\
+\end{bmatrix}\_{n \times k}
+\begin{bmatrix}
+\hat{\beta}\_1 \\\\
+\hat{\beta}\_2 \\\\
+\vdots \\\\
+\vdots \\\\
+\hat{\beta}\_n
+\end{bmatrix}\_{k \times 1}
+}\_{\Tiny\text{Computes the dot product of each row and our parameters to get N predictions}}
++
+\begin{bmatrix}
+e_1 \\\\
+e_2 \\\\
+\vdots \\\\
+\vdots \\\\
+e_n
+\end{bmatrix}\_{n \times 1}
+\end{align}
+$$
 
 Same stuff as before, but nicely generalized to as many examples and as many
-betas as we want.
+betas as we want[25].
 
-
-Now, the sum of squared residuals is just  transpose[26] times . The product of
-a 1 x n matrix and a n x 1 matrix is a scalar, so that all checks out.
-
+Now, the sum of squared residuals is just $e$ transpose[26] times $e$. The product of
+a $1 \times n$ matrix and a $n \times 1$ matrix is a scalar, so that all checks out.
 
 Given the definition of the residuals, we can write
 
-
-
-
-
+$$
+\begin{align}
+e^T e & = (y - X\hat{\beta})^T (y - X\hat{\beta}) \\\\
+& = y^T y - y^TX\hat{\beta} - \hat{\beta}^T X^T y + \hat{\beta}^T X^T X\hat{\beta}
+\end{align}
+$$
 
 If you are forgetting your transpose properties, and it would not be untoward to
 charge this author of doing so, this last step might take a second or two.
-First, we must remember that the transpose respects addition, . The transpose
-must be commended for its reasonableness here. But we must also remember that .
+First, we must remember that the transpose respects addition, $(A+B)^T = A^T +
+B^T$. The transpose
+must be commended for its reasonableness here. But we must also remember that
+$(AB)^T = B^TA^T$.
 At first, this seems evidence of the transposes’s deceit and chicanery. The
 proof of this property, however, is so concise that to spite Fermat[27], I shall
 include it in the margin[28]. Upon its consideration, we are forced to again
 congratulate the transpose on its integrity.
 
+Consolidating our previous work and exploiting the fact that $\hat{\beta}^T X^T
+y = (y^T X \hat{\beta})^T$ and $y^T X \hat{\beta}$ is simply a scalar $((1
+\times n) \cdot (n \times k) \cdot (k \times 1) = 1 \times 1)$ and the transpose
+of a scalar is itself, we get
 
-Consolidating our previous work and exploiting the fact that and is simply a
-scalar (1 x n dot n x k dot k x 1 = 1 x 1) and the transpose of a scalar is
-itself, we get
-
-
-
-
-
-
+$$
+\begin{align}
+e^T e & = (y - X\hat{\beta})^T(y - X\hat{\beta}) \\\\
+  & = y^T y - y^T X \hat{\beta} - \hat{\beta}^TX^Ty +
+  \hat{\beta}^TX^TX\hat{\beta} \\\\
+  & = y^Ty - 2\hat{\beta}^TX^Ty + \hat{\beta}^TX^TX\hat{\beta}
+\end{align}
+$$
 
 As before, we now need to take the derivative with respect to our betas. Matrix
 calculus is fundamentally the same as scalar calculus, but the interactions with
 dimensions and the transpose add extra complexity, so don’t worry too much if
 the next piece isn’t immediately obvious.
 
-
-
-
-
+$$
+\begin{align}
+e^Te & = y^Ty - 2\hat{\beta}^TX^Ty + \hat{\beta}^TX^TX\hat{\beta} \\\\
+\frac{\delta e^Te}{\delta\hat{\beta}} & = -2X^Ty + 2X^TX\hat{\beta} = 0
+\end{align}
+$$
 
 Which gives us our multivariate OLS normal equations in matrix form:
 
+$$(X^TX)\hat{\beta} = X^Ty$$
 
+Nice. The only unknown in this equation is $\hat{\beta}$ so let’s put that on
+one side of the equation. To do so only requires recalling that a matrix times
+the inverse of itself gives the identity matrix $I$ (a matrix with 1s along the
+diagonal and zeros elsewhere) which does nothing to any matrix applied to it.
+Multiply both sides by the inverse $(X^TX)^{-1}$
 
+$$
+\begin{align}
+(X^TX)^{-1}(X^TX)\hat{\beta} & = (X^TX)^{-1}X^Ty \\\\
+I\hat{\beta} & = (X^TX)^{-1}X^Ty
+\end{align}
+$$
 
+And discard $I$ because it ipso facto does nothing:
 
-Nice. The only unknown in this equation is  so let’s put that on one side of the
-equation. To do so only requires recalling that a matrix times the inverse of
-itself gives the identity matrix (a matrix with 1s along the diagonal and zeros
-elsewhere) which does nothing to any matrix applied to it. Multiply both sides
-by the inverse
-
-
-
-
-
-
-And discard I because it ipso facto does nothing:
-
-
-
-
+$$ \hat{\beta} = (X^TX)^{-1}X^Ty$$
 
 Aha! We have it! Fully generalized, here at last is the precise definition of
 what we must do to obtain any regression, for any dataset, for any problem,
 forever[29]. And the truth is, most applied classes will leave it at that.
-Knowing that allows you to derive a whole bunch of useful things about OLS, like
-that it’s the Best Linear, Unbiased, and Efficient estimator, and if you make
-some assumptions about the disturbances, you can get into the wonderful land of
-standard errors and heteroskedasticity[30]. But to actually solve this equation,
-you type “reg” into Stata and you’re done. If you’re like me, that’s
-unsatisfying.
+Knowing that $\hat{beta} = (X^TX)^{-1}X^T$ allows you to derive a whole bunch of
+useful things about OLS, like that it’s the Best Linear, Unbiased, and Efficient
+estimator, and if you make some assumptions about the disturbances, you can get
+into the wonderful land of standard errors and heteroskedasticity[30]. But to
+actually solve this equation, you type “reg” into Stata and you’re done. If
+you’re like me, that’s unsatisfying.
 
 
 This math is the theoretical essence of the empirical revolution. Clinical
 trials and fiscal policy in just a few lines of linear algebra. There’s a good
 reason the applied world often stops here—everything that comes next is an
 implementation detail. But, Dear Reader, believe me when I say that the next
-time we ask, “But how does that work”?
+time we ask, _“But how does that work”_?
 
 
 That’s where it gets spicy.
 
-
-
-
 ^^^^
-[1] One might consider this my Walden moment. On the other hand, you wouldn’t be
+[1] One might consider this my _Walden_ moment. On the other hand, you wouldn’t be
 blamed for thinking “Steven, you’re watching Bon Appetit in your apartment.
 You’re not in a remote New England cabin.” Consider, however, that Thoreau’s
 mother made {% preview https://www.newyorker.com/magazine/2015/10/19/pond-scum %} the 20 minute walk from Concord to Walden Pond to bring him food {% endpreview %} and {% preview https://austinkleon.com/2019/08/30/thoreaus-laundry/ %}do his laundry{% endpreview %}. I do my own laundry.
@@ -478,6 +515,8 @@ line (1-dimensional), in 3-dimensions, a plane (2-dimensional), and anything
 higher: hyperplanes (ooh, very cool). In math, once you get past 3-dimensions
 you slap a sweet name on it and stop counting. Vectors are 1-dimensional,
 matrices are 2-dimensional, everything after is a tensor. Nice.
+
+[9.9] French for, _loss function with juice_.
 
 [10] Least Squares makes sense, you want the line that produces the least
 squared error. Ordinary because this is plain old linear least squares, as
@@ -527,36 +566,55 @@ to be his forte.
 [21] His friend, Paul Erdős, would have argued that a mathematician is a device
 for turning amphetamines into theorems. He wrote a lot of papers.
 
-[22] This StackOverflow question does a good job of explaining why matrix
-operations are fast on computers. Basically, a lot of linear operations can be
-done in parallel, since they’re independent. Also, computer caches (L1, L2, L3…)
-work better when memory access is “spatially and temporally coherent”.
+[22] {% preview
+https://softwareengineering.stackexchange.com/questions/312445/why-does-expressing-calculations-as-matrix-multiplications-make-them-faster
+%}This StackOverflow question{% endpreview %} does a good job of explaining why
+matrix operations are fast on computers. Basically, a lot of linear operations
+can be done in parallel, since they’re independent. Also, computer caches (L1,
+L2, L3…) work better when memory access is “spatially and temporally coherent”.
 Basically, it has structure and isn’t jumping all over the place.
 
-[23] Matrices are denoted number of rows by number of columns. In this case,
+[23] Commonly referred to as a column vector.
+
+[24] Matrices are denoted number of rows by number of columns. In this case,
 each row of $X$ is a point in our dataset with $k$ features.
 
-[24] Previously, we used u to denote the residuals, but it appears e is more
-common in this formulation.
+[25] This section is largely sourced from [here](https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf)
 
-[25] Sourced from
-(https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf)
-
-[26] written as T or ‘, the transpose flips x and y dimensions, so our column
+[26] written as $^T$ or $^\prime$, the transpose flips x and y dimensions, so our column
 vector is now a row vector.
 
 [27] In 1637, in the margin of one of his books, Pierre de Fermat proposed a
-conjecture, now known as Fermat’s Last Theorem, that would take 358 years to
-solve. While proposing his theorem, Fermat mentioned that he had already proved
-it, but that he didn’t have enough space in the margin to write it down. “I have
-discovered a truly marvelous demonstration of this proposition that this margin
-is too narrow to contain.” is a phrase that haunted nearly 4 centuries of
-mathematicians.
+conjecture, now known as {% preview
+https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem %}Fermat’s Last Theorem{%
+endpreview %}, that would take 358 years to solve. While proposing his theorem,
+Fermat mentioned that he had already proved it, but that he didn’t have enough
+space in the margin to write it down. “I have discovered a truly marvelous
+demonstration of this proposition that this margin is too narrow to contain.” is
+a phrase that haunted nearly 4 _centuries_ of mathematicians.
 
-[28] **Gdoc does not support equations in footnotes nor images** Proof here:
-http://www.math.ucdenver.edu/~esulliva/LinearAlgebra/ABT.pdf
+[28] **Theorem**: Let $A$ and $B$ be matrices. $(AB)^T = B^TA^T$<br/><br/>
+**Proof:**
+  First observe that the $ij$ entry of $AB$ can be written as<br/><br/>
+  $$(AB)\_{ij} = \sum^n_{k=1}a_{ik}b_{kj}$$<br/><br/>
+  Furthermore, if we transpose a matrix, we switch the rows and the columns.
+  These facts together mean we can write
+  $$((AB)^T)\_{ij} = (AB)\_{ji} = \sum^n_{k=1}a_{jk}b_{ki}$$<br/><br/>
+  and<br/>
+  $$\begin{align}
+    (B^TA^T)\_{ij} & = \sum\nolimits^n_{k=1}(B^T)\_{ik}(A^T)\_{kj} \\\\
+                   & = \sum\nolimits^n_{k=1}b_{ki}a_{jk} \\\\
+                   & = \sum\nolimits^n_{k=1}a_{jk}b_{ki}
+    \end{align}
+  $$<br/><br/>
+  And here we can see that these last two results are the same summation, just
+  with their members flipped around. **Q.E.D**<br/>
+  [Source](http://www.math.ucdenver.edu/~esulliva/LinearAlgebra/ABT.pdf)
+
 
 [29] That is, like we mentioned, as long as there’s no perfect
 multicollinearity.
 
-[30] If you want to go in that direction, fine. Here, go to section 4.
+[30] If you want to go in that direction, fine. {% preview
+https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf
+%}Here{% endpreview %}, go to section 4.

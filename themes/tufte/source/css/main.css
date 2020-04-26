@@ -71,6 +71,14 @@ li {
   text-decoration: underline;
 }
 
+/* Epigraph quotes flow rightward in a way that makes left sidenotes unsightly */
+div.epigraph > blockquote > footer > .sidenote.even-sidenote {
+  float: right;
+  clear: right;
+  margin-left: 0;
+  margin-right: -55%;
+}
+
 /* blockquotes */
 blockquote {
   font-size: 1.1rem;

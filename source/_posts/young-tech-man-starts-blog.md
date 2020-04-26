@@ -1,6 +1,6 @@
 ---
 title: Young Tech Man Starts Blog
-tags: []
+tags:
 mathjax: true
 author: Steven Chun
 date: 2020-02-25 23:15:50

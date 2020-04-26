@@ -1,25 +1,33 @@
 <li>
-  <h4 class="title">
-    <% if(link_title) { %>
-      <a href="<%= url_for(post.path) %>">
-    <% } %>
-      <%- post.title %>
-    <% if(link_title) { %>
-      </a>
-    <% } %>
-  </h4>
-  <div class="listing-subtitle-container">
-    <p style="margin-bottom: 0;">
-      <em id="published-on">Published on <%= post.date.format("DD MMMM YYYY") %></em>
-    </p>
-    <%
-      post.tags.forEach(function(tag){
-        %>
-          <a href="<%= config.root %>tags/<%= tag.name %>" title="<%= tag.name %>">
-            <%= tag.name  %>
-          </a>
+    <h4 class="title">
+        <% if(link_title) { %>
+        <a href="<%= url_for(post.path) %>">
+            <% } %>
+            <%- post.title %>
+            <% if(link_title) { %>
+        </a>
+        <% } %>
+    </h4>
+    <div class="listing-subtitle-container">
+        <% let prefix = post.tags.data.length > 0 ? ' in the Annals of' : ''; %>
+        <p style="margin-bottom: 0;">
+            <em id="published-on">Published on
+                <%= post.date.format("DD MMMM YYYY") + prefix %>
+            </em>
+        </p>
         <%
-      })
+      for (let i=0; i < post.tags.length; ++i){
+        let tag = post.tags.data[i];
+        %>
+        <a href="<%= config.root %>tags/<%= tag.slug %>" title="<%= tag.name %>">
+            <em> <%= tag.name  %></em>
+        </a>
+        <% if (i != post.tags.length - 1) { %>
+        <% let comma = ", "; %>
+        <em><%- comma %></em>
+        <% } %>
+        <%
+      }
     %>
-  </div>
+    </div>
 </li>
