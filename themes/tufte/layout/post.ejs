@@ -2,5 +2,5 @@
     title: page.title,
     body: partial('_partial/post', {post: page, link_title: false}),
     css_source: 'post.css',
-    open_graph_options: {image: "https://i.imgur.com/lPsHpIa.jpg", description: page.summary, twitter_card: "summary_large_image"},
+    open_graph_options: {image: page.twitter_image, description: page.summary, twitter_card: "summary_large_image"},
 }) %>
