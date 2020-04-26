@@ -21,11 +21,9 @@ drawn](https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg
 
 This essay is an attempt to answer an ever escalating series of _“but how does
 that work?”_. Regardless of your field, you’ve probably encountered linear
-regression. As a statistical model, it’s as prevalent as it is useful. You might
-even know how to wield linear regression, to take the logit and interpret its
-demon spawn, the log odds. But less attention is given to the mechanics of
-regression. How is it computed? Is it hard? And at what specific point does it
-melt my 2015 Macbook?
+regression. As a statistical model, it’s as prevalent as it is useful. But less
+attention is given to the mechanics of regression. How is it computed? Is it
+hard? And at what specific point does it melt my 2015 Macbook?
 
 For any concept there’s, like, the most abstract definition, usually math, and
 then, on the opposite end of the spectrum, there’s the CPU physically flipping
