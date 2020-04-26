@@ -459,7 +459,7 @@ $$ \hat{\beta} = (X^TX)^{-1}X^Ty$$
 Aha! We have it! Fully generalized, here at last is the precise definition of
 what we must do to obtain any regression, for any dataset, for any problem,
 forever[29]. And the truth is, most applied classes will leave it at that.
-Knowing that $\hat{beta} = (X^TX)^{-1}X^T$ allows you to derive a whole bunch of
+Knowing that $\hat{\beta} = (X^TX)^{-1}X^T$ allows you to derive a whole bunch of
 useful things about OLS, like that it’s the Best Linear, Unbiased, and Efficient
 estimator, and if you make some assumptions about the disturbances, you can get
 into the wonderful land of standard errors and heteroskedasticity[30]. But to
