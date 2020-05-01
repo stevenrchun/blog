@@ -104,7 +104,17 @@ blockquote {
 .pagination-container {
   width: 100%;
   display: flex;
-  justify-content: center;
+  flex-flow: column;
+  justify-content: start;
+  align-items: center;
+}
+
+.pagination-container > p {
+  margin: 0;
+}
+
+.pagination-container > a > p {
+  margin: 0;
 }
 
 .pagination-container > a {
