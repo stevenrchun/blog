@@ -82,6 +82,7 @@ div.epigraph > blockquote > footer > .sidenote.even-sidenote {
 /* blockquotes */
 blockquote {
   font-size: 1.1rem;
+  margin-inline-end: 0;
 }
 
 /* intro */
@@ -169,6 +170,14 @@ blockquote {
 }
 
 @media (max-width: 760px) {
+
+  /* make sidenote numbers visibly clickable in mobile */
+  .sidenote-number {
+    text-decoration: underline;
+    color: #BE7798;
+  }
+
+
   label.margin-toggle:not(.sidenote-number) {
     display: inline;
   }
@@ -177,12 +186,13 @@ blockquote {
     display: none;
   }
 
+  /* Add important to override epigraph sidenotes */
   .margin-toggle:checked + .sidenote,
   .margin-toggle:checked + .marginnote {
     display: block;
-    float: left;
+    float: left !important;
     left: 1rem;
-    clear: both;
+    clear: both !important;
     width: 95%;
     margin: 1rem 2.5%;
     vertical-align: baseline;
