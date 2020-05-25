@@ -7,7 +7,7 @@ tags:
   - Finance
 mathjax: true
 summary: post = goof.size()
-twitter_image: https://media1.tenor.com/images/0e48d9c822b64bf8ad32e24080b1d17f/tenor.gif
+twitter_image: https://66.media.tumblr.com/40a4bacc64bd71b206d13a1a76efeb82/tumblr_mqk4qqzx2P1rm4mpho1_1280.png
 ---
 Say you’re Amazon. You have a lot of money, even in a pandemic, and since you’re
 Amazon, you hate having money. So you consider buying an entertainment company,
