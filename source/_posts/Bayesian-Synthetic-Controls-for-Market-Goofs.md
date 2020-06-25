@@ -249,7 +249,7 @@ every ten minutes that the markets were open, you sold exactly one share, and
 you did this the Monday, Tuesday, and Wednesday after the Daily Mail story
 broke, you would have made 981.57 dollars. This model predicts that if people
 hadn’t read that Amazon might buy AMC,  you would’ve probably made somewhere
-between 818 and 839 dollars.
+between 683 and 881 dollars.
 
 
 Is that super useful? Not really, but then again what are we measuring here?
@@ -275,33 +275,54 @@ this and see if you can come up with a better freakin analogy:
 
 <blockquote>
 <p>
-“Summing up the individual data points during the post-intervention period
-(which can only sometimes be meaningfully interpreted), the response variable
-had an overall value of 981.57.  By contrast, had the intervention not taken
-place, we would have expected a sum of 828.63. The 95% interval of this
-prediction is [818.56, 839.84].
+During the post-intervention period, the response variable had
+an average value of approx. 4.93254. By contrast, in the absence of an
+intervention, we would have expected an average response of 3.91743.
+The 95% interval of this counterfactual prediction is [3.43472, 4.4284].
+Subtracting this prediction from the observed response yields
+an estimate of the causal effect the intervention had on the
+response variable. This effect is 1.0151 with a 95% interval of
+[0.50414, 1.49782]. For a discussion of the significance of this effect,
+see below.
 
 
-The above results are given in terms of absolute numbers. In relative terms, the
-response variable showed an increase of +18.46%. The 95% interval of this
-percentage is [17.11%, 19.67%].
+Summing up the individual data points during the post-intervention
+period (which can only sometimes be meaningfully interpreted), the
+response variable had an overall value of 981.575.
+By contrast, had the intervention not taken place, we would have expected
+a sum of 779.56923. The 95% interval of this prediction is [683.50915, 881.251].
 
 
-This means that the positive effect observed during the intervention period is
-statistically significant and unlikely to be due to random fluctuations. It
-should be noted, however, that the question of whether this increase also bears
-substantive significance can only be answered by comparing the absolute effect
-(0.77) to the original goal of the underlying intervention.
+The above results are given in terms of absolute numbers. In relative
+terms, the response variable showed an increase of +25.91249%. The 95%
+interval of this percentage is [12.86916%, 38.23469%].
 
 
-The probability of obtaining this effect by chance is very small (Bayesian
-one-sided tail-area probability p = 0.0).  This means the causal effect can be
-considered statistically significant.”
+This means that the positive effect observed during the intervention
+period is statistically significant and unlikely to be due to random
+fluctuations. It should be noted, however, that the question of whether
+this increase also bears substantive significance can only be answered
+by comparing the absolute effect (1.0151) to the original goal
+of the underlying intervention.
+
+
+The probability of obtaining this effect by chance is very small
+(Bayesian one-sided tail-area probability p = 0.0).
+This means the causal effect can be considered statistically
+significant.
 </p>
 </blockquote>
 
 You can find the code and data for this analysis {% preview
 https://github.com/stevenrchun/ticker-confusion %}here{% endpreview %}.
+
+_06/24/20 - Update: I realized CausalImpact was setting a prior standard
+deviation that was probably too low for this data (again, firing from the hip
+here. Not well versed in these sorts of models). The package has an option to
+allow the model to pick the standard deviation itself, which generates much more
+reasonable looking credible intervals. I have updated the report and the graph
+and any other numbers that were sourced from that analysis. Thanks to B. Hie for
+the catch._
 
 
 ^^^^
