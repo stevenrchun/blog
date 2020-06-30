@@ -69,6 +69,14 @@ function cleanHTML(str) {
     .replace(/”/g, '&quot;');
 }
 
+hexo.extend.tag.register(
+  'large_fig',
+  function(args, content) {
+    return `<div class="large-figure">`+ hexo.render.renderSync({text: content, engine: 'md'}) + `</div>`
+  },
+  {ends: true},
+)
+
 // Insert a annotated link for popups.
 // NOTE: MathJax "not being able to find a handler for document" means that the
 // text isn't parsing as valid html, likely a un-closed tag.

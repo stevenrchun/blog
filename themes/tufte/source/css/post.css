@@ -15,6 +15,16 @@ p > img {
   width: 45%;
 }
 
+.large-figure > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.large-figure > p > img {
+  max-width: 150%;
+}
+
 /* Make display mathjax larger than inline
  * and allow overflow while centering*/
 mjx-container[jax="SVG"][display="true"].MathJax {

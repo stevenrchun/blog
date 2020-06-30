@@ -214,8 +214,9 @@ data.
 
 Here’s what it spits out:
 
+{% large_fig %}
 ![Causal Impact graphs](./ci.png)
-
+{% endlarge_fig %}
 
 
 Since I indexed our data using a Pandas date object, we see the times when the
