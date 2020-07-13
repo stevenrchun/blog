@@ -3,6 +3,13 @@ body {
   /* background-color: #113D30; Good for homepage w white text though! */
 }
 
+.pine {
+  height: 100%;
+  width: 4rem;
+  padding: 5px 5px 0 5px;
+  border-bottom: 2px solid black;
+}
+
 li > h4 {
   color: #BE7798;
   color: black;

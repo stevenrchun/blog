@@ -24,8 +24,8 @@
     <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/tufte_ext.css'%>">
     <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/solarized_light.css'%>">
     <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/header.css'%>">
-    <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/main.css'%>">
     <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/' + css_source %>">
+    <link rel="stylesheet" type="text/css" href="<%= config.root + 'css/main.css'%>">
     <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700|Work+Sans&amp;display=swap" rel="stylesheet">
     <% if(config.feed) { %>
@@ -35,10 +35,20 @@
 </head>
 
 <body>
-    <% if(is_home() || is_current('/bookshelf')) { %>
-    <%- intro %>
-    <% } %>
-    <%- partial('_partial/header') %>
+    <div class="masthead-container">
+        <% if(is_home()) { %>
+        <img class="pine" src="images/pine-left.png" />
+        <% } %>
+        <div class="intro-header-wrapper">
+            <% if(is_home() || is_current('/bookshelf')) { %>
+            <%- intro %>
+            <% } %>
+            <%- partial('_partial/header') %>
+        </div>
+        <% if(is_home()) { %>
+        <img class="pine" src="images/pine-right.png" />
+        <% } %>
+    </div>
     <div class="body-container">
         <%- body %>
     </div>

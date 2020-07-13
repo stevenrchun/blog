@@ -1,3 +1,14 @@
+.masthead-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.intro-header-wrapper {
+  width: 45%;
+}
+
 .header-container {
   display: flex;
   width: 100%;
@@ -5,7 +16,7 @@
 }
 
 .header {
-  width: 45%;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   border-style: solid;
