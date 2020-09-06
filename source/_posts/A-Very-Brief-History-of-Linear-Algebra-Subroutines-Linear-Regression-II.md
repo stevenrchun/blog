@@ -30,8 +30,10 @@ last post,{% endpreview %} we derived the least squares normal equations.
 $$ \hat{\beta} = (X^TX)^{-1}X^Ty$$
 
 So, from a theoretical standpoint you’d be 100% correct if you said,
-“Scikit-learn solves the least squares normal equations”. Good job. But there’s
-a story we miss by ignoring the actual code and hardware that will solve least
+“Scikit-learn solves the least squares normal equations”. Good job. And to go
+further, you could talk about using different matrix factorizations to
+efficiently solve the normal equations, like SVD or QR or LU. But there’s a
+story we miss by ignoring the actual code and hardware that will solve least
 squares.
 
 Like pretty much all modern software, Scikit-learn and its contemporaries stand
@@ -59,9 +61,12 @@ input, but there’s no matrix factoring, not even a dot product.
 ## LAPACK and BLAS
 
 Rather than performing the calculations itself, SciPy actually calls a LAPACK
-subroutine to do all the matrix factoring work. LAPACK in turn calls a BLAS
-subroutine to do all the scalar, vector, and matrix work. These programs are
-very particular. Different architectures will have different implementations.
+subroutine to do all the matrix factoring work. Which subroutine depends on
+which option you pass to it: “gelsd” for divide-and-conquer SVD, “gelsy” for
+complete orthogonal factorization, or “gels” for QR/LQ factorization. LAPACK in
+turn calls a BLAS subroutine to do all the scalar, vector, and matrix work.
+These programs are very particular. Different architectures will have different
+implementations.
 Some of the really-fast implementations were hand-written by a guy on sabbatical
 from the Japanese Patent Office.
 

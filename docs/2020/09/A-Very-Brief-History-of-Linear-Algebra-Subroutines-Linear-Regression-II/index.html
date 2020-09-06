@@ -38,7 +38,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://graphics8.nytimes.com/images/2005/11/28/business/28super.1841.jpg">
 <meta property="article:published_time" content="2020-09-06T07:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-06T21:58:21.292Z">
+<meta property="article:modified_time" content="2020-09-06T23:17:04.345Z">
 <meta property="article:author" content="Steven Chun">
 <meta property="article:tag" content="Computation">
 <meta property="article:tag" content="History">
@@ -327,8 +327,10 @@ mostly intact<label for="50c1cce69ab6aa77ecdd4f0d7b287a0d9b9bf4926190ae924abde30
 </a> we derived the least squares normal equations.</p>
 <p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="17.947ex" height="2.891ex" role="img" focusable="false" viewBox="0 -1028 7932.7 1278" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-3B2"></use></g><g data-mml-node="mo" transform="translate(116.3, 234)"><use xlink:href="#MJX-TEX-N-5E"></use></g></g></g><g data-mml-node="mo" transform="translate(894.1, 0)"><use xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(1949.9, 0)"><use xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="msup" transform="translate(2338.9, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="mi" transform="translate(906.8, 413) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g><g data-mml-node="mi" transform="translate(3793.5, 0)"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="msup" transform="translate(4645.5, 0)"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="TeXAtom" transform="translate(389, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="mn" transform="translate(778, 0)"><use xlink:href="#MJX-TEX-N-31"></use></g></g></g><g data-mml-node="msup" transform="translate(5988.1, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="mi" transform="translate(906.8, 413) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g><g data-mml-node="mi" transform="translate(7442.7, 0)"><use xlink:href="#MJX-TEX-I-79"></use></g></g></g></svg></mjx-container></p>
 <p>So, from a theoretical standpoint you’d be 100% correct if you said,
-“Scikit-learn solves the least squares normal equations”. Good job. But there’s
-a story we miss by ignoring the actual code and hardware that will solve least
+“Scikit-learn solves the least squares normal equations”. Good job. And to go
+further, you could talk about using different matrix factorizations to
+efficiently solve the normal equations, like SVD or QR or LU. But there’s a
+story we miss by ignoring the actual code and hardware that will solve least
 squares.</p>
 <p>Like pretty much all modern software, Scikit-learn and its contemporaries stand
 on the shoulders of giants: NASA’s Jet Propulsion Laboratory, Oak Ridge National
@@ -347,9 +349,12 @@ Scipy doing?</p>
 it…doesn’t do anything? It checks for any mismatch in the shapes of the
 input, but there’s no matrix factoring, not even a dot product.</p>
 <h2 id="LAPACK-and-BLAS"><a href="#LAPACK-and-BLAS" class="headerlink" title="LAPACK and BLAS"></a>LAPACK and BLAS</h2><p>Rather than performing the calculations itself, SciPy actually calls a LAPACK
-subroutine to do all the matrix factoring work. LAPACK in turn calls a BLAS
-subroutine to do all the scalar, vector, and matrix work. These programs are
-very particular. Different architectures will have different implementations.
+subroutine to do all the matrix factoring work. Which subroutine depends on
+which option you pass to it: “gelsd” for divide-and-conquer SVD, “gelsy” for
+complete orthogonal factorization, or “gels” for QR/LQ factorization. LAPACK in
+turn calls a BLAS subroutine to do all the scalar, vector, and matrix work.
+These programs are very particular. Different architectures will have different
+implementations.
 Some of the really-fast implementations were hand-written by a guy on sabbatical
 from the Japanese Patent Office.</p>
 <h3 id="LAPACK"><a href="#LAPACK" class="headerlink" title="LAPACK"></a>LAPACK</h3><p>LAPACK was a project out of Tennessee and Rice Universities, the Numerical
