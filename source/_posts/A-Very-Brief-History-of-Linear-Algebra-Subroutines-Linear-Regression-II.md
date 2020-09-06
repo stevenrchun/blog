@@ -120,13 +120,13 @@ worth a lot of effort to eek out small performance gains which then aggregate to
 huge performance gains.
 
 One example from a 2017 talk on Google’s[7] efforts to develop faster, more
-efficient hash tables:
+efficient hash tables[8]:
 
 {% blockquote %}
 “Hash tables are incredibly performance sensitive. At Google, right now, as I am
 speaking, in our fleet, one percent of the CPU’s are computing something in a
 hash table. As I am speaking, more than four percent of Google’s RAM is owned by
-a hash table. And that’s just C++”[8]
+a hash table. And that’s just C++”
 {% endblockquote %}
 
 The same idea applies to a dot product. If your supercomputer weather simulation
