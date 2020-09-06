@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SYDKQWLE1C"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SYDKQWLE1C');
+    </script>
+    <title>A Very Brief History of Linear Algebra Subroutines (Linear Regression II)</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    
+    <meta name="author" content="Steven Chun">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+    <link rel="stylesheet" type="text/css" href="/css/tufte_ext.css">
+    <link rel="stylesheet" type="text/css" href="/css/solarized_light.css">
+    <link rel="stylesheet" type="text/css" href="/css/header.css">
+    <link rel="stylesheet" type="text/css" href="/css/post.css">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono:400,700|Work+Sans&amp;display=swap" rel="stylesheet">
+    
+    <meta name="description" content="JPL, BLAS, and a man on a train">
+<meta property="og:type" content="article">
+<meta property="og:title" content="A Very Brief History of Linear Algebra Subroutines (Linear Regression II)">
+<meta property="og:url" content="https://blog.stevenchun.me/2020/09/A-Very-Brief-History-of-Linear-Algebra-Subroutines-Linear-Regression-II/index.html">
+<meta property="og:site_name" content="Chun&#39;s Blog">
+<meta property="og:description" content="JPL, BLAS, and a man on a train">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://graphics8.nytimes.com/images/2005/11/28/business/28super.1841.jpg">
+<meta property="article:published_time" content="2020-09-06T07:00:00.000Z">
+<meta property="article:modified_time" content="2020-09-06T21:58:21.292Z">
+<meta property="article:author" content="Steven Chun">
+<meta property="article:tag" content="Computation">
+<meta property="article:tag" content="History">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://graphics8.nytimes.com/images/2005/11/28/business/28super.1841.jpg">
+<meta name="generator" content="Hexo 4.2.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container {
+  overflow: auto hidden;
+}
+
+mjx-container + br {
+  display: none;
+}
+</style><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container {
+  overflow: auto hidden;
+}
+
+mjx-container + br {
+  display: none;
+}
+</style></head>
+
+<body>
+    <div class="masthead-container">
+        
+        <div class="intro-header-wrapper">
+            
+            <header>
+    
+    <div class="header-container">
+        <div class="header">
+            <h3><a href="/">Articles</a></h3>
+            <h3><a href="/bookshelf">Bookshelf</a></h3>
+            <h3><a href="https://www.stevenchun.me/" target="_blank" rel="noopener">About</a></h3>
+        </div>
+    </div>
+    
+</header>
+
+        </div>
+        
+    </div>
+    <div class="body-container">
+        <article class="content" id="A-Very-Brief-History-of-Linear-Algebra-Subroutines-Linear-Regression-II">
+    <header>
+        
+            <h1 class="title">A Very Brief History of Linear Algebra Subroutines (Linear Regression II)</h1>
+            
+        <p style="margin-bottom: 0;">
+            <em id="written-by">Written by Steven Chun</em>
+            <br />
+            <em id="published-on">Published on 06 September 2020</em>
+        </p>
+    </header>
+    <p>Consider some features <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.928ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 852 683" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g></g></g></svg></mjx-container> and some labels <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-79"></use></g></g></g></svg></mjx-container>.</p>
+<p>Then, navigate the quagmire that is Python dependency management and survive
+having multiple versions of Python installed on your machine with your sanity
+mostly intact<label for="50c1cce69ab6aa77ecdd4f0d7b287a0d9b9bf4926190ae924abde30fe8208045" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="50c1cce69ab6aa77ecdd4f0d7b287a0d9b9bf4926190ae924abde30fe8208045"><span class="sidenote"> For this, the sanity maintenance I mean, I like a combination of <a href="https://pipenv.pypa.io/en/latest/" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Pipenv: Python Dev Workflow for Humans — pipenv 2020.8.13.dev0 documentation" data-popup-image="" data-popup-abstract="">pipenv
+</a> for projects and <a href="https://github.com/pyenv/pyenv" target="_blank" rel="noopener" class="docMetadata" data-popup-title="pyenv/pyenv" data-popup-image="https://avatars1.githubusercontent.com/u/16530698?s=400&v=4" data-popup-abstract="Simple Python version management. Contribute to pyenv/pyenv development by creating an account on GitHub.">pyenv
+</a> for changing my global python version.
+</span>.</p>
+<p>And run something like this</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LinearRegression</span><br><span class="line">...</span><br><span class="line">reg = LinearRegression().fit(X, y)</span><br></pre></td></tr></table></figure>
+
+<p>What happens when you call LinearRegression().fit(X,y)?</p>
+<p>In our <a href="https://blog.stevenchun.me/2020/04/linear-regression-I/" class="docMetadata" data-popup-title="Under the Hood: Linear Regression" data-popup-image="https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg" data-popup-abstract="It's not your Grandfather's Econometrics!">last post,
+</a> we derived the least squares normal equations.</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="17.947ex" height="2.891ex" role="img" focusable="false" viewBox="0 -1028 7932.7 1278" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-3B2"></use></g><g data-mml-node="mo" transform="translate(116.3, 234)"><use xlink:href="#MJX-TEX-N-5E"></use></g></g></g><g data-mml-node="mo" transform="translate(894.1, 0)"><use xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(1949.9, 0)"><use xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="msup" transform="translate(2338.9, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="mi" transform="translate(906.8, 413) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g><g data-mml-node="mi" transform="translate(3793.5, 0)"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="msup" transform="translate(4645.5, 0)"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="TeXAtom" transform="translate(389, 413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="mn" transform="translate(778, 0)"><use xlink:href="#MJX-TEX-N-31"></use></g></g></g><g data-mml-node="msup" transform="translate(5988.1, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="mi" transform="translate(906.8, 413) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g><g data-mml-node="mi" transform="translate(7442.7, 0)"><use xlink:href="#MJX-TEX-I-79"></use></g></g></g></svg></mjx-container></p>
+<p>So, from a theoretical standpoint you’d be 100% correct if you said,
+“Scikit-learn solves the least squares normal equations”. Good job. But there’s
+a story we miss by ignoring the actual code and hardware that will solve least
+squares.</p>
+<p>Like pretty much all modern software, Scikit-learn and its contemporaries stand
+on the shoulders of giants: NASA’s Jet Propulsion Laboratory, Oak Ridge National
+Laboratory, and work done in the 70s to revolutionize scientific computing.</p>
+<p>Understanding this work and its modern forms is critical to an end-to-end
+understanding of why your 2015 Macbook is burning the tops of your thighs as you
+run an ill advised regression for a term paper. This is not a particularly
+technical post, as I don’t think I could do justice to the hardware
+optimizations involved. Instead, we’ll dig into modern linear regression as a
+way to develop a mental picture of the structures involved.</p>
+<p>Scikit’s <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" target="_blank" rel="noopener" class="docMetadata" data-popup-title="sklearn.linear_model.LinearRegression — scikit-learn 0.23.2 documentation" data-popup-image="" data-popup-abstract="scikit-learn: machine learning in Python">documentation
+</a> mentions that its LinearRegression model is “just plain Ordinary Least Squares (scipy.linalg.lstsq)”. Okay, what is
+Scipy doing?</p>
+<p>A cursory examination of the <a href="https://github.com/scipy/scipy/blob/99b8660a5bb838cfcebf5e9e63512aed982a40e8/scipy/linalg/basic.py#L1047" target="_blank" rel="noopener" class="docMetadata" data-popup-title="scipy/scipy" data-popup-image="https://avatars1.githubusercontent.com/u/288277?s=400&v=4" data-popup-abstract="Scipy library main repository. Contribute to scipy/scipy development by creating an account on GitHub.">code for scipy.linalg.lstsq
+</a> reveals that
+it…doesn’t do anything? It checks for any mismatch in the shapes of the
+input, but there’s no matrix factoring, not even a dot product.</p>
+<h2 id="LAPACK-and-BLAS"><a href="#LAPACK-and-BLAS" class="headerlink" title="LAPACK and BLAS"></a>LAPACK and BLAS</h2><p>Rather than performing the calculations itself, SciPy actually calls a LAPACK
+subroutine to do all the matrix factoring work. LAPACK in turn calls a BLAS
+subroutine to do all the scalar, vector, and matrix work. These programs are
+very particular. Different architectures will have different implementations.
+Some of the really-fast implementations were hand-written by a guy on sabbatical
+from the Japanese Patent Office.</p>
+<h3 id="LAPACK"><a href="#LAPACK" class="headerlink" title="LAPACK"></a>LAPACK</h3><p>LAPACK was a project out of Tennessee and Rice Universities, the Numerical
+Algorithms Group, a private non-profit, and Oak Ridge and Argonne National
+Laboratories in the early 90s. This assemblage of researchers all saw the need
+for a standardized, fast package that provided “<a href="https://www.researchgate.net/profile/Christian_Bischof/publication/220781801_LAPACK_A_Portable_Linear_Algebra_Library_for_High-Performance_Computers/links/00b7d519e119d012bc000000/LAPACK-A-Portable-Linear-Algebra-Library-for-High-Performance-Computers.pdf" target="_blank" rel="noopener" class="docMetadata" data-popup-title="www.researchgate.net/profile/Christian_Bischof/publication/220781801_LAPACK_A_Portable_Linear_Algebra_Library_for_High-Performance_Computers/links/00b7d519e119d012bc000000/LAPACK-A-Portable-Linear-Algebra-Library-for-High-Performance-Computers.pdf" data-popup-image="" data-popup-abstract="">routines for solving systems of
+simultaneous linear equations, least-squares solutions of overdetermined
+systems of equations, and eigenvalue problems.
+</a>”</p>
+<p>These sorts of things had been tried before in LINPACK and EISPACK, but those
+packages weren’t written with modern computer architectures in mind. The
+original Intel Pentium chip had come out in 1993 and brought a split L1 cache<label for="ad0dd30cc0a2320fb30580b38d61955c0ad19c9df743e3b0bf43dfeb0b6e53c4" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="ad0dd30cc0a2320fb30580b38d61955c0ad19c9df743e3b0bf43dfeb0b6e53c4"><span class="sidenote"> If you have a rough idea of what an L1 cache is, here’s an insanely thorough
+<a href="https://stackoverflow.com/questions/55752699/what-does-a-split-cache-means-and-how-is-it-usefulif-it-is" target="_blank" rel="noopener" class="docMetadata" data-popup-title="What does a 'Split' cache means. And how is it useful(if it is)?" data-popup-image="https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded" data-popup-abstract="I was doing a question on Computer Architecture and in it it was mentioned that the cache is a split cache, and no hazard what does this exactly means?">StackOverflow on what a split L1 does.
+</a>
+</span>
+into the mainstream<label for="27d323f4c14c9e352f1594554af2caa4543f3627642b38ca9b3f451c98c4be96" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="27d323f4c14c9e352f1594554af2caa4543f3627642b38ca9b3f451c98c4be96"><span class="sidenote"> At the time, Intel was facing competition from a company called Cyrix, who
+was also releasing some very nice x86 chips. But then, Quake was released by id
+Software, which targeted the Pentium processor’s ability to interleave floating
+point and integer operations, something Cyrix’s chips couldn’t do. “Quake was
+extremely popular, and everyone used it in their performance tests – and thus
+hammered the Cyrix chips, even though the Cyrix was faster in ordinary use, in
+business/work/Windows operation, indeed in every other game except Quake. And
+ultimately that killed Cyrix off.”  From <a href="https://liam-on-linux.livejournal.com/49259.html" target="_blank" rel="noopener" class="docMetadata" data-popup-title="The rise & fall of the first real x86 rival to Intel: the Cyrix 6x86" data-popup-image="https://l-stat.livejournal.net/img/sign.png" data-popup-abstract="I was surprised to read someone castigating and condemning the Cyrix line of PC CPUs today. For a while, I recommended em and used em myself. My own home PC was a Cyrix 6x86 P166+ for a year or two. Lovely machine -- a 133MHz processor that performed about 30-40% better than an Intel…">here
+</a>
+</span><label for="ad822332d44e6a86f3b073652c3be71fe4f3d8adc89b0312c25713277aa4ebfe" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="ad822332d44e6a86f3b073652c3be71fe4f3d8adc89b0312c25713277aa4ebfe"><span class="sidenote"> Did you know x86 just means a system that’s compatible with the instruction
+set first used on the Intel 8086 chip, the precursor to the Pentium? I didn’t.
+Well, now I do. Such is the epistemic problem of writing a blog post in order to
+learn about what you’re writing about.
+</span>. The basic problem here is that CPUs got quite fast at
+multiplying numbers, but accessing those numbers from memory hadn’t kept up. So,
+programs that didn’t pay attention to the cost of moving data started being
+bottlenecked by the speed of memory access rather than the speed of their
+processors.</p>
+<p>LAPACK was written in FORTRAN 77 for modern memory hierarchies with multiple
+parallel, processors; and that made it stupid fast. Of course, you can’t write a
+library that’ll be optimal for all architectures. You have different cache
+sizes; you might have an L3 or L4 cache. But LAPACK didn’t need to, because it
+wasn’t actually doing the low-level calculations. For that, it relied on
+whatever Basic Linear Algebra Subroutines—BLAS<label for="e6cd2e246ce0576c0ea8487b43e72e470d101ecc87c677ed98fd670616ef5b6e" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="e6cd2e246ce0576c0ea8487b43e72e470d101ecc87c677ed98fd670616ef5b6e"><span class="sidenote"> Obviously. Honestly, I’m way more in on the all-cap, pronounceable acronym,
+compared to like, the current state of open source naming. I mean look at the
+<a href="https://www.apache.org/index.html#projects-list" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Welcome to The Apache Software Foundation!" data-popup-image="" data-popup-abstract="Home page of The Apache Software Foundation">list of projects
+</a> under the Apache Foundation. What is this…<a href="http://guacamole.apache.org/" target="_blank" rel="noopener">Guacamole</a>? <a href="http://kafka.apache.org/" target="_blank" rel="noopener">Kafka</a>?
+Oh God, there’s a project called <a href="http://chemistry.apache.org/" target="_blank" rel="noopener">Chemistry</a>, please let it have something to do
+with—No. From its homepage: “Important time-saving note for chemists: the Apache
+Chemistry project has nothing to do with chemistry or chemicals!” It’s a CMS
+interoperability standard. And Steve? Steve is the Foundation’s python-based
+voting system.
+</span>— the user had installed.</p>
+<h3 id="BLAS"><a href="#BLAS" class="headerlink" title="BLAS"></a>BLAS</h3><p>In the late 70s, the nerds at JPL came out with a FORTRAN library of
+thirty-eight basic linear algebra subroutines. Stuff like a dot-product,
+implemented in a way that was fast and correct. This way an aeronautical
+engineer didn’t have to worry that his code for, like, a 2-norm<label for="221c330c1fb37958b3a7aeba1299318f19846fae4c652d177db65ff3cd1cd4aa" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="221c330c1fb37958b3a7aeba1299318f19846fae4c652d177db65ff3cd1cd4aa"><span class="sidenote"> A 2-norm is just the Euclidean distance of the vector. I have no idea how it
+should interact with complex numbers. This way, I don’t have to!
+</span> handled a
+complex vector correctly. And that might mean fewer rocket crashes.</p>
+<p>While it started out as an actual library, BLAS persisted more as a
+specification. Anyone could write a BLAS implementation that was fast on their
+hardware, and any program designed to use BLAS could use any of these
+implementations.</p>
+<p>If you’re reading this on a Mac, you’re running <a href="https://developer.apple.com/documentation/accelerate/blas" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Apple Developer Documentation" data-popup-image="" data-popup-abstract="">Apple’s implementation
+</a> of BLAS
+and LAPACK, specially optimized, like much of Apple software, for its own
+hardware.</p>
+<p>There’s a useful idea here that some constructs are so widely used that it’s
+worth a lot of effort to eek out small performance gains which then aggregate to
+huge performance gains.</p>
+<p>One example from a 2017 talk on Google’s<label for="04aa2b4d1a716f77545c559a01ac048a92f2ad4dd1c31988ec4cf32af492f5a3" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="04aa2b4d1a716f77545c559a01ac048a92f2ad4dd1c31988ec4cf32af492f5a3"><span class="sidenote">Disclaimer: I work at Google. I was not involved in this work.
+</span> efforts to develop faster, more
+efficient hash tables:</p>
+<blockquote><p>“Hash tables are incredibly performance sensitive. At Google, right now, as I am
+speaking, in our fleet, one percent of the CPU’s are computing something in a
+hash table. As I am speaking, more than four percent of Google’s RAM is owned by
+a hash table. And that’s just C++”</p>
+</blockquote>
+
+<p>The same idea applies to a dot product. If your supercomputer weather simulation
+does a lot of dot products, you might save days of compute time by having a good
+BLAS implementation for your hardware.</p>
+<p>This is where Mr. Kazushige Goto comes in.</p>
+<h2 id="The-Man-from-the-Patent-Office"><a href="#The-Man-from-the-Patent-Office" class="headerlink" title="The Man from the Patent Office"></a>The Man from the Patent Office</h2><p><img src="https://graphics8.nytimes.com/images/2005/11/28/business/28super.1841.jpg" alt="Kazushige Goto standing next to a research
+poster"></p>
+<p>Prior to 2002, Kazushige Goto worked in the Japanese Patent Office. While he was
+there, he developed a knack for tinkering with the subroutines on computers to
+improve bottlenecks. I say this, of course, in the same sense that Babe Ruth
+developed a knack for hitting home runs. From a <a href="https://www.nytimes.com/2005/11/28/technology/writing-the-fastest-code-by-hand-for-fun-a-human-computer-keeps.html" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Writing the Fastest Code, by Hand, for Fun: A Human Computer Keeps Speeding Up Chips" data-popup-image="https://static01.nyt.com/newsgraphics/images/icons/defaultPromoCrop.png" data-popup-abstract="Kazushige Goto, research associate at Texas Advanced Computing Center at University of Texas in Austin, has become legend in world of supercomputing by single-handedly producing at his keyboard programs that run world's fastest computers and doing it faster than powerful automated systems and entire teams of software developers; value of his work goes far beyond setting speed records because Goto's programs can more efficiently solve complex linear equations, thus offering better solutions in virtually every computational science and engineering problem; photo (M)">2005 New York Times profile
+</a>:</p>
+<blockquote><p>“To help in his work, Mr. Goto purchased a Digital Equipment workstation based
+on the Alpha microprocessor in 1994 to perform a simulation.  But when it
+arrived he could not understand why it was performing so slowly. So he explored
+the Alpha’s design to see where the performance bottlenecks were.</p>
+<p>He later purchased a second Alpha-based computer and by rewriting the crucial
+subroutines was able to improve its performance to 78 percent of its theoretical
+peak calculating speed, up from 44 percent.</p>
+<p>Although he was not formally trained in computer or software design, he
+perfected his craft by learning from programmers on an Internet mailing list
+focusing on the Linux operating system for the Alpha chip. His curiosity quickly
+became a passion that he pursued in his free time and during his twice daily
+two-hour train commute between his job in Tokyo and his home in Kanagawa
+Prefecture.</p>
+<p>‘I would frequently work on these problems until midnight,’ he said. ‘I did it
+to relax.’”</p>
+</blockquote>
+
+<p>Naturally, this sort of hardware whispering doesn’t go unnoticed,
+and eventually Mr. Goto got the call up to the Texas Advanced Computer Center at
+UT Austin to apply his gifts to supercomputing while on sabbatical from the
+patent office. At the time of this profile, 4 out of the 11 fastest
+supercomputers were running GotoBLAS, Goto’s optimized implementation for
+Intel’s Nehalem processor.</p>
+<p>The narrative of Goto-the-Auteur’s is painted in sharp relief to contemporary
+efforts to automate the process of optimizing BLAS for different processors. The
+Automatically Tuned Linear Algebra Software or ATLAS is a BLAS implementation
+that can perform a sort of hyperparameter sweep on any processor to identify a
+reasonably good BLAS implementation. This sort of approach means that ATLAS is
+often the first good BLAS implementation available on a new processor, but is
+eventually eclipsed by hand-tuned implementations.</p>
+<p>Needless to say, I find this immensely aesthetic. The idea that deep learning,
+whose signature trait seems to be the ability to replicate those domains of
+man—art, perception, language—with all its forward pass matrix multiplications,
+might itself still be subservient to one man’s lonely craft. Of course, I expect
+ATLAS and its ilk to improve. Compilers, a related field, has already begun to
+cede territory to deep learning powered heuristics. But, you know, at least for
+a while, state of the art can be a man on a train before work.</p>
+<svg style="display: none" id="MJX-SVG-global-cache"><defs><path id="MJX-TEX-I-58" d="M42 0H40Q26 0 26 11Q26 15 29 27Q33 41 36 43T55 46Q141 49 190 98Q200 108 306 224T411 342Q302 620 297 625Q288 636 234 637H206Q200 643 200 645T202 664Q206 677 212 683H226Q260 681 347 681Q380 681 408 681T453 682T473 682Q490 682 490 671Q490 670 488 658Q484 643 481 640T465 637Q434 634 411 620L488 426L541 485Q646 598 646 610Q646 628 622 635Q617 635 609 637Q594 637 594 648Q594 650 596 664Q600 677 606 683H618Q619 683 643 683T697 681T738 680Q828 680 837 683H845Q852 676 852 672Q850 647 840 637H824Q790 636 763 628T722 611T698 593L687 584Q687 585 592 480L505 384Q505 383 536 304T601 142T638 56Q648 47 699 46Q734 46 734 37Q734 35 732 23Q728 7 725 4T711 1Q708 1 678 1T589 2Q528 2 496 2T461 1Q444 1 444 10Q444 11 446 25Q448 35 450 39T455 44T464 46T480 47T506 54Q523 62 523 64Q522 64 476 181L429 299Q241 95 236 84Q232 76 232 72Q232 53 261 47Q262 47 267 47T273 46Q276 46 277 46T280 45T283 42T284 35Q284 26 282 19Q279 6 276 4T261 1Q258 1 243 1T201 2T142 2Q64 2 42 0Z"></path><path id="MJX-TEX-I-79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path><path id="MJX-TEX-I-3B2" d="M29 -194Q23 -188 23 -186Q23 -183 102 134T186 465Q208 533 243 584T309 658Q365 705 429 705H431Q493 705 533 667T573 570Q573 465 469 396L482 383Q533 332 533 252Q533 139 448 65T257 -10Q227 -10 203 -2T165 17T143 40T131 59T126 65L62 -188Q60 -194 42 -194H29ZM353 431Q392 431 427 419L432 422Q436 426 439 429T449 439T461 453T472 471T484 495T493 524T501 560Q503 569 503 593Q503 611 502 616Q487 667 426 667Q384 667 347 643T286 582T247 514T224 455Q219 439 186 308T152 168Q151 163 151 147Q151 99 173 68Q204 26 260 26Q302 26 349 51T425 137Q441 171 449 214T457 279Q457 337 422 372Q380 358 347 358H337Q258 358 258 389Q258 396 261 403Q275 431 353 431Z"></path><path id="MJX-TEX-N-5E" d="M112 560L249 694L257 686Q387 562 387 560L361 531Q359 532 303 581L250 627L195 580Q182 569 169 557T148 538L140 532Q138 530 125 546L112 560Z"></path><path id="MJX-TEX-N-3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path><path id="MJX-TEX-N-28" d="M94 250Q94 319 104 381T127 488T164 576T202 643T244 695T277 729T302 750H315H319Q333 750 333 741Q333 738 316 720T275 667T226 581T184 443T167 250T184 58T225 -81T274 -167T316 -220T333 -241Q333 -250 318 -250H315H302L274 -226Q180 -141 137 -14T94 250Z"></path><path id="MJX-TEX-I-54" d="M40 437Q21 437 21 445Q21 450 37 501T71 602L88 651Q93 669 101 677H569H659Q691 677 697 676T704 667Q704 661 687 553T668 444Q668 437 649 437Q640 437 637 437T631 442L629 445Q629 451 635 490T641 551Q641 586 628 604T573 629Q568 630 515 631Q469 631 457 630T439 622Q438 621 368 343T298 60Q298 48 386 46Q418 46 427 45T436 36Q436 31 433 22Q429 4 424 1L422 0Q419 0 415 0Q410 0 363 1T228 2Q99 2 64 0H49Q43 6 43 9T45 27Q49 40 55 46H83H94Q174 46 189 55Q190 56 191 56Q196 59 201 76T241 233Q258 301 269 344Q339 619 339 625Q339 630 310 630H279Q212 630 191 624Q146 614 121 583T67 467Q60 445 57 441T43 437H40Z"></path><path id="MJX-TEX-N-29" d="M60 749L64 750Q69 750 74 750H86L114 726Q208 641 251 514T294 250Q294 182 284 119T261 12T224 -76T186 -143T145 -194T113 -227T90 -246Q87 -249 86 -250H74Q66 -250 63 -250T58 -247T55 -238Q56 -237 66 -225Q221 -64 221 250T66 725Q56 737 55 738Q55 746 60 749Z"></path><path id="MJX-TEX-N-2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path><path id="MJX-TEX-N-31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></defs></svg>
+</article>
+
+<script src="/js/sidenote.js" async></script>
+
+
+<script src="/js/popup.js" async></script>
+
+
+    </div>
+    <footer>
+        <div class="pagination-container">
+            
+            
+        </div>
+        <div class="pagination-container">
+            <a href="mailto:&#115;&#099;&#104;&#117;&#110;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">
+                <p>comments or errata? say hi at &#115;&#099;&#104;&#117;&#110;&#099;&#104;&#105;&#099;&#097;&#103;&#111;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</p>
+            </a>
+            <p>To get an email when new posts come out, <a href="https://tinyletter.com/chunstuff" target="_blank" rel="noopener">sign up here</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+

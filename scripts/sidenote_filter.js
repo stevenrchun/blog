@@ -7,7 +7,7 @@ hexo.extend.filter.register('before_post_render', function(data) {
 });
 
 function insertSidenotes(content) {
-  let kFootnoteSplit = '^^^^';
+  let kFootnoteSplit = '________________';
   let split = content.split(kFootnoteSplit);
   let textContent = split[split.length - 2];
   let sidenoteContent = split[split.length - 1];

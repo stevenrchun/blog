@@ -37,6 +37,7 @@ mjx-container[jax="SVG"][display="true"].MathJax {
 /* override tufte blockquotes to make full width */
 blockquote p {
   width: 100%;
+  font-style: italic;
 }
 
 blockquote footer {

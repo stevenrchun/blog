@@ -38,7 +38,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg">
 <meta property="article:published_time" content="2020-04-25T07:00:00.000Z">
-<meta property="article:modified_time" content="2020-04-26T06:38:29.522Z">
+<meta property="article:modified_time" content="2020-09-06T20:43:32.370Z">
 <meta property="article:author" content="Steven Chun">
 <meta property="article:tag" content="Statistics">
 <meta property="article:tag" content="Computation">
@@ -316,12 +316,12 @@ mjx-container + br {
 it’s been more like 4-5 weeks, but every time I opened up this essay I
 had to update the number, and I lost count. As the world collectively
 weathers the pandemic, I find myself with an abundance of time and no
-excuse to not write<label for="a1374e928919f827e516c609210a5bb481571be04fb868b84034f303aa4e71e6" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="a1374e928919f827e516c609210a5bb481571be04fb868b84034f303aa4e71e6"><span class="sidenote"> One might consider this my <em>Walden</em> moment. On the other hand, you wouldn’t be
+excuse to not write<label for="782a4a8f8d015db94a3a74b1bf1b8dfd55634cb4717a2d6454c7ec328472bea7" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="782a4a8f8d015db94a3a74b1bf1b8dfd55634cb4717a2d6454c7ec328472bea7"><span class="sidenote"> One might consider this my <em>Walden</em> moment. On the other hand, you wouldn’t be
 blamed for thinking “Steven, you’re watching Bon Appetit in your apartment.
 You’re not in a remote New England cabin.” Consider, however, that Thoreau’s
-mother made <a href="https://www.newyorker.com/magazine/2015/10/19/pond-scum" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Why Do We Love Henry David Thoreau?" data-popup-image="https://media.newyorker.com/photos/590971152179605b11ad79aa/16:9/w_1280,c_limit/151019_r27147.jpg" data-popup-abstract="An examination of the writer’s moral sensibility and how &quot;Walden&quot; fits into our national conscience.">the 20 minute walk from Concord to Walden Pond to bring him food 
-</a> and <a href="https://austinkleon.com/2019/08/30/thoreaus-laundry/" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Thoreau’s laundry - Austin Kleon" data-popup-image="http://austinkleon.com/wp-content/uploads/2019/08/Screen-Shot-2019-08-30-at-12.51.42-PM.png" data-popup-abstract="&quot;No other male American writer has been so discredited for enjoying a meal with loved ones or for not doing his own laundry.&quot;">do his laundry
-</a>. I do my own laundry.
+mother made <a href="https://www.newyorker.com/magazine/2015/10/19/pond-scum" target="_blank" rel="noopener">the 20 minute walk from Concord to Walden Pond to bring him food </a>
+ and <a href="https://austinkleon.com/2019/08/30/thoreaus-laundry/" target="_blank" rel="noopener">do his laundry</a>
+. I do my own laundry.
 </span>. So, let’s talk about an old friend: linear
 regression.</p>
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Linear_regression.svg" alt="graph of points with a line of best fit
@@ -340,9 +340,9 @@ interactions if  you wanna go further. You get the picture. A reasonable
 explanation usually goes from the abstract down towards the tangible to the
 point where you can apply a concept in your work. We’re going to take that
 explanation and push it just a little farther than is really useful—why? Why am
-I watching <a href="https://www.youtube.com/watch?v=r1t_ITj1qoA" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Brad Makes Olive Oil (In Italy!) | It's Alive | Bon Appétit" data-popup-image="https://i.ytimg.com/vi/r1t_ITj1qoA/maxresdefault.jpg" data-popup-abstract="Bon Appétit’s Brad Leone is back for episode 45 of &quot;It’s Alive,&quot; and this time he traveled to Tuscany, Italy to make olive oil with Lucini Italia. Watch Brad...">how olive
-oil is made
-</a>? Because why the hell not<label for="536a35d90631ccaa69103f1f839825fd672b245d13966f32df530e1ac5486532" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="536a35d90631ccaa69103f1f839825fd672b245d13966f32df530e1ac5486532"><span class="sidenote"> What I mean, of course, is that there is no other reason. Learning adds
+I watching <a href="https://www.youtube.com/watch?v=r1t_ITj1qoA" target="_blank" rel="noopener">how olive
+oil is made</a>
+? Because why the hell not<label for="536a35d90631ccaa69103f1f839825fd672b245d13966f32df530e1ac5486532" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="536a35d90631ccaa69103f1f839825fd672b245d13966f32df530e1ac5486532"><span class="sidenote"> What I mean, of course, is that there is no other reason. Learning adds
 richness to each second of life.
 </span>?</p>
 <p><img src="./ExplanationSpectrum.svg" alt="A very silly diagram describing an explanation spectrum from the abstract
@@ -369,11 +369,11 @@ outright slow, it is because I fear that a rushed assumption or unexplained
 algebraic manipulation might cause an otherwise talented, curious, maybe sleepy
 learner to miss the forest for the trees.</p>
 <h2 id="Linear-Regression-is-Nice"><a href="#Linear-Regression-is-Nice" class="headerlink" title="Linear Regression is Nice"></a>Linear Regression is Nice</h2><p>First, we must appreciate linear regression. We are like Salieri. We see the
-beauty. We do not understand how it is done.<label for="a8ce970435820190104c5ebcab74878441b6f4877b1f05b6586fcbcc76e58f0e" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="a8ce970435820190104c5ebcab74878441b6f4877b1f05b6586fcbcc76e58f0e"><span class="sidenote"> A lot of writing is stealing. In fact, if you see humans as just pattern
+beauty. We do not understand how it is done.<label for="bea28d353dfc1911dd6cba0c54adb0c857eef1a4d298fe4889a376ea711f05a4" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="bea28d353dfc1911dd6cba0c54adb0c857eef1a4d298fe4889a376ea711f05a4"><span class="sidenote"> A lot of writing is stealing. In fact, if you see humans as just pattern
 recognition machines, and that’s not a particularly bad way to see us, all
 creation is stealing. But I must admit I stole this comparison from Craig
-Silverstein, who made it first about Sanjay Ghemawat in this <a href="https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge" target="_blank" rel="noopener" class="docMetadata" data-popup-title="The Friendship That Made Google Huge" data-popup-image="https://media.newyorker.com/photos/5c0040d75cc0c92d353cfc9c/16:9/w_1280,c_limit/181210_r33377.jpg" data-popup-abstract="Coding together at the same computer, Jeff Dean and Sanjay Ghemawat changed the course of the company—and the Internet.">wonderful New Yorker piece on Sanjay and Jeff Dean
-</a>.
+Silverstein, who made it first about Sanjay Ghemawat in this <a href="https://www.newyorker.com/magazine/2018/12/10/the-friendship-that-made-google-huge" target="_blank" rel="noopener">wonderful New Yorker piece on Sanjay and Jeff Dean</a>
+.
 </span></p>
 <p>I love linear regression. As much as fancy techniques like decision trees or
 artificial neural networks have captured the present imagination, linear
@@ -385,21 +385,21 @@ promote more good things and prevent bad things.</p>
 of Imperfect Information</em> by Rothschild and Stiglitz, 1976.
 </span> suggests that making
 everyone sign up for healthcare makes everyone better off—I wonder if that holds
-up in the real world?”<label for="add70301ed1ccfd5739638cf2667b35c7616384840845d088627649460ed93b7" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="add70301ed1ccfd5739638cf2667b35c7616384840845d088627649460ed93b7"><span class="sidenote"> You could also ask much sillier questions, like, “Do people stay alive longer
-so they can save money on their estate taxes?” <a href="https://www.nber.org/papers/w8158" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Dying to Save Taxes: Evidence from Estate Tax Returns on the Death Elasticity" data-popup-image="" data-popup-abstract="">These guys did
-</a>.
+up in the real world?”<label for="cede9014d62e273960bdea8ba19d05140c7dc50e4f8f4a73c648a991f19cfe3f" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="cede9014d62e273960bdea8ba19d05140c7dc50e4f8f4a73c648a991f19cfe3f"><span class="sidenote"> You could also ask much sillier questions, like, “Do people stay alive longer
+so they can save money on their estate taxes?” <a href="https://www.nber.org/papers/w8158" target="_blank" rel="noopener">These guys did</a>
+.
 </span> You might get some data on healthcare coverage, costs,
 and premiums; you could exploit the fact that Massachusetts actually did make
 everyone sign up for healthcare; and then you can have a little linear
 regression to estimate if people were better off. You might look at your
-regression and conclude, “Hey, people are better off, like <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20130758" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Adverse Selection and an Individual Mandate: When Theory Meets Practice" data-popup-image="https://www.aeaweb.org/journals/images/aer" data-popup-abstract="Adverse Selection and an Individual Mandate: When Theory Meets Practice by Martin B. Hackmann, Jonathan T. Kolstad and Amanda E. Kowalski. Published in volume 105, issue 3, pages 1030-66 of American Economic Review, March 2015, Abstract: We develop a model of selection that incorporates a key elemen...">$241
-</a>
-better off! We should do this nationally!” And you go and do it nationally<label for="dae51a89f78c201d10a02775fd2b3204e99067d8f0f46d0932860dc46f9ff7bc" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="dae51a89f78c201d10a02775fd2b3204e99067d8f0f46d0932860dc46f9ff7bc"><span class="sidenote"> Well actually, you publish a paper—<a href="https://www.aeaweb.org/articles?id=10.1257/aer.20130758" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Adverse Selection and an Individual Mandate: When Theory Meets Practice" data-popup-image="https://www.aeaweb.org/journals/images/aer" data-popup-abstract="Adverse Selection and an Individual Mandate: When Theory Meets Practice by Martin B. Hackmann, Jonathan T. Kolstad and Amanda E. Kowalski. Published in volume 105, issue 3, pages 1030-66 of American Economic Review, March 2015, Abstract: We develop a model of selection that incorporates a key elemen...">this paper
-</a>—and then someone important
+regression and conclude, “Hey, people are better off, like <a href="https://www.aeaweb.org/articles?id=10.1257/aer.20130758" target="_blank" rel="noopener">$241</a>
+
+better off! We should do this nationally!” And you go and do it nationally<label for="4f3218162a2f1f436b07597d2876f1bc1722e79679e855b9cf81400ad6709898" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="4f3218162a2f1f436b07597d2876f1bc1722e79679e855b9cf81400ad6709898"><span class="sidenote"> Well actually, you publish a paper—<a href="https://www.aeaweb.org/articles?id=10.1257/aer.20130758" target="_blank" rel="noopener">this paper</a>
+—and then someone important
 reads it and goes and writes some policy.
 </span>,
-and it goes, you know, <a href="https://www.nytimes.com/2017/02/05/upshot/grading-obamacare-successes-failures-and-incompletes.html" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Grading Obamacare: Successes, Failures and ‘Incompletes’" data-popup-image="https://static01.nyt.com/images/2017/01/30/upshot/xxup-obamacare/xxup-obamacare-facebookJumbo.jpg" data-popup-abstract="The law has changed the health care landscape in ways large and small. Let’s take a survey.">okay
-</a>.</p>
+and it goes, you know, <a href="https://www.nytimes.com/2017/02/05/upshot/grading-obamacare-successes-failures-and-incompletes.html" target="_blank" rel="noopener">okay</a>
+.</p>
 <p>Of course, economics is a lot more than just specifying and running a
 regression. Actually, that’s probably the easiest part. But still! You can’t do
 any of it without linear regression!</p>
@@ -431,9 +431,9 @@ squared error. Ordinary because this is plain old linear least squares, as
 opposed to the extra-ordinary non-linear least squares.
 </span>. It means you
 measure how far off your prediction is by taking the Euclidean distance between
-the true value and your predicted value<label for="e4372f54a97b0e0d60376dd54bfd535bb379834656a82f4f1ca5731382f05b11" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="e4372f54a97b0e0d60376dd54bfd535bb379834656a82f4f1ca5731382f05b11"><span class="sidenote"> You know this one: it’s just your regular geometric distance. What’s more
-fun is that there’s also <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Taxicab geometry - Wikipedia" data-popup-image="https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Manhattan_distance.svg/1200px-Manhattan_distance.svg.png" data-popup-abstract="">Manhattan Distance
-</a>, where you take the distance as if you had to get there via city blocks! New
+the true value and your predicted value<label for="6c076dbd394ea5f9bb4c18a28e1dfdd956f1dfd2099563bfb5df896a759984f0" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="6c076dbd394ea5f9bb4c18a28e1dfdd956f1dfd2099563bfb5df896a759984f0"><span class="sidenote"> You know this one: it’s just your regular geometric distance. What’s more
+fun is that there’s also <a href="https://en.wikipedia.org/wiki/Taxicab_geometry" target="_blank" rel="noopener">Manhattan Distance</a>
+, where you take the distance as if you had to get there via city blocks! New
 York, baby!
 </span> and squaring it. You do that for
 each example, sum them all, and you get a number that represents the sum of the
@@ -445,8 +445,8 @@ squared errors—this is your loss, which you want to minimize.</p>
 <p>What mathematical notation gains in precision it loses in legibility. However,
 this is basically the same thing. <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.257ex" height="2.195ex" role="img" focusable="false" viewBox="0 -765 555.6 970" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi" transform="translate(5, 0)"><use xlink:href="#MJX-TEX-I-79"></use></g><g data-mml-node="mo" transform="translate(55.6, -29)"><use xlink:href="#MJX-TEX-N-5E"></use></g></g></g></g></g></svg></mjx-container><label for="9f1808460c264ca56e1dd01203bc769c0f3ade0f494df1235542cd0ea6f250cb" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="9f1808460c264ca56e1dd01203bc769c0f3ade0f494df1235542cd0ea6f250cb"><span class="sidenote">Pronounced “y-hat”.
 </span> is again the predicted value at any point,
-the carrot (called a <a href="https://twitter.com/chemicollins/status/1236350747895308288" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Papa Bear on Twitter" data-popup-image="https://pbs.twimg.com/profile_images/1134938702755573765/FIKYpk1Z_400x400.jpg" data-popup-abstract="&quot;My bf's first language is french, and he forgot the word for &quot;lid&quot;, so instead he held up the pot and asked &quot;where is his hat?&quot;&quot;">hat
-</a>) indicates that this is a predicted value which will differ from  which is
+the carrot (called a <a href="https://twitter.com/chemicollins/status/1236350747895308288" target="_blank" rel="noopener">hat</a>
+) indicates that this is a predicted value which will differ from  which is
 the true value, is the residual (the difference between our estimation
 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.561ex" xmlns="http://www.w3.org/2000/svg" width="1.922ex" height="2.292ex" role="img" focusable="false" viewBox="0 -765 849.6 1013.1" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi" transform="translate(5, 0)"><use xlink:href="#MJX-TEX-I-79"></use></g><g data-mml-node="mo" transform="translate(55.6, -29)"><use xlink:href="#MJX-TEX-N-5E"></use></g></g></g><g data-mml-node="mi" transform="translate(555.6, -240.4) scale(0.707)"><use xlink:href="#MJX-TEX-I-69"></use></g></g></g></g></svg></mjx-container> and the truth <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.774ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 784 647" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-79"></use></g><g data-mml-node="mi" transform="translate(490, -150) scale(0.707)"><use xlink:href="#MJX-TEX-I-69"></use></g></g></g></g></svg></mjx-container>, and the subscript <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-69"></use></g></g></g></svg></mjx-container> just indicates that this
 is the prediction for the <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-69"></use></g></g></g></svg></mjx-container>-th<label for="e8e629e3fdc05ad1bdc83d6baabccc1d58d253d6b75f28a7fc99762a33c9d78b" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="e8e629e3fdc05ad1bdc83d6baabccc1d58d253d6b75f28a7fc99762a33c9d78b"><span class="sidenote"> <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-69"></use></g></g></g></svg></mjx-container> is the canonical notation for index (AKA position). If you have two
@@ -471,11 +471,11 @@ course, what constitutes Normal Math™ is completely arbitrary, but generally
 things like infinite series and iterative methods don’t count.
 </span> solution for OLS. This is the dressing down you should get in
 most introductory econometrics classes.</p>
-<h2 id="Solving-for-Beta"><a href="#Solving-for-Beta" class="headerlink" title="Solving for Beta"></a>Solving for Beta</h2><p>First<label for="532a7aa54215b55783ff664ed780873c8a4a6b04480405e237a7d6f8605d855f" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="532a7aa54215b55783ff664ed780873c8a4a6b04480405e237a7d6f8605d855f"><span class="sidenote"> If you’re already familiar with the univariate derivation of OLS, feel free
+<h2 id="Solving-for-Beta"><a href="#Solving-for-Beta" class="headerlink" title="Solving for Beta"></a>Solving for Beta</h2><p>First<label for="5f56ac65723ec0d42d27b09fd049d7f542949c88b46afa6db5b455da7fdb01a5" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="5f56ac65723ec0d42d27b09fd049d7f542949c88b46afa6db5b455da7fdb01a5"><span class="sidenote"> If you’re already familiar with the univariate derivation of OLS, feel free
 to skip ahead to the next section. This section is heavily drawn from this nice
-worksheet I found from Queen’s University at Kingston’s <a href="http://qed.econ.queensu.ca/pub/faculty/abbott/econ351/351note02.pdf" target="_blank" rel="noopener" class="docMetadata" data-popup-title="qed.econ.queensu.ca/pub/faculty/abbott/econ351/351note02.pdf" data-popup-image="" data-popup-abstract="">Introductory
-Econometrics class
-</a>.
+worksheet I found from Queen’s University at Kingston’s <a href="http://qed.econ.queensu.ca/pub/faculty/abbott/econ351/351note02.pdf" target="_blank" rel="noopener">Introductory
+Econometrics class</a>
+.
 </span>, let us formalize the focus of our optimization for OLS, which is often
 called the Residual Sum of Squares (RSS) or the Sum of Squared Estimates of
 Errors (SSE).</p>
@@ -583,8 +583,8 @@ was univariate and commonly we want multivariate regression. So, we need a new
 tool and that tool is linear algebra.</p>
 <p>Linear algebra helps us express multivariate OLS succinctly, with the added
 benefit of framing the operations much in the same way as we actually execute
-them en machina<label for="5dfc7afc4a905ca872e9773d43d8d16ace2581ae85e62436c0d0a50c3ab36cb5" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="5dfc7afc4a905ca872e9773d43d8d16ace2581ae85e62436c0d0a50c3ab36cb5"><span class="sidenote"> <a href="https://softwareengineering.stackexchange.com/questions/312445/why-does-expressing-calculations-as-matrix-multiplications-make-them-faster" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Why does expressing calculations as matrix multiplications make them faster?" data-popup-image="https://cdn.sstatic.net/Sites/softwareengineering/Img/apple-touch-icon@2.png?v=1ef7363febba" data-popup-abstract="In Google's MNist tutorial using TensorFlow, a calculation is exhibited in which one step is equivalent to multiplying a matrix by a vector. Google first shows a picture in which each numeric">This StackOverflow question
-</a> does a good job of explaining why
+them en machina<label for="6f637585ad60d78b793b7b51fec835edf5da776b91502fca78e240158a99a4f3" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="6f637585ad60d78b793b7b51fec835edf5da776b91502fca78e240158a99a4f3"><span class="sidenote"> <a href="https://softwareengineering.stackexchange.com/questions/312445/why-does-expressing-calculations-as-matrix-multiplications-make-them-faster" target="_blank" rel="noopener">This StackOverflow question</a>
+ does a good job of explaining why
 matrix operations are fast on computers. Basically, a lot of linear operations
 can be done in parallel, since they’re independent. Also, computer caches (L1,
 L2, L3…) work better when memory access is “spatially and temporally coherent”.
@@ -621,9 +621,9 @@ First, we must remember that the transpose respects addition, <mjx-container cla
 must be commended for its reasonableness here. But we must also remember that
 <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="15.323ex" height="2.47ex" role="img" focusable="false" viewBox="0 -841.7 6773 1091.7" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="mi" transform="translate(389, 0)"><use xlink:href="#MJX-TEX-I-41"></use></g><g data-mml-node="mi" transform="translate(1139, 0)"><use xlink:href="#MJX-TEX-I-42"></use></g><g data-mml-node="msup" transform="translate(1898, 0)"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="mi" transform="translate(389, 363) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g><g data-mml-node="mo" transform="translate(3112.6, 0)"><use xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="msup" transform="translate(4168.4, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-42"></use></g><g data-mml-node="mi" transform="translate(759, 363) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g><g data-mml-node="msup" transform="translate(5475.2, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-41"></use></g><g data-mml-node="mi" transform="translate(750, 363) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g></g></g></svg></mjx-container>.
 At first, this seems evidence of the transposes’s deceit and chicanery. The
-proof of this property, however, is so concise that to spite Fermat<label for="22ee2e929e0f0cc41a589b0ec6088a70b52e2b1152f5152a096a22d6f11114f4" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="22ee2e929e0f0cc41a589b0ec6088a70b52e2b1152f5152a096a22d6f11114f4"><span class="sidenote"> In 1637, in the margin of one of his books, Pierre de Fermat proposed a
-conjecture, now known as <a href="https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Fermat's Last Theorem - Wikipedia" data-popup-image="https://upload.wikimedia.org/wikipedia/commons/4/47/Diophantus-II-8-Fermat.jpg" data-popup-abstract="">Fermat’s Last Theorem
-</a>, that would take 358 years to solve. While proposing his theorem,
+proof of this property, however, is so concise that to spite Fermat<label for="a1afd6a805d3ddad52ab0fa51f532eda4da526c7fdb016d9f2c540dde9a12109" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="a1afd6a805d3ddad52ab0fa51f532eda4da526c7fdb016d9f2c540dde9a12109"><span class="sidenote"> In 1637, in the margin of one of his books, Pierre de Fermat proposed a
+conjecture, now known as <a href="https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem" target="_blank" rel="noopener">Fermat’s Last Theorem</a>
+, that would take 358 years to solve. While proposing his theorem,
 Fermat mentioned that he had already proved it, but that he didn’t have enough
 space in the margin to write it down. “I have discovered a truly marvelous
 demonstration of this proposition that this margin is too narrow to contain.” is
@@ -669,8 +669,8 @@ multicollinearity.
 Knowing that <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="16.839ex" height="2.891ex" role="img" focusable="false" viewBox="0 -1028 7442.7 1278" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="TeXAtom" data-mjx-texclass="ORD"><g data-mml-node="mover"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-3B2"></use></g><g data-mml-node="mo" transform="translate(116.3, 234)"><use xlink:href="#MJX-TEX-N-5E"></use></g></g></g><g data-mml-node="mo" transform="translate(894.1, 0)"><use xlink:href="#MJX-TEX-N-3D"></use></g><g data-mml-node="mo" transform="translate(1949.9, 0)"><use xlink:href="#MJX-TEX-N-28"></use></g><g data-mml-node="msup" transform="translate(2338.9, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="mi" transform="translate(906.8, 363) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g><g data-mml-node="mi" transform="translate(3793.5, 0)"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="msup" transform="translate(4645.5, 0)"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-29"></use></g><g data-mml-node="TeXAtom" transform="translate(389, 363) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><use xlink:href="#MJX-TEX-N-2212"></use></g><g data-mml-node="mn" transform="translate(778, 0)"><use xlink:href="#MJX-TEX-N-31"></use></g></g></g><g data-mml-node="msup" transform="translate(5988.1, 0)"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g><g data-mml-node="mi" transform="translate(906.8, 363) scale(0.707)"><use xlink:href="#MJX-TEX-I-54"></use></g></g></g></g></svg></mjx-container> allows you to derive a whole bunch of
 useful things about OLS, like that it’s the Best Linear, Unbiased, and Efficient
 estimator, and if you make some assumptions about the disturbances, you can get
-into the wonderful land of standard errors and heteroskedasticity<label for="fded1c19952da4f3241121780ed49c9e0cac6b0f970078fa0992d63f9d933de1" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="fded1c19952da4f3241121780ed49c9e0cac6b0f970078fa0992d63f9d933de1"><span class="sidenote"> If you want to go in that direction, fine. <a href="https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf" target="_blank" rel="noopener" class="docMetadata" data-popup-title="web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf" data-popup-image="" data-popup-abstract="">Here
-</a>, go to section 4.
+into the wonderful land of standard errors and heteroskedasticity<label for="e70db4ba76da5838f659bb4259e132af26c80e694cf0db6319f3351f4f19c90a" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="e70db4ba76da5838f659bb4259e132af26c80e694cf0db6319f3351f4f19c90a"><span class="sidenote"> If you want to go in that direction, fine. <a href="https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf" target="_blank" rel="noopener">Here</a>
+, go to section 4.
 </span>. But to
 actually solve this equation, you type “reg” into Stata and you’re done. If
 you’re like me, that’s unsatisfying.</p>

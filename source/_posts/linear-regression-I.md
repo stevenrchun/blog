@@ -476,7 +476,7 @@ time we ask, _“But how does that work”_?
 
 That’s where it gets spicy.
 
-^^^^
+________________
 [1] One might consider this my _Walden_ moment. On the other hand, you wouldn’t be
 blamed for thinking “Steven, you’re watching Bon Appetit in your apartment.
 You’re not in a remote New England cabin.” Consider, however, that Thoreau’s
