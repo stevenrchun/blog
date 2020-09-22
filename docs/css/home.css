@@ -27,6 +27,10 @@ li > h4:hover {
   text-shadow: 1px 1px black, 2px 2px black;
 }
 
+.article-list {
+  list-style-type: none;
+}
+
 .listing-subtitle-container {
   display: flex;
 }

@@ -47,10 +47,6 @@ p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.bookt
   width: 100%;
 }
 
-li {
-  list-style-type: none;
-}
-
 /* Alternate sidenotes */
 .sidenote, .marginnote {
   font-size: 1rem;

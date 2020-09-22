@@ -38,7 +38,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://graphics8.nytimes.com/images/2005/11/28/business/28super.1841.jpg">
 <meta property="article:published_time" content="2020-09-06T07:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-06T23:17:04.345Z">
+<meta property="article:modified_time" content="2020-09-22T04:35:26.255Z">
 <meta property="article:author" content="Steven Chun">
 <meta property="article:tag" content="Computation">
 <meta property="article:tag" content="History">
@@ -418,12 +418,44 @@ implementations.</p>
 </a> of BLAS
 and LAPACK, specially optimized, like much of Apple software, for its own
 hardware.</p>
-<p>There’s a useful idea here that some constructs are so widely used that it’s
-worth a lot of effort to eek out small performance gains which then aggregate to
-huge performance gains.</p>
+<h3 id="3-Things-for-Faster-Linear-Algebra"><a href="#3-Things-for-Faster-Linear-Algebra" class="headerlink" title="3 Things for Faster Linear Algebra"></a>3 Things for Faster Linear Algebra</h3><p>This is the technical lesson sandwiched between some interesting history. LAPACK
+and BLAS take the same approach to speed at the algorithmic and operational
+level, respectively. That approach is<label for="c2336c522c3caa43e7c1ddc1071fb275529a94937211d6865469b60a8b0291b5" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="c2336c522c3caa43e7c1ddc1071fb275529a94937211d6865469b60a8b0291b5"><span class="sidenote"> This is straight from the <a href="http://www.netlib.org/lapack/lug/node61.html" target="_blank" rel="noopener" class="docMetadata" data-popup-title="Factors that Affect Performance" data-popup-image="" data-popup-abstract="Factors that Affect Performance">LAPACK user manual
+</a>.
+</span></p>
+<ol>
+<li>Vectorize</li>
+<li>Minimize Data Movement</li>
+<li>Parallelize</li>
+</ol>
+<p>Vectorization is taking advantage of hardware’s propensity for vector
+operations. You can multiply pairs of numbers together in a loop and sum them,
+but it will be faster if you compute a dot product on a row and column vector.</p>
+<p>Data movement means from different levels of memory: disk to main memory to
+cache and in and out of registers. These all are all costly. You want to spend
+your time computing floating point operations, not accessing memory. These are a
+few of Jeff Dean’s “<a href="http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/stanford-295-talk.pdf" target="_blank" rel="noopener" class="docMetadata" data-popup-title="static.googleusercontent.com/media/research.google.com/en/us/people/jeff/stanford-295-talk.pdf" data-popup-image="" data-popup-abstract="">Numbers Everyone Should Know
+</a>”:</p>
+<ul>
+<li>L1 cache reference: 0.5 ns</li>
+<li>L2 cache reference: 7 ns</li>
+<li>Main memory reference: 100 ns</li>
+<li>Read 1MB sequentially from memory: 250,000 ns</li>
+<li>Disk seek: 10,000,000 ns</li>
+</ul>
+<p>Parallelization is in the same vein as vectorization, but instead spreads a
+problem over multiple threads/processors. If there are large chunks of the
+problem that can be computed completely independently, you can reduce the time
+needed almost linearly in the number of threads.</p>
+<p>This is all a lot of work. But there’s a useful idea here that some constructs
+are so widely used that it’s worth a lot of effort to eek out small performance
+gains which then aggregate to huge performance gains.</p>
 <p>One example from a 2017 talk on Google’s<label for="04aa2b4d1a716f77545c559a01ac048a92f2ad4dd1c31988ec4cf32af492f5a3" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="04aa2b4d1a716f77545c559a01ac048a92f2ad4dd1c31988ec4cf32af492f5a3"><span class="sidenote">Disclaimer: I work at Google. I was not involved in this work.
 </span> efforts to develop faster, more
-efficient hash tables:</p>
+efficient hash tables<label for="b2b747eb91b88a372a814956c90420db0ebfcd6718c39472248007bcf6dd7ad3" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="b2b747eb91b88a372a814956c90420db0ebfcd6718c39472248007bcf6dd7ad3"><span class="sidenote"> <a href="https://www.youtube.com/watch?v=ncHmEUmJZf4&feature=youtu.be" target="_blank" rel="noopener" class="docMetadata" data-popup-title="CppCon 2017: Matt Kulukundis &quot;Designing a Fast, Efficient, Cache-friendly Hash Table, Step by Step&quot;" data-popup-image="https://i.ytimg.com/vi/ncHmEUmJZf4/maxresdefault.jpg" data-popup-abstract="http://CppCon.org — Presentation Slides, PDFs, Source Code and other presenter materials are available at: https://github.com/CppCon/CppCon2017 — Hash tables...">Source
+</a>. This is a really excellent talk even if you’re not big on C++
+internals.
+</span>:</p>
 <blockquote><p>“Hash tables are incredibly performance sensitive. At Google, right now, as I am
 speaking, in our fleet, one percent of the CPU’s are computing something in a
 hash table. As I am speaking, more than four percent of Google’s RAM is owned by

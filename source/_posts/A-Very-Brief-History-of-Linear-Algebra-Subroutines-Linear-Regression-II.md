@@ -115,9 +115,41 @@ https://developer.apple.com/documentation/accelerate/blas %}Apple’s implementa
 and LAPACK, specially optimized, like much of Apple software, for its own
 hardware.
 
-There’s a useful idea here that some constructs are so widely used that it’s
-worth a lot of effort to eek out small performance gains which then aggregate to
-huge performance gains.
+### 3 Things for Faster Linear Algebra
+
+This is the technical lesson sandwiched between some interesting history. LAPACK
+and BLAS take the same approach to speed at the algorithmic and operational
+level, respectively. That approach is[6.5]
+1. Vectorize
+2. Minimize Data Movement
+3. Parallelize
+
+
+Vectorization is taking advantage of hardware’s propensity for vector
+operations. You can multiply pairs of numbers together in a loop and sum them,
+but it will be faster if you compute a dot product on a row and column vector.
+
+
+Data movement means from different levels of memory: disk to main memory to
+cache and in and out of registers. These all are all costly. You want to spend
+your time computing floating point operations, not accessing memory. These are a
+few of Jeff Dean’s “{% preview
+http://static.googleusercontent.com/media/research.google.com/en/us/people/jeff/stanford-295-talk.pdf
+%}Numbers Everyone Should Know{% endpreview %}”:
+* L1 cache reference: 0.5 ns
+* L2 cache reference: 7 ns
+* Main memory reference: 100 ns
+* Read 1MB sequentially from memory: 250,000 ns
+* Disk seek: 10,000,000 ns
+
+Parallelization is in the same vein as vectorization, but instead spreads a
+problem over multiple threads/processors. If there are large chunks of the
+problem that can be computed completely independently, you can reduce the time
+needed almost linearly in the number of threads.
+
+This is all a lot of work. But there’s a useful idea here that some constructs
+are so widely used that it’s worth a lot of effort to eek out small performance
+gains which then aggregate to huge performance gains.
 
 One example from a 2017 talk on Google’s[7] efforts to develop faster, more
 efficient hash tables[8]:
@@ -225,6 +257,10 @@ voting system.
 
 [6] A 2-norm is just the Euclidean distance of the vector. I have no idea how it
 should interact with complex numbers. This way, I don’t have to!
+
+[6.5] This is straight from the {% preview
+http://www.netlib.org/lapack/lug/node61.html %}LAPACK user manual{% endpreview
+%}.
 
 [7] Disclaimer: I work at Google. I was not involved in this work.
 
