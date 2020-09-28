@@ -29,6 +29,7 @@ li > h4:hover {
 
 .article-list {
   list-style-type: none;
+  width: 45%;
 }
 
 .listing-subtitle-container {
