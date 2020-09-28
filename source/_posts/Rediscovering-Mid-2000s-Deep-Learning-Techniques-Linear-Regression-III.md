@@ -5,6 +5,7 @@ mathjax: true
 tags:
   - Computation
   - Deep Learning
+author: Steven Chun
 summary: This Halloween, I'm going as Yoshua Bengio.
 ---
 So far, we’ve:
