@@ -87,7 +87,9 @@ minimizing the L2 norm[6] for each data point would have to be _at least_
 linear, which is exactly what SGD appears to be.
 
 
-Speeding Up Stochastic Gradient Descent Try to answer these questions:
+## Speeding Up Stochastic Gradient Descent
+
+Try to answer these questions:
 1. What is the bottleneck in Stochastic Gradient Descent? And how many times do
    we run into that bottleneck?
 2. What is (at a hand wavy level) the bottleneck in computing the closed form
