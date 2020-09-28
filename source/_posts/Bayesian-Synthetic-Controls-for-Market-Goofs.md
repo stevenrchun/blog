@@ -326,7 +326,7 @@ and any other numbers that were sourced from that analysis. Thanks to B. Hie for
 the catch._
 
 
-^^^^
+________________
 [1] Was the first to point out, in fact, to me, via newsletter.
 I’m just summarizing here.
 

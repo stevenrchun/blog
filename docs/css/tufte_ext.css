@@ -1,24 +1,48 @@
-ol .marginnote, ul .marginnote, ol .sidenote, ul .sidenote { margin-right: -77.7%; }
-ul { list-style-type: inherit; }
+ol .marginnote, ul .marginnote, ol .sidenote, ul .sidenote {
+  margin-right: -77.7%;
+}
 
-ol { width: 45%; }
+ul {
+  list-style-type: inherit;
+}
 
-li > p, li > ul { width: initial; }
-li, li > p { margin-bottom: 0; margin-top: 0; }
+/*ol { width: 45%; }*/
 
-h1.title { width: 60%; }
-@media (max-width: 760px) { h1.title { width: 95%; } }
+li > p, li > ul {
+  width: initial;
+}
 
-pre { overflow-x: auto; }
+li, li > p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
 
-code { font-family: Source Code Pro, monospace; }
+h1.title {
+  width: 60%;
+}
 
-p > code { font-size: 1.1rem; }
+@media (max-width: 760px) {
+  h1.title {
+    width: 95%;
+  }
+}
+
+pre {
+  overflow-x: auto;
+}
+
+code {
+  font-family: Source Code Pro, monospace;
+}
+
+p > code {
+  font-size: 1.1rem;
+}
 
 article {
-    counter-reset: sidenote-counter;
+  counter-reset: sidenote-counter;
 }
 
 .sidenote, .marginnote {
-    font-size: 1.2rem;
+  font-size: 1.2rem;
 }
