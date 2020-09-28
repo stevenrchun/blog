@@ -94,16 +94,16 @@ Try to answer these questions:
    we run into that bottleneck?
 2. What is (at a hand wavy level) the bottleneck in computing the closed form
    solution for Ordinary Least Squares? And how many times do we run into that
-   bottleneck?  The answer for the first is vector vector multiplication: a 1D
-   vector of weights times a 1D vector of the chosen example. And this happens
-   many times—potentially unbounded!
+   bottleneck?
 
+The answer for the first is vector vector multiplication: a 1D
+vector of weights times a 1D vector of the chosen example. And this happens
+many times—potentially unbounded!
 
 For the second, it’s matrix matrix multiplication (mostly...for solving the
 normal equations there’s some matrix factoring going on but we’re going to file
 this under “matrix things LAPACK can handle”, so matrix multiplication). And
 this happens exactly once.
-
 
 Matrix matrix multiplication is obviously way more floating point operations
 (FLOPS, floating point operations per second, is a common measure of processor
