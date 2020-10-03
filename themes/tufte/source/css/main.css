@@ -112,6 +112,7 @@ blockquote {
 
 .pagination-container > a > p {
   margin: 0;
+  text-align: center;
 }
 
 .pagination-container > a {
