@@ -1,5 +1,5 @@
 ol .marginnote, ul .marginnote, ol .sidenote, ul .sidenote {
-  margin-right: -77.7%;
+  /* margin-right: -77.7%; makes sidenotes on list items far too wide.*/
 }
 
 ul {
