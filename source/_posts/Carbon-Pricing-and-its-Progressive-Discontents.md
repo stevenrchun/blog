@@ -4,6 +4,7 @@ date: 2021-01-24
 tags:
   - Climate
 author: Steven Chun
+summary: The progressive politics of a Carbon Dividend make it a potent tool for slowing climate change.
 twitter_image: ./thicket.jpeg
 ---
 
