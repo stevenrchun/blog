@@ -246,7 +246,7 @@ Luckily, there’s a way around all of this. A growing consensus[^16] has settle
 on a **carbon dividend**: place a fee on emissions and return all the money as a
 check to every American[^17].
 
-It’s almost poetic in its simplicity. After all, it’s everyones’_ _world that’s
+It’s almost poetic in its simplicity. After all, it’s everyones’ world that’s
 getting hotter, shouldn’t those responsible be forced to compensate...everyone?
 We avoid the polarized issue of government spending. Everyone gets a check.
 
