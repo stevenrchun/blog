@@ -89,6 +89,9 @@ hexo.extend.tag.register(
 hexo.extend.tag.register(
   'preview',
   function(args, content) {
+    // So this actually triggers the bug.
+    return content;
+    return hexo.render.renderSync({ text: content, engine: 'md' });
     const url = args[0];
     /*
     if (!hexo.config.fetch) {

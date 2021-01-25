@@ -91,6 +91,7 @@ href="https://twitter.com/AOC/status/1094623850141224962?ref_src=twsrc%5Etfw">Fe
 10, 2019</a></blockquote> <script async
 src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+
 It is a long road from Bernie Sanders’ centerpiece climate policy to “could be
 part of a solution”. Bewilderingly, this fall from grace is set against a
 backdrop of consistent support from the [scientific and economic
@@ -281,14 +282,14 @@ of $398, and the fifth and wealthiest quintile sees a cost increase of $921 and
 a dividend of $383](./ccl-costs.png "#checkscheckschecks")
 
 
-[https://citizensclimatelobby.org/household-impact-study/](https://citizensclimatelobby.org/household-impact-study/)
+Source: [https://citizensclimatelobby.org/household-impact-study/](https://citizensclimatelobby.org/household-impact-study/)
 
-
- > _Comparison of Year 1 household costs from carbon fee with Year 1 carbon
+ > Comparison of Year 1 household costs from carbon fee with Year 1 carbon
  > dividends. Direct energy is gasoline, electricity, and home heating. Indirect
  > energy is embodied energy in all other purchases. Financial asset costs
  > accrue from carbon costs incurred by businesses and passed back to owners.
- > Carbon dividends are net after personal income tax._
+ > Carbon dividends are net after personal income tax.
+
 
 So unless you make more than ~$130,000[^18] and, this is important, _burn carbon
 like someone who makes $130,000_, you’re going to be better off. Even if you
