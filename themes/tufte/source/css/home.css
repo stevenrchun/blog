@@ -28,7 +28,6 @@ li > h4:hover {
 }
 
 .article-list {
-  /* hmmm */
   list-style-type: none;
   width: 45%;
 }
