@@ -50,8 +50,10 @@ hexo.extend.tag.register(
 );
 
 async function getUrlMetadata(url) {
+  console.log('Fetching metadata for: ' + url);
   const response = await fetch(url);
   const html = await response.text();
+  console.log('Finished fetching metadata for: ' + url);
   const doc = domino.createWindow(html).document;
   const metadata = getMetadata(doc, url);
   return metadata;
@@ -72,10 +74,14 @@ function cleanHTML(str) {
 hexo.extend.tag.register(
   'large_fig',
   function(args, content) {
-    return `<div class="large-figure">`+ hexo.render.renderSync({text: content, engine: 'md'}) + `</div>`
+    return (
+      `<div class="large-figure">` +
+      hexo.render.renderSync({ text: content, engine: 'md' }) +
+      `</div>`
+    );
   },
-  {ends: true},
-)
+  { ends: true },
+);
 
 // Insert a annotated link for popups.
 // NOTE: MathJax "not being able to find a handler for document" means that the
@@ -84,12 +90,23 @@ hexo.extend.tag.register(
   'preview',
   function(args, content) {
     const url = args[0];
+    /*
     if (!hexo.config.fetch) {
       // Return a plain markdown link
+      console.log(
+        hexo.render.renderSync({
+          text: `[${content}](${url})`,
+          engine: 'md',
+        }),
+      );
       return hexo.render
-        .renderSync({ text: `[${content}](${url})`, engine: 'md' })
+        .renderSync({
+          text: `[${content}](${url})`,
+          engine: 'md',
+        })
         .replace(/<\/?p>/g, '');
     }
+    */
     return getUrlMetadata(url).then((metadata) => {
       if (metadata == null) {
         return `[${content}](${url})`;

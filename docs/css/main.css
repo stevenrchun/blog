@@ -54,6 +54,7 @@ p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.bookt
   color: #616161;
   margin-bottom: 15px;
   overflow-wrap: break-word;
+  font-style: normal;
 }
 
 .even-sidenote {

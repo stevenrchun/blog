@@ -1,4 +1,8 @@
 /* Custom code for blog */
+/* A larger font-size than Tufte css */
+html {
+  font-size: 15px;
+}
 
 /* override body to remove column positioning */
 body {
@@ -54,6 +58,7 @@ p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.bookt
   color: #616161;
   margin-bottom: 15px;
   overflow-wrap: break-word;
+  font-style: normal;
 }
 
 .even-sidenote {
