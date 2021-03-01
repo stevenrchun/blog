@@ -3,6 +3,7 @@ let kMarkdownFootnoteSplit = '## Notes';
 let kHorizontalLine = '\n --- \n';
 
 hexo.extend.filter.register('before_post_render', function(data) {
+  console.log('before post render');
   processed_content = preprocess(data.content);
   if (processed_content != null) {
     data.content = processed_content;
@@ -21,7 +22,7 @@ function preprocess(content) {
     content = insertSidenotesForMarkdown(content);
     console.log('Finished inserting sidenotes.');
     console.log('Inserting preview links...');
-    return replaceLinks(content);
+    return content;
   }
 }
 
@@ -68,7 +69,11 @@ function insertSidenotesForMarkdown(content) {
 
   // Replace sidenotes in text. We trim since GDoc2MD inserts a linebreak at the start and 4 spaces, which causes it to be interpreted as code.
   for (let [key, note] of sidenoteMap) {
-    tag = '{% sidenote %}' + note.trim() + '{% endsidenote %}';
+    // We render the inner content, so any markdown links are transformed into before tags are parsed.
+    tag =
+      '{% sidenote %}' +
+      hexo.render.renderSync({ text: note.trim(), engine: 'md' }) +
+      '{% endsidenote %}';
     textContent = textContent.replace(key, tag);
   }
   // Recombine, so that the sidenotes are also represented below.
@@ -76,12 +81,11 @@ function insertSidenotesForMarkdown(content) {
 }
 
 //TODO: enable an indicator to not replace.
+// Currently disabled.
 function replaceLinks(content) {
-  if (!hexo.config.fetch) {
-    console.log('Link fetch disabled, not replacing any links');
-    return content;
-  }
+  console.log('Link fetch disabled, using standin previews');
   console.log('replace links');
+  return content;
   // Returns an iterator in which each element has ['[abc](xyz)', 'abc', 'xyz', index, input]
   // Some idiosyncracies of this RegEx: It matches the first character before the link.
   // This is so we can exclude images, which are identical except for the !.

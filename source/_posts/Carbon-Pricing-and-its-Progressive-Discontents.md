@@ -1,12 +1,14 @@
 ---
 title: Carbon Pricing and its Progressive Discontents
 date: 2021-01-24
+mathjax: false
 tags:
   - Climate
 author: Steven Chun
 summary: The progressive politics of a Carbon Dividend make it a potent tool for slowing climate change.
 twitter_image: ./thicket.jpeg
 ---
+
 
 I am worried about progressive perceptions of carbon pricing.
 
@@ -44,14 +46,15 @@ Whenever discussion around a Green New Deal gets into specifics, some of its
 supporters seem to lightly chafe against emissions pricing, usually by omission
 but sometimes outright.
 
-For example, [HR
-109](https://www.congress.gov/bill/116th-congress/house-resolution/109/text) and
-[SR 59](https://www.congress.gov/bill/116th-congress/senate-resolution/59/text),
+For example, [HR 109](https://www.congress.gov/bill/116th-congress/house-resolution/109/text/) and
+[SR 59](https://www.congress.gov/bill/116th-congress/senate-resolution/59/text/),
 the pair of congressional resolutions which establish the spirit of the Green
 New Deal, don’t mention any form of emissions pricing. Critiques of the language
 of these resolutions have been met with the gentle reminder that they’re
 resolutions, not specific plans. They’re meant to establish urgency and vision,
-not get into details. And yet, into detail they get! Surely if “_‘smart’ power
+not get into details.
+
+And yet, into detail **they** get! Surely if “_‘smart’ power
 grids”_ and “_proven low-tech solutions that increase soil carbon storage, such
 as land preservation and afforestation”_ are not too granular to mention,
 something as simple as a price on carbon might merit a bullet point?
@@ -82,6 +85,7 @@ Congresswoman Ocasio-Cortez captures this mix of fatigue and anti-market
 sentiment pretty well,
 [tweeting](https://twitter.com/AOC/status/1094623850141224962?s=20),
 
+{% raw %}
 <blockquote class="twitter-tweet"><p lang="en" dir="ltr">For far too long, ideas
 like a carbon tax or cap-and-trade were touted as the premier solutions to
 climate change.<br><br>While those things could be *part* of a solution, the GND
@@ -90,7 +94,7 @@ Flint weren’t a “market failure.”</p>&mdash; Alexandria Ocasio-Cortez (@AO
 href="https://twitter.com/AOC/status/1094623850141224962?ref_src=twsrc%5Etfw">February
 10, 2019</a></blockquote> <script async
 src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
+{% endraw %}
 
 It is a long road from Bernie Sanders’ centerpiece climate policy to “could be
 part of a solution”. Bewilderingly, this fall from grace is set against a
@@ -280,7 +284,6 @@ sees an increase of $326 and a dividend of $455, the third sees an increase of
 $368 and a dividend of $421, the fourth sees an increase of $440 and a dividend
 of $398, and the fifth and wealthiest quintile sees a cost increase of $921 and
 a dividend of $383](./ccl-costs.png "#checkscheckschecks")
-
 
 Source: [https://citizensclimatelobby.org/household-impact-study/](https://citizensclimatelobby.org/household-impact-study/)
 
@@ -480,7 +483,7 @@ undergrad!")
 {% endlarge_fig %}
 
 
-(https://climatecommunication.yale.edu/visualizations-data/ycom-us/)
+  > Source: [Yale Climate Communication](https://climatecommunication.yale.edu/visualizations-data/ycom-us/)
 
 Basically everyone who was neutral on the idea of a carbon tax decided they were
 for it. Unfortunately, the question wording for this chart got changed from “A

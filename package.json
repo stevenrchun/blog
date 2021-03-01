@@ -22,10 +22,11 @@
         "hexo-generator-index": "^1.0.0",
         "hexo-generator-tag": "^1.0.0",
         "hexo-renderer-ejs": "^1.0.0",
-        "hexo-renderer-marked": "^2.0.0",
+        "hexo-renderer-marked": "^4.0.0",
         "hexo-renderer-stylus": "^1.1.0",
         "hexo-server": "^1.0.0",
         "js-beautify": "^1.10.3",
+        "marked": "^2.0.1",
         "node-fetch": "^2.6.1",
         "page-metadata-parser": "^1.1.4"
     },

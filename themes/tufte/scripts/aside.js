@@ -1,8 +1,10 @@
 const crypto = require('crypto');
 const util = require('util');
+const { encodeURL, isExternalLink } = require('hexo-util');
 const fetch = require('node-fetch');
 const { getMetadata } = require('page-metadata-parser');
 const domino = require('domino');
+const marked = require('marked');
 
 hexo.extend.tag.register(
   'sidenote',
@@ -89,27 +91,30 @@ hexo.extend.tag.register(
 hexo.extend.tag.register(
   'preview',
   function(args, content) {
-    // So this actually triggers the bug.
-    return content;
-    return hexo.render.renderSync({ text: content, engine: 'md' });
     const url = args[0];
-    /*
-    if (!hexo.config.fetch) {
-      // Return a plain markdown link
-      console.log(
-        hexo.render.renderSync({
-          text: `[${content}](${url})`,
-          engine: 'md',
-        }),
-      );
-      return hexo.render
-        .renderSync({
-          text: `[${content}](${url})`,
-          engine: 'md',
-        })
-        .replace(/<\/?p>/g, '');
+    if (
+      url.startsWith('javascript:') ||
+      url.startsWith('vbscript:') ||
+      url.startsWith('data:')
+    ) {
+      url = '';
     }
-    */
+    if (!hexo.config.fetch) {
+      // Return a default preview.
+      return (
+        `<a href="${url}" class="docMetadata" data-popup-title="Sample Preview" data-popup-image="https://pbs.twimg.com/media/Es3GPfxXMAkaMcK?format=jpg&name=medium" data-popup-abstract="This is a test preview, created to prevent firing tons of metadata requests during development">` +
+        marked.parseInline(content) +
+        '</a>'
+      );
+    }
+
+    let target = '_self';
+    let rel = 'nooponer';
+    if (isExternalLink(url, hexo.config.url)) {
+      target = '_blank';
+      rel += ' ' + 'external';
+    }
+
     return getUrlMetadata(url).then((metadata) => {
       if (metadata == null) {
         return `[${content}](${url})`;
@@ -130,7 +135,11 @@ hexo.extend.tag.register(
         metadata.image = '';
       }
       return (
-        `<a href="${url}" class="docMetadata" data-popup-title="${title}" data-popup-image="${metadata.image}" data-popup-abstract="${abstract}">` +
+        `<a href="${encodeURL(
+          url,
+        )}" class="docMetadata" data-popup-title="${title}" data-popup-image="${
+          metadata.image
+        }" data-popup-abstract="${abstract}" target="${target}" rel="${rel}">` +
         hexo.render
           .renderSync({ text: content, engine: 'md' })
           .replace(/<\/?p>/g, '') +
