@@ -59,7 +59,6 @@ highlight:
 # Marked renderer
 marked:
   breaks: false
-  autolink: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
