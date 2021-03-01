@@ -1,0 +1,62 @@
+body {
+  background-color: #fdfaf3;
+}
+
+article {
+  padding: 0 0 5rem 0;
+}
+
+p > img {
+  display: block;
+  margin: auto;
+}
+
+.content {
+  width: 45%;
+}
+
+.large-figure > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.large-figure > p > img {
+  max-width: 150%;
+}
+
+/* Make display mathjax larger than inline
+ * and allow overflow while centering*/
+mjx-container[jax="SVG"][display="true"].MathJax {
+  font-size: 1.4em;
+  display: flex;
+  justify-content: center;
+  overflow: visible;
+}
+
+/* override tufte blockquotes to make full width */
+blockquote p {
+  width: 100%;
+  font-style: italic;
+}
+
+blockquote footer {
+  width: 100%;
+  font-size: 1.1rem;
+  text-align: right;
+}
+
+footer > a {
+  text-decoration: underline;
+}
+
+
+@media screen and (max-width: 760px) {
+  .content {
+    width: 90%;
+  }
+
+  mjx-container[jax="SVG"][display="true"].MathJax > svg {
+    width: 100%;
+  }
+}

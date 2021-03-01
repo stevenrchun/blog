@@ -1,0 +1,57 @@
+body {
+  background-color: #EFC000;
+  /* background-color: #113D30; Good for homepage w white text though! */
+}
+
+.pine {
+  height: 100%;
+  width: 4rem;
+  padding: 5px 5px 0 5px;
+  border-bottom: 2px solid black;
+}
+
+li > h4 {
+  color: #BE7798;
+  color: black;
+}
+
+li > h4:hover {
+  text-decoration: underline;
+}
+
+.header > h3 {
+  color: black;
+}
+
+.header > h3:hover {
+  text-shadow: 1px 1px black, 2px 2px black;
+}
+
+.article-list {
+  list-style-type: none;
+  width: 45%;
+}
+
+.listing-subtitle-container {
+  display: flex;
+}
+
+.listing-subtitle-container > p {
+  margin-top: 0;
+  width: inherit;
+  margin-right: .4rem;
+}
+
+.listing-subtitle-container > a {
+  text-decoration: underline;
+}
+
+.listing-subtitle-container > em {
+  white-space: pre;
+}
+
+@media screen and (max-width: 760px) {
+  .article-list {
+    width: 85%;
+  }
+}

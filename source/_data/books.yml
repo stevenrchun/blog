@@ -13,19 +13,54 @@ Seveneves:
     Stephenson, who worked at Blue Origin, is in fact so rigorous that it can feel impossible to *unsuspend* disbelief. Can't recommend enough; bonus if
     you're looking for something with whip-crack smart, well-written female leads.
 
-The Path to Power:
-  favorite: false
-  ISBN: 0-679-72945-3
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/51XOGLoW9lL.jpg
-  author: Robert Caro
-  read: false
 
-Deep Learning:
+A Gentleman in Moscow:
+  favorite: true
+  ISBN: 978-0670026197
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SY346_.jpg
+  author: Amor Towles
+  read: true
+
+The Kingkiller Chronicles:
+  favorite: true
+  ISBN: 978-0756404079
+  cover_link: https://m.media-amazon.com/images/I/51MUF7bj-lL.jpg
+  author: Patrick Rothfuss
+  read: true
+
+The Right Stuff:
+  ISBN: 978-0312427566
+  favorite: true
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/41ykmq1e0tL._SX330_BO1,204,203,200_.jpg
+  author: Tom Wolfe
+  read: true
+
+The Mezzanine:
   favorite: false
-  ISBN: 978-0262035613
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/61AWo6sS%2B-L._SX378_BO1,204,203,200_.jpg
-  author: Goodfellow, Bengio, & Courville
-  read: false
+  ISBN: 978-1555842581
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51Z83j7pGDL._SX283_BO1,204,203,200_.jpg
+  author: Nicholson Baker
+  read: true
+
+A Beautiful Mind:
+  favorite: false
+  ISBN: 978-0684819068
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/5153Ab1TKeL._SX333_BO1,204,203,200_.jpg
+  author: Sylvia Nasar
+  read: true
+
+His Dark Materials:
+  favorite: false
+  ISBN: 978-0679879244
+	cover_link: https://images-na.ssl-images-amazon.com/images/I/51NH3umDslL._SX334_BO1,204,203,200_.jpg
+  author: Philip Pullman
+  read: true
+
+Dune:
+  favorite: true
+  ISBN: 978-0143111580
+  cover_link: https://m.media-amazon.com/images/I/41UZeCEKOBL._SY346_.jpg
+  author: Frank Herbert
 
 "The Vital Question: The Origins of Complex Life":
   favorite: false
@@ -34,12 +69,6 @@ Deep Learning:
   author: Nick Lane
   read: true
 
-A Gentleman in Moscow:
-  favorite: false
-  ISBN: 978-0670026197
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/51T7zMDV9xL._SY346_.jpg
-  author: Amor Towles
-  read: true
 
 'How to Travel with a Salmon: And Other Essays':
   favorite: false
@@ -53,7 +82,7 @@ The Planet Remade:
   ISBN: 9780691148250
   cover_link: https://pup-assets.imgix.net/onix/images/9780691148250.jpg?w=640
   author: Oliver Morton
-  read: false
+  read: true
 
 Billion Dollar Whale:
   favorite: false
@@ -123,13 +152,6 @@ Amazon’s Antitrust Paradox:
   author: Lina Khan
   read: true
 
-The Right Stuff:
-  ISBN: 978-0312427566
-  favorite: true
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/41ykmq1e0tL._SX330_BO1,204,203,200_.jpg
-  author: Tom Wolfe
-  read: true
-
 The Paris Review Interviews, Vol. I:
   ISBN: 978-0312361754
   cover_link: https://images-na.ssl-images-amazon.com/images/I/41o1DXR9SaL._SX331_BO1,204,203,200_.jpg
@@ -139,3 +161,18 @@ Trick Mirror:
   ISBN: 978-0525510543
   cover_link: https://m.media-amazon.com/images/I/51xau4YNRLL.jpg
   author: Jia Tolentino
+
+The Path to Power:
+  favorite: false
+  ISBN: 0-679-72945-3
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/51XOGLoW9lL.jpg
+  author: Robert Caro
+  read: false
+
+
+    # Deep Learning:
+    #   favorite: false
+    #   ISBN: 978-0262035613
+    #   cover_link: https://images-na.ssl-images-amazon.com/images/I/61AWo6sS%2B-L._SX378_BO1,204,203,200_.jpg
+    #   author: Goodfellow, Bengio, & Courville
+    #   read: false
