@@ -8,6 +8,9 @@ summary: Look, I don't know. It seemed like a good idea at the time.
 twitter_image: https://imgur.com/a/lSruREG
 ---
 
+(Apparently there is a big heading that says 'undefined' on top of this post. I
+don't know why. This isn't some artsy thing, this is software being insane.)
+
 I know what this looks like. And you’re not entirely wrong, either.
 
 <p>Yes, I—a young, recent college graduate living in San Francisco and working in the technology industry—have decided to start a blog. Being an occasional consumer of blogs much like this, I’m fully aware that this is the second most common and least differentiable sort of writing, right behind healthy eating recipes. But, Dear Reader, this blog isn’t really for you. This blog is for me. I thought the reasons why that’s true might make for a good first blog post.</p>
