@@ -54,7 +54,7 @@ of these resolutions have been met with the gentle reminder that they’re
 resolutions, not specific plans. They’re meant to establish urgency and vision,
 not get into details.
 
-And yet, into detail **they** get! Surely if “_‘smart’ power
+And yet, into detail they get! Surely if “_‘smart’ power
 grids”_ and “_proven low-tech solutions that increase soil carbon storage, such
 as land preservation and afforestation”_ are not too granular to mention,
 something as simple as a price on carbon might merit a bullet point?
@@ -72,6 +72,51 @@ scorecard](https://web.archive.org/web/20200317124840/https://scorecard.sunrisem
 chiefly rated candidates on how their climate plan aligned with the tenets of a
 Green New Deal. Out of the many specific policy dimensions candidates were
 ranked against, no mention of emissions pricing[^2].
+
+---
+### <Update as of May 2021>
+
+I no longer think this is totally fair. The population of
+people who like the Green New Deal is huge. It includes me! Our views on emissions pricings
+are likely deeply heterogeneous.
+
+In particular, what changed my mind was this interview Noah Smith did with Saikat Chakrabarti, who helped
+formulate AOC's original Green New Deal. Instead of reading beteen the lines of
+the House & Senate resolutions you could just like, ask the guy. That's what
+Noah did and it resulted in a quote I really like.
+
+ > Noah: "So it sounds like to a large extent, the Green New Deal was about changing attitudes and approaches within the environmental movement. You seem to want to steer environmentalists away from the idea of degrowth, away from thinking of climate change as a lifestyle issue, and away from market-based tools like carbon taxes. Is that right? To what extent do you think that has succeeded? Has the environmental movement learned how to embrace green growth and industrial policy?"
+
+ > Saikat: "On the first question: sort of. We do want to steer people away from the idea of degrowth and climate change as a lifestyle issue, but we aren't against market-based tools like carbon taxes. These solutions are just nowhere close to being enough to reverse climate change on their own, and they often don’t make sense to use as a first step. **But in DC, they were sucking up nearly 100% of the oxygen on climate change proposals because they were very convenient for solving the political problem of DC bipartisanship.**[emphasis my own]"
+
+[Read it for yourself](https://noahpinion.substack.com/p/interview-saikat-chakrabarti-creator)!
+
+I think the quote about sucking up nearly 100% of the oxygen on climate change
+proposals is absolutely true, and a good reason to be tired of those beating the
+never ending pigouvian drum.
+
+I still wish carbon dividends got more of the oxygen pie. I think the rest of
+this should read now as less "Oh no, the Left hates market-based climate policy,
+that's bad."
+and more "The (fair) pushback from carbon taxes among the Left has hamstrung a carbon
+dividend. This is not so good."
+
+Noah Smith also has a piece on [the failures of climate
+economics](https://noahpinion.substack.com/p/why-has-climate-economics-failed).
+It talks about the overemphasis on carbon taxes and particularly on the free
+rider problem that arises when you try to convince other countries to adopt
+carbon taxes. This is a good point! And a good reason to believe that global
+carbon taxes are unlikely. But it doesn't change the validity of green checks as
+domestic policy, as a way to eliminate implicit fossil fuel subsidies and as a
+way to make real the benefits of climate policy.
+
+Updating your beliefs! Hearing from people you thought you disagreed with, only
+to realize you agree on a lot more than you think! That's the goodstuff.
+
+Ok, back to the piece.
+
+---
+
 
 #### III.
 
