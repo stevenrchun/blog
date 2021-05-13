@@ -43,7 +43,12 @@ p > a {
 }
 
 h1.title {
-  width: 100%
+  width: 100%;
+}
+
+blockquote > p > strong {
+  /* There's not bold & italic font for et-book, and the synthetic bolding can look blurry depending on zoom level. */
+  font-style: normal;
 }
 
 p, footer, table, div.table-wrapper-small, div.supertable-wrapper > p, div.booktabs-wrapper {

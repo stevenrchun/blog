@@ -87,7 +87,7 @@ Noah did and it resulted in a quote I really like.
 
  > Noah: "So it sounds like to a large extent, the Green New Deal was about changing attitudes and approaches within the environmental movement. You seem to want to steer environmentalists away from the idea of degrowth, away from thinking of climate change as a lifestyle issue, and away from market-based tools like carbon taxes. Is that right? To what extent do you think that has succeeded? Has the environmental movement learned how to embrace green growth and industrial policy?"
 
- > Saikat: "On the first question: sort of. We do want to steer people away from the idea of degrowth and climate change as a lifestyle issue, but we aren't against market-based tools like carbon taxes. These solutions are just nowhere close to being enough to reverse climate change on their own, and they often don’t make sense to use as a first step. **But in DC, they were sucking up nearly 100% of the oxygen on climate change proposals because they were very convenient for solving the political problem of DC bipartisanship.**[emphasis my own]"
+ > Saikat: "On the first question: sort of. We do want to steer people away from the idea of degrowth and climate change as a lifestyle issue, but we aren't against market-based tools like carbon taxes. These solutions are just nowhere close to being enough to reverse climate change on their own, and they often don’t make sense to use as a first step. **But in DC, they were sucking up nearly 100% of the oxygen on climate change proposals because they were very convenient for solving the political problem of DC bipartisanship.[emphasis my own]**"
 
 [Read it for yourself](https://noahpinion.substack.com/p/interview-saikat-chakrabarti-creator)!
 
