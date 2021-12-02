@@ -38,7 +38,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://graphics8.nytimes.com/images/2005/11/28/business/28super.1841.jpg">
 <meta property="article:published_time" content="2020-09-06T07:00:00.000Z">
-<meta property="article:modified_time" content="2020-09-22T04:35:26.255Z">
+<meta property="article:modified_time" content="2021-12-02T07:24:16.773Z">
 <meta property="article:author" content="Steven Chun">
 <meta property="article:tag" content="Computation">
 <meta property="article:tag" content="History">
@@ -315,8 +315,8 @@ mjx-container + br {
     <p>Consider some features <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.928ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 852 683" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-58"></use></g></g></g></svg></mjx-container> and some labels <mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="1.109ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 490 647" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><use xlink:href="#MJX-TEX-I-79"></use></g></g></g></svg></mjx-container>.</p>
 <p>Then, navigate the quagmire that is Python dependency management and survive
 having multiple versions of Python installed on your machine with your sanity
-mostly intact<label for="6358c1747b6857693f9b56e6baee1b5fc9e4919b4c883fad1a22799a9afe45cc" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="6358c1747b6857693f9b56e6baee1b5fc9e4919b4c883fad1a22799a9afe45cc"><span class="sidenote"> For this, the sanity maintenance I mean, I like a combination of <a href="https://pipenv.pypa.io/en/latest/" class="docMetadata" data-popup-title="Pipenv: Python Dev Workflow for Humans — pipenv 2020.11.16.dev0 documentation" data-popup-image="" data-popup-abstract="" target="_blank" rel="nooponer external">pipenv
-</a> for projects and <a href="https://github.com/pyenv/pyenv" class="docMetadata" data-popup-title="pyenv/pyenv" data-popup-image="https://avatars.githubusercontent.com/u/16530698?s=400&v=4" data-popup-abstract="Simple Python version management. Contribute to pyenv/pyenv development by creating an account on GitHub." target="_blank" rel="nooponer external">pyenv
+mostly intact<label for="ad48fd127cf586c85d0ccf126ff0d48ba27d866c48a50d3dfbbac578f2aa76a6" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="ad48fd127cf586c85d0ccf126ff0d48ba27d866c48a50d3dfbbac578f2aa76a6"><span class="sidenote"> For this, the sanity maintenance I mean, I like a combination of <a href="https://pipenv.pypa.io/en/latest/" class="docMetadata" data-popup-title="Pipenv: Python Dev Workflow for Humans — pipenv 2021.11.23 documentation" data-popup-image="" data-popup-abstract="" target="_blank" rel="nooponer external">pipenv
+</a> for projects and <a href="https://github.com/pyenv/pyenv" class="docMetadata" data-popup-title="GitHub - pyenv/pyenv: Simple Python version management" data-popup-image="https://opengraph.githubassets.com/4e0468a1f6106ade0793d0225099a335368ff724e58b2bdf0e26eea2b7f7f7bc/pyenv/pyenv" data-popup-abstract="Simple Python version management. Contribute to pyenv/pyenv development by creating an account on GitHub." target="_blank" rel="nooponer external">pyenv
 </a> for changing my global python version.
 </span>.</p>
 <p>And run something like this</p>
@@ -341,10 +341,10 @@ run an ill advised regression for a term paper. This is not a particularly
 technical post, as I don’t think I could do justice to the hardware
 optimizations involved. Instead, we’ll dig into modern linear regression as a
 way to develop a mental picture of the structures involved.</p>
-<p>Scikit’s <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" class="docMetadata" data-popup-title="sklearn.linear_model.LinearRegression — scikit-learn 0.24.1 documentation" data-popup-image="" data-popup-abstract="" target="_blank" rel="nooponer external">documentation
+<p>Scikit’s <a href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html" class="docMetadata" data-popup-title="sklearn.linear_model.LinearRegression" data-popup-image="https://scikit-learn.org/stable/_images/sphx_glr_plot_pcr_vs_pls_thumb.png" data-popup-abstract="Examples using sklearn.linear_model.LinearRegression: Principal Component Regression vs Partial Least Squares Regression Principal Component Regression vs Partial Least Squares Regression, Plot ind..." target="_blank" rel="nooponer external">documentation
 </a> mentions that its LinearRegression model is “just plain Ordinary Least Squares (scipy.linalg.lstsq)”. Okay, what is
 Scipy doing?</p>
-<p>A cursory examination of the <a href="https://github.com/scipy/scipy/blob/99b8660a5bb838cfcebf5e9e63512aed982a40e8/scipy/linalg/basic.py#L1047" class="docMetadata" data-popup-title="scipy/scipy" data-popup-image="https://avatars.githubusercontent.com/u/288277?s=400&v=4" data-popup-abstract="Scipy library main repository. Contribute to scipy/scipy development by creating an account on GitHub." target="_blank" rel="nooponer external">code for scipy.linalg.lstsq
+<p>A cursory examination of the <a href="https://github.com/scipy/scipy/blob/99b8660a5bb838cfcebf5e9e63512aed982a40e8/scipy/linalg/basic.py#L1047" class="docMetadata" data-popup-title="scipy/basic.py at 99b8660a5bb838cfcebf5e9e63512aed982a40e8 · scipy/scipy" data-popup-image="https://opengraph.githubassets.com/09569a7f463965be42c10618968e8557c3a311cd88a177dad193ce4660a2cab0/scipy/scipy" data-popup-abstract="SciPy library main repository. Contribute to scipy/scipy development by creating an account on GitHub." target="_blank" rel="nooponer external">code for scipy.linalg.lstsq
 </a> reveals that
 it…doesn’t do anything? It checks for any mismatch in the shapes of the
 input, but there’s no matrix factoring, not even a dot product.</p>
@@ -393,11 +393,14 @@ parallel, processors; and that made it stupid fast. Of course, you can’t write
 library that’ll be optimal for all architectures. You have different cache
 sizes; you might have an L3 or L4 cache. But LAPACK didn’t need to, because it
 wasn’t actually doing the low-level calculations. For that, it relied on
-whatever Basic Linear Algebra Subroutines—BLAS<label for="ba8199b492f8b29f3f0e15894be4f4480ae347e4802068479deb672924c470c2" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="ba8199b492f8b29f3f0e15894be4f4480ae347e4802068479deb672924c470c2"><span class="sidenote"> Obviously. Honestly, I’m way more in on the all-cap, pronounceable acronym,
+whatever Basic Linear Algebra Subroutines—BLAS<label for="715babb5d6d53f4777ac2b49dccea04b43990752d7dd34e2273cd53d28f13176" class="sidenote-number margin-toggle"></label><input type="checkbox" class="margin-toggle" id="715babb5d6d53f4777ac2b49dccea04b43990752d7dd34e2273cd53d28f13176"><span class="sidenote"> Obviously. Honestly, I’m way more in on the all-cap, pronounceable acronym,
 compared to like, the current state of open source naming. I mean look at the
 <a href="https://www.apache.org/index.html#projects-list" class="docMetadata" data-popup-title="Welcome to The Apache Software Foundation!" data-popup-image="" data-popup-abstract="Home page of The Apache Software Foundation" target="_blank" rel="nooponer external">list of projects
-</a> under the Apache Foundation. What is this…{% preview http://guacamole.apache.org/ %} Guacamole {% endpreview %}? {% preview http://kafka.apache.org/ %} Kafka {% endpreview %}?
-Oh God, there’s a project called {% preview http://chemistry.apache.org/ %} Chemistry {% endpreview %}, please let it have something to do
+</a> under the Apache Foundation. What is this…<a href="http://guacamole.apache.org/" class="docMetadata" data-popup-title="Apache Guacamole™" data-popup-image="" data-popup-abstract="" target="_blank" rel="nooponer external">Guacamole
+</a>? <a href="http://kafka.apache.org/" class="docMetadata" data-popup-title="Apache Kafka" data-popup-image="http://apache-kafka.org/images/apache-kafka.png" data-popup-abstract="Apache Kafka: A Distributed Streaming Platform." target="_blank" rel="nooponer external">Kafka
+</a>?
+Oh God, there’s a project called <a href="http://chemistry.apache.org/" class="docMetadata" data-popup-title="Apache Chemistry - Index" data-popup-image="" data-popup-abstract="Apache Chemistry, CMIS Implementation" target="_blank" rel="nooponer external">Chemistry
+</a>, please let it have something to do
 with—No. From its homepage: “Important time-saving note for chemists: the Apache
 Chemistry project has nothing to do with chemistry or chemicals!” It’s a CMS
 interoperability standard. And Steve? Steve is the Foundation’s python-based
