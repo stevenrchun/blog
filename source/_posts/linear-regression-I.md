@@ -577,7 +577,7 @@ Basically, it has structure and isn’t jumping all over the place.
 [24] Matrices are denoted number of rows by number of columns. In this case,
 each row of $X$ is a point in our dataset with $k$ features.
 
-[25] This section is largely sourced from [here](https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf)
+[25] This section is largely sourced from {% preview https://web.stanford.edu/~mrosenfe/soc_meth_proj3/matrix_OLS_NYU_notes.pdf %}here{% endpreview %}
 
 [26] written as $^T$ or $^\prime$, the transpose flips x and y dimensions, so our column
 vector is now a row vector.
@@ -607,7 +607,7 @@ a phrase that haunted nearly 4 _centuries_ of mathematicians.
   $$<br/><br/>
   And here we can see that these last two results are the same summation, just
   with their members flipped around. **Q.E.D**<br/>
-  [Source](http://www.math.ucdenver.edu/~esulliva/LinearAlgebra/ABT.pdf)
+  {% preview http://www.math.ucdenver.edu/~esulliva/LinearAlgebra/ABT.pdf %}Source{% endpreview %}
 
 
 [29] That is, like we mentioned, as long as there’s no perfect

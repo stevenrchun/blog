@@ -248,8 +248,8 @@ learn about what you’re writing about.
 
 [5] Obviously. Honestly, I’m way more in on the all-cap, pronounceable acronym,
 compared to like, the current state of open source naming. I mean look at the
-{% preview https://www.apache.org/index.html#projects-list %}list of projects{% endpreview %} under the Apache Foundation. What is this...[Guacamole](http://guacamole.apache.org/)? [Kafka](http://kafka.apache.org/)?
-Oh God, there’s a project called [Chemistry](http://chemistry.apache.org/), please let it have something to do
+{% preview https://www.apache.org/index.html#projects-list %}list of projects{% endpreview %} under the Apache Foundation. What is this...{% preview http://guacamole.apache.org/ %}Guacamole{% endpreview %}? {% preview http://kafka.apache.org/ %}Kafka{% endpreview %}?
+Oh God, there’s a project called {% preview http://chemistry.apache.org/ %}Chemistry{% endpreview %}, please let it have something to do
 with—No. From its homepage: “Important time-saving note for chemists: the Apache
 Chemistry project has nothing to do with chemistry or chemicals!” It’s a CMS
 interoperability standard. And Steve? Steve is the Foundation’s python-based
