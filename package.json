@@ -26,7 +26,7 @@
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
     "js-beautify": "^1.10.3",
-    "marked": "^2.0.1",
+    "marked": "^4.0.10",
     "node-fetch": "^2.6.1",
     "page-metadata-parser": "^1.1.4"
   },
