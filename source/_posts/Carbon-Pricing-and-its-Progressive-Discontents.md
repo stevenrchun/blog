@@ -330,7 +330,7 @@ $368 and a dividend of $421, the fourth sees an increase of $440 and a dividend
 of $398, and the fifth and wealthiest quintile sees a cost increase of $921 and
 a dividend of $383](./ccl-costs.png "#checkscheckschecks")
 
-Source: [https://citizensclimatelobby.org/household-impact-study/](https://citizensclimatelobby.org/household-impact-study/)
+ > Source: [citizensclimatelobby.org/household-impact-study/](https://citizensclimatelobby.org/household-impact-study/)
 
  > Comparison of Year 1 household costs from carbon fee with Year 1 carbon
  > dividends. Direct energy is gasoline, electricity, and home heating. Indirect
