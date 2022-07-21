@@ -9,7 +9,6 @@ summary: The progressive politics of a Carbon Dividend make it a potent tool for
 twitter_image: ./thicket.jpeg
 ---
 
-
 I am worried about progressive perceptions of carbon pricing.
 
 But first, a word from our sponsor.

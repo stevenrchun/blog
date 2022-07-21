@@ -12,7 +12,7 @@ language: en
 timezone: ''
 
 # Preprocessing
-fetch: false # don't want to fetch everytime while debugging, because it's a lot of requests :(
+fetch: true # don't want to fetch everytime while debugging, because it's a lot of requests :(
 show_drafts: false # so I can check out what's cooking.
 
 # URL
@@ -50,7 +50,7 @@ relative_link: false
 future: true
 highlight:
   enable: true
-  line_number: true
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
@@ -66,7 +66,7 @@ marked:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 8
+  per_page: 100
   order_by: -date
 
 # Category & Tag
