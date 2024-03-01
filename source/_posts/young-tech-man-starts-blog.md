@@ -143,7 +143,7 @@ knows.
   condescends, “At one point one of the policemen tripped and fell, but I was on
   my feet all the way, a point to take no vast pride in because the cops were
   smaller than me, and did not know how to fight.” He then represents himself in
-  court, swearing in his wife and _the journalist from the New Yorker _as
+  court, swearing in his wife and _the journalist from the New Yorker_ as
   witnesses. He wins. Despite being, at one point, a finalist for a prize named
   after Mailer, I do not know how to fight.
 
@@ -165,7 +165,7 @@ knows.
 
 [^6]: What? It’s fun.
 
-[^7]: Because I’ll _assay _(from the French “to try, _essayer_”) to understand
-  something and then write an _essay _about it, eh? I am not fun at parties.
+[^7]: Because I’ll _assay_ (from the French “to try, _essayer_ ”) to understand
+  something and then write an _essay_ about it, eh? I am not fun at parties.
 
 [^8]: I think I found this on HackerNews, where I find a lot of things.
