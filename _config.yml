@@ -12,7 +12,7 @@ language: en
 timezone: ''
 
 # Preprocessing
-fetch: false # don't want to fetch everytime while debugging, because it's a lot of requests :(
+fetch: true # don't want to fetch everytime while debugging, because it's a lot of requests :(
 show_drafts: false # so I can check out what's cooking.
 
 # URL

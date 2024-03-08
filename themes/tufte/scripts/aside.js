@@ -88,6 +88,8 @@ hexo.extend.tag.register(
 // Insert a annotated link for popups.
 // NOTE: MathJax "not being able to find a handler for document" means that the
 // text isn't parsing as valid html, likely a un-closed tag.
+// It seems that tags are rendered in-order for each post but concurrently across
+// posts: https://github.com/hexojs/hexo/pull/4926
 hexo.extend.tag.register(
   'preview',
   function(args, content) {
