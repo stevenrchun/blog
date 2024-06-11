@@ -15,12 +15,15 @@
 
 // For an example of a Hakyll library which generates annotations for Wikipedia/Biorxiv/Arxiv/PDFs/arbitrarily-defined links, see https://www.gwern.net/LinkMetadata.hs ; for a live demonstration, see the links in https://www.gwern.net/newsletter/2019/07
 
+// Modified by Steven Chun
+// Date: 2020-04-23
+
 Extracts = {
-  popupStylesID: 'popups-styles',
-  popupContainerID: 'popup-container',
-  popupContainerParentSelector: 'html',
+  popupStylesID: "popups-styles",
+  popupContainerID: "popup-container",
+  popupContainerParentSelector: "html",
   //targetElementsSelector: "#markdownBody a.docMetadata, #markdownBody a[href^='./images/'], #markdownBody a[href^='../images/'], #markdownBody a[href*='youtube.com'], #markdownBody a[href*='youtu.be'], #TOC a",
-  targetElementsSelector: 'a.docMetadata',
+  targetElementsSelector: "a.docMetadata",
   minPopupWidth: 260,
   maxPopupWidth: 320,
   popupBorderWidth: 3.0,
@@ -37,13 +40,16 @@ Extracts = {
   popup: null,
   encoder: new TextEncoder(),
   isMobileMediaQuery: matchMedia(
-    'not screen and (hover:hover) and (pointer:fine)',
+    "not screen and (hover:hover) and (pointer:fine)",
   ),
   extractForTarget: (target) => {
-    var doi = '';
+    var doi = "";
     // Create link to archive
-    let internetArchiveLink = 'https://web.archive.org/web/' + target.href;
-    let archive = `<a class="archive" href="${internetArchiveLink}">[archive]</a>`;
+    let internetArchiveLink = "https://web.archive.org/web/";
+    // But only if the link itself doesn't point to the IA already.
+    let archive = target.href.startsWith(internetArchiveLink)
+      ? ``
+      : `<a class="archive" href="${internetArchiveLink + target.href}">[archive]</a>`;
 
     if (target.dataset.popupDoi != undefined) {
       doi =
@@ -52,7 +58,7 @@ Extracts = {
         `target='_new' ` +
         `title="Reverse citations of the paper '${target.dataset.popupTitle}' with DOI '${target.dataset.popupDoi}' in Semantic Scholar">` +
         `citations</a>`;
-    } else if (target.href.includes('pdf')) {
+    } else if (target.href.includes("pdf")) {
       doi =
         `; ` +
         `<a href="https://ricon.dev/citations_for_title?title=%22${target.dataset.popupTitle}%22" ` +
@@ -71,8 +77,8 @@ Extracts = {
     let uri = new URL(target.href);
     const kMaxDescriptionChars = 140;
     const kMaxTitleChars = 80;
-    let image = '';
-    if (target.dataset.popupImage != '') {
+    let image = "";
+    if (target.dataset.popupImage != "") {
       image = `<div class='popup-image' style="background-image:
                url(${target.dataset.popupImage})"></div>`;
     }
@@ -84,7 +90,7 @@ Extracts = {
           href='${target.href}'
           title='${target.href}'>
           <h4>
-          ${target.dataset.popupTitle.substring(0, kMaxTitleChars) || ''}
+          ${target.dataset.popupTitle.substring(0, kMaxTitleChars) || ""}
           </h4>
       </a>` +
       `</div>` +
@@ -94,7 +100,7 @@ Extracts = {
       `</div>` +
       image +
       `<div class='data-field abstract' onclick='parentNode.remove()'>` +
-      `${abstract.substring(0, kMaxDescriptionChars) || ''}` +
+      `${abstract.substring(0, kMaxDescriptionChars) || ""}` +
       `</div>` +
       `</div>`
     );
@@ -106,7 +112,7 @@ Extracts = {
     if (match && match[2].length == 11) {
       return match[2];
     } else {
-      return '';
+      return "";
     }
   },
   videoForTarget: (target, videoId) => {
@@ -118,8 +124,9 @@ Extracts = {
     );
   },
   sectionEmbedForTarget: (target) => {
-    let targetSectionHTML = document.querySelector(target.getAttribute('href'))
-      .innerHTML;
+    let targetSectionHTML = document.querySelector(
+      target.getAttribute("href"),
+    ).innerHTML;
     return `<div class='popup-section-embed'>${targetSectionHTML}</div>`;
   },
   localImageForTarget: (target) => {
@@ -130,18 +137,18 @@ Extracts = {
       .querySelectorAll(Extracts.targetElementsSelector)
       .forEach((target) => {
         //  Unbind existing mouseover/mouseout events, if any.
-        target.removeEventListener('mouseover', Extracts.targetover);
-        target.removeEventListener('mouseout', Extracts.targetout);
+        target.removeEventListener("mouseover", Extracts.targetover);
+        target.removeEventListener("mouseout", Extracts.targetout);
         target.onclick = () => {};
       });
     if (Extracts.popupContainer)
       Extracts.popupContainer.removeEventListener(
-        'mouseup',
+        "mouseup",
         Extracts.popupContainerClicked,
       );
   },
   cleanup: () => {
-    console.log('popups.js: Cleaning up...');
+    console.log("popups.js: Cleaning up...");
 
     //  Unbind event listeners.
     Extracts.unbind();
@@ -158,19 +165,19 @@ Extracts = {
     Extracts.cleanup();
 
     if (
-      'ontouchstart' in document.documentElement &&
+      "ontouchstart" in document.documentElement &&
       Extracts.isMobileMediaQuery.matches
     ) {
-      console.log('Mobile client detected. Exiting.');
+      console.log("Mobile client detected. Exiting.");
       return;
     } else {
-      console.log('popups.js: Setting up...');
+      console.log("popups.js: Setting up...");
     }
 
     //  Inject styles.
     document
-      .querySelector('head')
-      .insertAdjacentHTML('beforeend', Extracts.popupStylesHTML);
+      .querySelector("head")
+      .insertAdjacentHTML("beforeend", Extracts.popupStylesHTML);
 
     //  Inject popups container.
     var popupContainerParent = document.querySelector(
@@ -179,7 +186,7 @@ Extracts = {
     document
       .querySelector(Extracts.popupContainerParentSelector)
       .insertAdjacentHTML(
-        'beforeend',
+        "beforeend",
         `<div id='${Extracts.popupContainerID}'></div>`,
       );
     requestAnimationFrame(() => {
@@ -187,7 +194,7 @@ Extracts = {
         `#${Extracts.popupContainerID}`,
       );
       Extracts.popupContainer.addEventListener(
-        'mouseup',
+        "mouseup",
         Extracts.popupContainerClicked,
       );
     });
@@ -197,11 +204,11 @@ Extracts = {
       .querySelectorAll(Extracts.targetElementsSelector)
       .forEach((target) => {
         //  Bind mousemover/mouseout events.
-        target.addEventListener('mouseover', Extracts.targetover);
-        target.addEventListener('mouseout', Extracts.targetout);
+        target.addEventListener("mouseover", Extracts.targetover);
+        target.addEventListener("mouseout", Extracts.targetout);
 
         //  Remove the title attribute.
-        target.removeAttribute('title');
+        target.removeAttribute("title");
         target.onclick = () => {
           return false;
         };
@@ -210,8 +217,8 @@ Extracts = {
   //  The mouseover event.
   targetover: (event) => {
     //  Get the target.
-    let target = event.target.closest('a');
-    if (target.classList.contains('footnote-ref')) return;
+    let target = event.target.closest("a");
+    if (target.classList.contains("footnote-ref")) return;
 
     event.preventDefault();
 
@@ -225,7 +232,8 @@ Extracts = {
     Extracts.popupSpawnTimer = setTimeout(() => {
       target.onclick = () => {};
 
-      let popupContainerViewportRect = Extracts.popupContainer.getBoundingClientRect();
+      let popupContainerViewportRect =
+        Extracts.popupContainer.getBoundingClientRect();
       let targetViewportRect = target.getBoundingClientRect();
       let targetOriginInPopupContainer = {
         x: targetViewportRect.left - popupContainerViewportRect.left,
@@ -237,13 +245,13 @@ Extracts = {
       };
 
       //  Get, or create, the popup.
-      Extracts.popup = document.querySelector('#popupdiv');
+      Extracts.popup = document.querySelector("#popupdiv");
       if (Extracts.popup) {
-        Extracts.popup.classList.remove('fading');
+        Extracts.popup.classList.remove("fading");
         Extracts.popup.remove();
       } else {
-        Extracts.popup = document.createElement('div');
-        Extracts.popup.id = 'popupdiv';
+        Extracts.popup = document.createElement("div");
+        Extracts.popup.id = "popupdiv";
         Extracts.popup.className = target.className;
       }
 
@@ -251,45 +259,45 @@ Extracts = {
       let videoId = Extracts.youtubeId(target.href);
 
       //  Inject the contents of the popup into the popup div.
-      Extracts.popup.removeAttribute('style');
+      Extracts.popup.removeAttribute("style");
       if (videoId) {
         Extracts.popup.innerHTML = Extracts.videoForTarget(target, videoId);
         isVideo = true;
-      } else if (target.getAttribute('href').startsWith('#')) {
+      } else if (target.getAttribute("href").startsWith("#")) {
         Extracts.popup.innerHTML = Extracts.sectionEmbedForTarget(target);
         Extracts.popup
-          .querySelectorAll('.caption-wrapper')
+          .querySelectorAll(".caption-wrapper")
           .forEach((captionWrapper) => {
-            captionWrapper.style.minWidth = '';
+            captionWrapper.style.minWidth = "";
           });
         Extracts.popup
           .querySelectorAll("a:not([href^='#'])")
           .forEach((externalLink) => {
-            externalLink.target = '_new';
-            externalLink.title = externalLink.href + '\n[Opens in new window]';
+            externalLink.target = "_new";
+            externalLink.title = externalLink.href + "\n[Opens in new window]";
           });
-        Extracts.popup.style.width = Extracts.maxPopupWidth + 'px';
-        Extracts.popup.style.maxHeight = Extracts.maxPopupWidth * 0.75 + 'px';
-      } else if (target.href.startsWith('https://www.gwern.net/images/')) {
+        Extracts.popup.style.width = Extracts.maxPopupWidth + "px";
+        Extracts.popup.style.maxHeight = Extracts.maxPopupWidth * 0.75 + "px";
+      } else if (target.href.startsWith("https://www.gwern.net/images/")) {
         Extracts.popup.innerHTML = Extracts.localImageForTarget(target);
-      } else if (target.classList.contains('docMetadata')) {
+      } else if (target.classList.contains("docMetadata")) {
         Extracts.popup.innerHTML = Extracts.extractForTarget(target);
       }
 
       //  Inject the popup into the page.
-      Extracts.popup.style.visibility = 'hidden';
-      Extracts.popup.style.left = '0px';
-      Extracts.popup.style.top = '0px';
+      Extracts.popup.style.visibility = "hidden";
+      Extracts.popup.style.left = "0px";
+      Extracts.popup.style.top = "0px";
       document
         .querySelector(`#${Extracts.popupContainerID}`)
         .appendChild(Extracts.popup);
 
       //  Add event listeners.
-      Extracts.popup.addEventListener('mouseup', (event) => {
+      Extracts.popup.addEventListener("mouseup", (event) => {
         event.stopPropagation();
       });
-      Extracts.popup.addEventListener('mouseover', Extracts.divover);
-      Extracts.popup.addEventListener('mouseout', Extracts.targetout);
+      Extracts.popup.addEventListener("mouseover", Extracts.divover);
+      Extracts.popup.addEventListener("mouseout", Extracts.targetout);
 
       //  Wait for the "naive" layout to be completed, and then...
       requestAnimationFrame(() => {
@@ -308,7 +316,7 @@ Extracts = {
         var popupIntrinsicWidth = Extracts.popup.clientWidth;
         var popupIntrinsicHeight = Extracts.popup.clientHeight;
 
-        var tocLink = target.closest('#TOC');
+        var tocLink = target.closest("#TOC");
         var offToTheSide = false;
 
         var provisionalPopupXPosition;
@@ -329,7 +337,7 @@ Extracts = {
         );
         if (tocLink) {
           provisionalPopupXPosition =
-            document.querySelector('#TOC').getBoundingClientRect().right +
+            document.querySelector("#TOC").getBoundingClientRect().right +
             1.0 -
             popupContainerViewportRect.left;
           provisionalPopupYPosition =
@@ -415,11 +423,11 @@ Extracts = {
           provisionalPopupXPosition = 0;
         }
 
-        Extracts.popup.style.left = provisionalPopupXPosition + 'px';
-        Extracts.popup.style.top = provisionalPopupYPosition + 'px';
+        Extracts.popup.style.left = provisionalPopupXPosition + "px";
+        Extracts.popup.style.top = provisionalPopupYPosition + "px";
 
-        Extracts.popupContainer.classList.add('popup-visible');
-        Extracts.popup.style.visibility = '';
+        Extracts.popupContainer.classList.add("popup-visible");
+        Extracts.popup.style.visibility = "";
         document.activeElement.blur();
       });
     }, Extracts.popupTriggerDelay);
@@ -433,7 +441,7 @@ Extracts = {
     if (!Extracts.popup) return;
 
     Extracts.popupFadeTimer = setTimeout(() => {
-      Extracts.popup.classList.add('fading');
+      Extracts.popup.classList.add("fading");
       Extracts.popupDespawnTimer = setTimeout(() => {
         Extracts.despawnPopup();
       }, Extracts.popupFadeoutDuration);
@@ -444,7 +452,7 @@ Extracts = {
     clearTimeout(Extracts.popupFadeTimer);
     clearTimeout(Extracts.popupDespawnTimer);
     clearTimeout(Extracts.popupSpawnTimer);
-    Extracts.popup.classList.remove('fading');
+    Extracts.popup.classList.remove("fading");
   },
   popupContainerClicked: (event) => {
     Extracts.despawnPopup();
@@ -452,9 +460,9 @@ Extracts = {
   despawnPopup: () => {
     Extracts.popup.remove();
     document.activeElement.blur();
-    Extracts.popup.classList.remove('fading');
-    document.querySelector('html').style.transform = '';
-    Extracts.popupContainer.classList.remove('popup-visible');
+    Extracts.popup.classList.remove("fading");
+    document.querySelector("html").style.transform = "";
+    Extracts.popupContainer.classList.remove("popup-visible");
   },
 };
 
@@ -664,8 +672,8 @@ Extracts.popupStylesHTML = `<style id='${Extracts.popupStylesID}'>
 
 </style>`;
 
-if (document.readyState == 'complete') {
+if (document.readyState == "complete") {
   Extracts.setup();
 } else {
-  window.addEventListener('load', Extracts.setup);
+  window.addEventListener("load", Extracts.setup);
 }

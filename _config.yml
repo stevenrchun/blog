@@ -59,6 +59,9 @@ highlight:
 # Marked renderer
 marked:
   breaks: false
+  # Not needed and breaks large_fig
+  postAsset: false
+  prependRoot: false
 
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
@@ -85,7 +88,7 @@ meta_generator: true
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
 ## Use post's date for updated date unless set in front-matter
-use_date_for_updated: false
+updated_option: 'date'
 
 # Pagination
 ## Set per_page to 0 to disable pagination
