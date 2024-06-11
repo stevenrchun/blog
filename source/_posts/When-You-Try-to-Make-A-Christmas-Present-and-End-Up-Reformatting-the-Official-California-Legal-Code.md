@@ -16,8 +16,8 @@ This is the story of a little project for my brother that ended up in front of
 the leadership of the California State Assembly and Senate and made a lot of
 wonks and lawyers very happy.
 
-![An oil painting of forest, heavily blanketed in snow. A morning or evening
-light peaks from ](winter-1890.jpg "Winter, by Ivan Shishkin, 1890")
+![An oil painting of forest, heavily blanketed in snow.](winter-1890.jpg
+"Winter, by Ivan Shishkin, 1890")
 
 
 ## Yuletide Blues
@@ -132,7 +132,7 @@ _“A true hero. Please send along our gratitude!!!!!”_
 
 _“Holy crap you just made my life so much easier”_
 
-_“I love your brother.”_
+_“I love your brother.”_k
 
 All real things said by nice people who work on important problems.
 

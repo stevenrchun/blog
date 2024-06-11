@@ -25,6 +25,16 @@ p > img {
   max-width: 150%;
 }
 
+/* When using {% asset_image %} tag */
+img.large-figure {
+  max-width: 150%;
+}
+
+/* Allow overflow on plain formatted text. Like the christmas ascii art */
+.highlight.plaintext {
+  overflow: visible;
+}
+
 /* Make display mathjax larger than inline
  * and allow overflow while centering*/
 mjx-container[jax="SVG"][display="true"].MathJax {

@@ -1,9 +1,8 @@
-let kCustomFootnoteSplit = '________________';
-let kMarkdownFootnoteSplit = '## Notes';
-let kHorizontalLine = '\n --- \n';
+let kCustomFootnoteSplit = "________________";
+let kMarkdownFootnoteSplit = "## Notes";
+let kHorizontalLine = "\n --- \n";
 
-hexo.extend.filter.register('before_post_render', function(data) {
-  console.log('before post render');
+hexo.extend.filter.register("before_post_render", function (data) {
   processed_content = preprocess(data.content);
   if (processed_content != null) {
     data.content = processed_content;
@@ -14,14 +13,10 @@ hexo.extend.filter.register('before_post_render', function(data) {
 function preprocess(content) {
   // If old style footnotes
   if (content.includes(kCustomFootnoteSplit)) {
-    console.log('Inserting classic sidenotes...');
     return insertSidenotesCustom(content);
   } else {
     // Parse markdown footnotes
-    console.log('Inserting sidenotes...');
     content = insertSidenotesForMarkdown(content);
-    console.log('Finished inserting sidenotes.');
-    console.log('Inserting preview links...');
     return content;
   }
 }
@@ -43,10 +38,9 @@ function insertSidenotesCustom(content) {
 
   // Replace sidenotes in text
   for (let [key, note] of sidenoteMap) {
-    tag = '{% sidenote %}' + note + '{% endsidenote %}';
+    tag = "{% sidenote %}" + note + "{% endsidenote %}";
     textContent = textContent.replace(key, tag);
   }
-  console.log('Finished inserting classic sidenotes');
   return textContent;
 }
 
@@ -63,7 +57,7 @@ function insertSidenotesForMarkdown(content) {
   for (i = 1; i < sidenotes.length - 1; i += 2) {
     let index = sidenotes[i];
     let text = sidenotes[i + 1];
-    let index_without_colon = index.replace(':', '');
+    let index_without_colon = index.replace(":", "");
     sidenoteMap.set(index_without_colon, text);
   }
 
@@ -71,9 +65,9 @@ function insertSidenotesForMarkdown(content) {
   for (let [key, note] of sidenoteMap) {
     // We render the inner content, so any markdown links are transformed into before tags are parsed.
     tag =
-      '{% sidenote %}' +
-      hexo.render.renderSync({ text: note.trim(), engine: 'md' }) +
-      '{% endsidenote %}';
+      "{% sidenote %}" +
+      hexo.render.renderSync({ text: note.trim(), engine: "md" }) +
+      "{% endsidenote %}";
     textContent = textContent.replace(key, tag);
   }
   // Recombine, so that the sidenotes are also represented below.
@@ -83,8 +77,8 @@ function insertSidenotesForMarkdown(content) {
 //TODO: enable an indicator to not replace.
 // Currently disabled.
 function replaceLinks(content) {
-  console.log('Link fetch disabled, using standin previews');
-  console.log('replace links');
+  console.log("Link fetch disabled, using standin previews");
+  console.log("replace links");
   return content;
   // Returns an iterator in which each element has ['[abc](xyz)', 'abc', 'xyz', index, input]
   // Some idiosyncracies of this RegEx: It matches the first character before the link.
@@ -99,10 +93,10 @@ function replaceLinks(content) {
     let link = match[2];
     // Construct hover link.
     let preview_tag =
-      ' {% preview ' + link + ' %}' + title + '{% endpreview %}';
+      " {% preview " + link + " %}" + title + "{% endpreview %}";
     // Replace each match
     content = content.replace(matchedLink, preview_tag);
   }
-  console.log('Finished inserting preview links.');
+  console.log("Finished inserting preview links.");
   return content;
 }
