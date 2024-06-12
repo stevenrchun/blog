@@ -132,7 +132,7 @@ _“A true hero. Please send along our gratitude!!!!!”_
 
 _“Holy crap you just made my life so much easier”_
 
-_“I love your brother.”_k
+_“I love your brother.”_
 
 All real things said by nice people who work on important problems.
 

@@ -44,8 +44,8 @@ async function getUrlMetadata(url, cache) {
     return cache[url];
   }
   const response = await fetch(url).catch((e) => {
+    console.log(`Caught error attempting to fetch ${url}`);
     console.log(e);
-    // TODO: right now this gets cached.
     return null;
   });
 
@@ -59,20 +59,8 @@ async function getUrlMetadata(url, cache) {
     const html = await response.text();
     console.log("Finished fetching metadata for: " + url);
     return getMetadataFromHtml(html);
-  } else {
-    // Try internet archive?
-    const response = await fetch(INTERNET_ARCHIVE_PREFIX + url).catch((e) => {
-      console.log(e);
-      return null;
-    });
-    if (response != null && response.ok) {
-      const html = await response.text();
-      console.log("Finished fetching metadata for archived link: " + url);
-      return getMetadataFromHtml(html);
-    }
   }
 
-  // If both the original and internet archive fail.
   return null;
 }
 // Parse out html entities
@@ -124,60 +112,80 @@ hexo.extend.tag.register(
     // Load cache
     let previewCache = hexo.locals.get(PREVIEW_CACHE);
 
-    return getUrlMetadata(url, previewCache).then((metadata) => {
-      if (metadata == null) {
-        if ((!url) in previewCache) {
-          previewCache[url] = metadata;
+    return getUrlMetadata(url, previewCache)
+      .then((metadata) => {
+        // First retry with the internet archive.
+        if (metadata == null) {
+          // Cache the null result for the initial link.
+          if (!(url in previewCache)) {
+            previewCache[url] = metadata;
+            hexo.locals.set(PREVIEW_CACHE, previewCache);
+          }
+          let archivedUrl = INTERNET_ARCHIVE_PREFIX + url;
+          return [archivedUrl, getUrlMetadata(archivedUrl, previewCache)];
+        } else {
+          // Else, just pass on the successful metadata.
+          return [url, metadata];
+        }
+      })
+      .then(([url, metadata]) => {
+        if (metadata == null) {
+          if (!(url in previewCache)) {
+            previewCache[url] = metadata;
+            hexo.locals.set(PREVIEW_CACHE, previewCache);
+          }
+
+          return `[${content}](${url})`;
+        }
+
+        if (metadata.description == null) {
+          abstract = "";
+        } else {
+          abstract = cleanHTML(metadata.description);
+        }
+
+        if (metadata.title == null) {
+          let parsedUrl = new URL(url);
+          title = parsedUrl.hostname + parsedUrl.pathname;
+        } else {
+          title = cleanHTML(metadata.title);
+        }
+
+        if (metadata.image == null) {
+          image = metadata.image = "";
+        } else {
+          image = metadata.image;
+        }
+
+        // If the url isn't in the cache, store it.
+        if (!(url in previewCache)) {
+          previewCache[url] = {
+            title: title,
+            abstract: abstract,
+            image: image,
+          };
           hexo.locals.set(PREVIEW_CACHE, previewCache);
         }
 
-        return `[${content}](${url})`;
-      }
+        let target = "_self";
+        let rel = "nooponer";
+        if (isExternalLink(url, hexo.config.url)) {
+          target = "_blank";
+          rel += " " + "external";
+        }
 
-      if (metadata.description == null) {
-        abstract = "";
-      } else {
-        abstract = cleanHTML(metadata.description);
-      }
-
-      if (metadata.title == null) {
-        let parsedUrl = new URL(url);
-        title = parsedUrl.hostname + parsedUrl.pathname;
-      } else {
-        title = cleanHTML(metadata.title);
-      }
-
-      if (metadata.image == null) {
-        image = metadata.image = "";
-      } else {
-        image = metadata.image;
-      }
-
-      // If the url isn't in the cache, store it.
-      if (!(url in previewCache)) {
-        previewCache[url] = { title: title, abstract: abstract, image: image };
-        hexo.locals.set(PREVIEW_CACHE, previewCache);
-      }
-
-      let target = "_self";
-      let rel = "nooponer";
-      if (isExternalLink(url, hexo.config.url)) {
-        target = "_blank";
-        rel += " " + "external";
-      }
-
-      return (
-        `<a href="${encodeURL(
-          url,
-        )}" class="docMetadata" data-popup-title="${title}" data-popup-image="${
-          metadata.image
-        }" data-popup-abstract="${abstract}" target="${target}" rel="${rel}">` +
-        hexo.render
-          .renderSync({ text: content, engine: "md" })
-          .replace(/<\/?p>/g, "") +
-        "</a>"
-      );
-    });
+        return (
+          `<a href="${encodeURL(
+            url,
+          )}" class="docMetadata" data-popup-title="${title}" data-popup-image="${
+            metadata.image
+          }" data-popup-abstract="${abstract}" target="${target}" rel="${rel}">` +
+          hexo.render
+            .renderSync({ text: content, engine: "md" })
+            .replace(/<\/?p>/g, "") +
+          "</a>"
+        );
+      });
   },
   { ends: true, async: true },
 );
