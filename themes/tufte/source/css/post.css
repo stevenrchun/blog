@@ -13,6 +13,7 @@ p > img {
 
 .content {
   width: 45%;
+  word-wrap: break-word;
 }
 
 .large-figure > p {
@@ -60,6 +61,12 @@ footer > a {
   text-decoration: underline;
 }
 
+/* Make the ascii house scroll after. */
+@media screen and (max-width: 910px) {
+  .highlight.plaintext {
+    overflow: scroll;
+  }
+}
 
 @media screen and (max-width: 760px) {
   .content {

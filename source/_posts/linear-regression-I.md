@@ -354,8 +354,7 @@ Y_2 \\\\
 \vdots \\\\
 \vdots \\\\
 Y_n
-\end{bmatrix}\_{k \times 1}
-=
+\end{bmatrix}\_{k \times 1}=
 \underbrace{
 \begin{bmatrix}
 1 & X_{1,1} & X_{2,1} & \dots & X_{k,1} \\\\
