@@ -1,3 +1,16 @@
+More or Less All the Cosmere Novels:
+  favorite: true
+  cover_link: https://m.media-amazon.com/images/I/91U6rc7u0yL._AC_UF1000,1000_QL80_.jpg
+  author: Brandon Sanderson,
+  read: true
+
+The 2002 Aims of Education Address:
+  favorite: true
+  cover_link: https://images-na.ssl-images-amazon.com/images/I/61UQ7hDHb9L._SX325_BO1,204,203,200_.jpg
+  author: Andrew Abbott
+  source: https://college.uchicago.edu/student-life/aims-education-address-2002-andrew-abbott
+  read: true
+
 Seveneves:
   favorite: true
   ISBN: 0062190377
@@ -13,6 +26,26 @@ Seveneves:
     Stephenson, who worked at Blue Origin, is in fact so rigorous that it can feel impossible to *unsuspend* disbelief. Can't recommend enough; bonus if
     you're looking for something with whip-crack smart, well-written female leads.
 
+Newsletter, Scope of Work:
+  favorite: true
+  author: Spencer Wright & Co.
+  source: https://www.scopeofwork.net/
+  cover_link: https://www.scopeofwork.net/content/images/size/w2000/2024/09/service-pnp-fsa-8c25000-8c25100-8c25156v.jpg
+  read: true
+
+Newsletter, Money Stuff:
+  favorite: true
+  author: Matt Levine
+  cover_link: https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iE8O2RXbXRhw/v6/630x630.jpg
+  source: https://www.bloomberg.com/account/newsletters/money-stuff
+  read: true
+
+Newsletter, Today in Tabs:
+  favorite: true
+  author: Rusty Foster
+  source: https://www.todayintabs.com/
+  cover_link: https://media.beehiiv.com/cdn-cgi/image/fit=scale-down,format=auto,onerror=redirect,quality=80/uploads/publication/logo/ca15cc2b-6769-4689-903e-58f44680ca58/thumb_Icon_Bigger.png
+  read: true
 
 A Gentleman in Moscow:
   favorite: true
@@ -21,12 +54,12 @@ A Gentleman in Moscow:
   author: Amor Towles
   read: true
 
-The Kingkiller Chronicles:
-  favorite: true
-  ISBN: 978-0756404079
-  cover_link: https://m.media-amazon.com/images/I/51MUF7bj-lL.jpg
-  author: Patrick Rothfuss
-  read: true
+    # The Kingkiller Chronicles:
+    #   favorite: true
+    #   ISBN: 978-0756404079
+    #   cover_link: https://m.media-amazon.com/images/I/51MUF7bj-lL.jpg
+    #   author: Patrick Rothfuss
+    #   read: true
 
 The Right Stuff:
   ISBN: 978-0312427566
@@ -40,6 +73,13 @@ The Mezzanine:
   ISBN: 978-1555842581
   cover_link: https://images-na.ssl-images-amazon.com/images/I/51Z83j7pGDL._SX283_BO1,204,203,200_.jpg
   author: Nicholson Baker
+  read: true
+
+Shitty First Drafts:
+  favorite: true
+  cover_link:
+  source: https://wrd.as.uky.edu/sites/default/files/1-Shitty%20First%20Drafts.pdf
+  author: Anne Lamott
   read: true
 
 A Beautiful Mind:
@@ -70,12 +110,12 @@ Dune:
   read: true
 
 
-'How to Travel with a Salmon: And Other Essays':
-  favorite: false
-  ISBN: 978-0156001250
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/416x8xcDRiL._SX326_BO1,204,203,200_.jpg
-  author: Umberto Eco
-  read: false
+    # 'How to Travel with a Salmon: And Other Essays':
+    #   favorite: false
+    #   ISBN: 978-0156001250
+    #   cover_link: https://images-na.ssl-images-amazon.com/images/I/416x8xcDRiL._SX326_BO1,204,203,200_.jpg
+    #   author: Umberto Eco
+    #   read: false
 
 The Planet Remade:
   favorite: false
@@ -126,12 +166,13 @@ Bad Blood:
   author: John Carreyrou
   read: true
 
-Animal Farm:
-  favorite: true
-  ISBN: 978-0151072552
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/21a2OjbrUQL._SX277_BO1,204,203,200_.jpg
-  author: George Orwell
-  read: true
+    # Trie
+    # Animal Farm:
+    #   favorite: true
+    #   ISBN: 978-0151072552
+    #   cover_link: https://images-na.ssl-images-amazon.com/images/I/21a2OjbrUQL._SX277_BO1,204,203,200_.jpg
+    #   author: George Orwell
+    #   read: true
 
 'Winners Take All: The Elite Charade of Changing the World':
   favorite: true
@@ -140,34 +181,10 @@ Animal Farm:
   author: Anand Giridharadas
   read: true
 
-The 2002 Aims of Education Address:
-  favorite: true
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/61UQ7hDHb9L._SX325_BO1,204,203,200_.jpg
-  author: Andrew Abbott
-  read: true
-
-Amazon’s Antitrust Paradox:
-  favorite: false
-  cover_link: https://heinonline.org/HOL/ViewImageLocal?handle=hein.journals/ylr126&div=18&collection=&method=preview&ext=.png&size=3
-  author: Lina Khan
-  read: true
-
-The Paris Review Interviews, Vol. I:
-  ISBN: 978-0312361754
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/41o1DXR9SaL._SX331_BO1,204,203,200_.jpg
-  author: Assorted
-
 Trick Mirror:
   ISBN: 978-0525510543
   cover_link: https://m.media-amazon.com/images/I/51xau4YNRLL.jpg
   author: Jia Tolentino
-
-The Path to Power:
-  favorite: false
-  ISBN: 0-679-72945-3
-  cover_link: https://images-na.ssl-images-amazon.com/images/I/51XOGLoW9lL.jpg
-  author: Robert Caro
-  read: false
 
 
     # Deep Learning:

@@ -1,9 +1,21 @@
 <div class="bookshelf-container">
     <% for (var book in site.data.books) { %>
     <div class="book-cell">
+      <% if (site.data.books[book].source) { %>
+        <a href="<%= site.data.books[book].source %>">
+            <img src="<%- site.data.books[book].cover_link %>" />
+        </a>
+      <% } else { %>
         <img src="<%- site.data.books[book].cover_link %>" />
+      <% } %>
+      <% if (site.data.books[book].source) { %>
+        <a href="<%= site.data.books[book].source %>">
+          <h4><%- book %></h4>
+        </a>
+      <% } else { %>
         <h4><%- book %></h4>
-        <p>By <%-site.data.books[book].author%></p>
+      <% } %>
+      <p class="authorship" >By <%-site.data.books[book].author%></p>
     </div>
     <% } %>
     <%

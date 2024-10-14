@@ -39,18 +39,30 @@ body {
   text-shadow: 1px 1px #715879, 2px 2px #715879;
 }
 
-.book-cell > img {
+.book-cell img {
   width: 50%;
   border: solid black;
 }
+.book-cell a {
+  display: contents;
+}
 
-.book-cell > h4 {
+.book-cell a img{
+  border: dashed #F7EE80;
+  padding: 10px;
+}
+
+.book-cell a h4 {
+  text-decoration: underline;
+}
+
+.book-cell h4 {
   width: 60%;
   margin-bottom: 0;
   text-align: center;
 }
 
-h4 + p {
+.authorship {
   margin-top: 0;
   width: 60%;
   font-size: 12px;
