@@ -26,6 +26,16 @@ p > img {
   max-width: 150%;
 }
 
+.extra-large-figure > p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.extra-large-figure > p > img {
+  max-width: 100vw;
+}
+
 /* When using {% asset_image %} tag */
 img.large-figure {
   max-width: 150%;

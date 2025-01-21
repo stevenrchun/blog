@@ -91,6 +91,7 @@ hexo.extend.filter.register("after_generate", function () {
 hexo.extend.tag.register(
   "preview",
   function (args, content) {
+    console.log("content: " + content);
     const url = args[0];
     // let got = hexo.locals.get("test");
     if (

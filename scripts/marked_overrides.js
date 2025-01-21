@@ -1,12 +1,6 @@
 // Overrides the link element in Marked's renderer. This is a more elegant and potentially portable alternative adding the preview tags as hexo elements.
 const marked = require("marked");
-const {
-  encodeURL,
-  slugize,
-  stripHTML,
-  url_for,
-  isExternalLink,
-} = require("hexo-util");
+const { encodeURL } = require("hexo-util");
 const fetch = require("node-fetch");
 const { getMetadata } = require("page-metadata-parser");
 const domino = require("domino");
@@ -43,7 +37,14 @@ hexo.extend.filter.register(
   "marked:renderer",
   function (renderer) {
     const { config } = this; // Skip this line if you don't need user config from _config.yml
+    defaultLinkRenderer = renderer.link;
     renderer.link = function (href, title, text) {
+      console.log("href" + href);
+      console.log("title" + title);
+      console.log("text" + text);
+      // Note: there's some bug with plain links where if the text is a valid URL
+      // a preview is added again. Sort of a recursive link preview problem.
+      // You can get around this by adding a text that is the url minus https://
       return `{% preview ${encodeURL(href)} %} ${text} {% endpreview %}`;
     };
   },

@@ -51,3 +51,15 @@ hexo.extend.tag.register(
   },
   { ends: true },
 );
+
+hexo.extend.tag.register(
+  "extra_large_fig",
+  function (args, content) {
+    return (
+      `<div class="extra-large-figure">` +
+      hexo.render.renderSync({ text: content, engine: "md" }) +
+      `</div>`
+    );
+  },
+  { ends: true },
+);
