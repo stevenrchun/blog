@@ -1,7 +1,10 @@
 ---
 title: Does the NERC Fan Still Exist?
-date: 2025-01-20 16:38:27
+date: 2025-01-20
 tags:
+  - Energy
+  - Climate
+twitter_image: ./modern_nerc_fan.png
 ---
 *The views expressed in this post are mine alone. They in no way reflect the views or work of my employer.*
 

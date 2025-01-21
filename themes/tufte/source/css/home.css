@@ -13,6 +13,7 @@ body {
 li > h4 {
   color: #BE7798;
   color: black;
+  margin-bottom: 2px;
 }
 
 li > h4:hover {

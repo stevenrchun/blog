@@ -5,6 +5,7 @@ mathjax: true
 author: Steven Chun
 summary: Travails in temperature.
 tags:
+  - The Extremely Obvious
 ---
 **Author’s note**: _It’s been more than a year and a half since I last published
 anything here[^1]. Time to write has been scarce. I haven't done much that warrants writing.
