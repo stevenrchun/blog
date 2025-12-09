@@ -68,7 +68,7 @@ function insertSidenotesForMarkdown(content) {
       "{% sidenote %}" +
       hexo.render.renderSync({ text: note.trim(), engine: "md" }) +
       "{% endsidenote %}";
-    textContent = textContent.replace(key, tag);
+    textContent = textContent?.replace(key, tag);
   }
   // Recombine, so that the sidenotes are also represented below.
   return textContent + kHorizontalLine + sidenoteContent;
